@@ -17,9 +17,6 @@ const Header: React.FC = () => {
         
         {/* Desktop Navigation - Hidden on mobile */}
         <nav className="hidden md:flex space-x-8">
-          <a href="#about" className="text-gray-700 hover:text-health-600 transition-colors font-medium">
-            Sobre
-          </a>
           <a href="#principles" className="text-gray-700 hover:text-health-600 transition-colors font-medium">
             Princípios
           </a>
