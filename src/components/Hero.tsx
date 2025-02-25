@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-block px-3 py-1 mb-6 text-sm font-medium text-health-600 bg-health-100 rounded-full animate-fade-in">
-            Proposta para uma Nova Instituição
+            Projeto Nacional de Saúde Pública
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight animate-fade-in" style={{ animationDelay: '100ms' }}>
