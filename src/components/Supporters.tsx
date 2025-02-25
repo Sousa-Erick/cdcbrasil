@@ -6,15 +6,15 @@ const Supporters: React.FC = () => {
   const getIconByType = (type: string) => {
     switch (type) {
       case "Universidade":
-        return <GraduationCap className="h-10 w-10 mb-3 text-health-600" />;
+        return <GraduationCap className="h-10 w-10 mb-3 text-blue-600" />;
       case "Instituto de Pesquisa":
-        return <Microscope className="h-10 w-10 mb-3 text-health-600" />;
+        return <Microscope className="h-10 w-10 mb-3 text-blue-600" />;
       case "Sociedade Científica":
-        return <Users className="h-10 w-10 mb-3 text-health-600" />;
+        return <Users className="h-10 w-10 mb-3 text-blue-600" />;
       case "Associação Científica":
-        return <BookOpen className="h-10 w-10 mb-3 text-health-600" />;
+        return <BookOpen className="h-10 w-10 mb-3 text-blue-600" />;
       default:
-        return <Building className="h-10 w-10 mb-3 text-health-600" />;
+        return <Building className="h-10 w-10 mb-3 text-blue-600" />;
     }
   };
 
@@ -62,7 +62,7 @@ const Supporters: React.FC = () => {
   ];
 
   return (
-    <section id="supporters" className="section bg-gray-50">
+    <section id="supporters" className="section bg-blue-50">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="inline-block px-3 py-1 mb-4 text-sm font-medium text-health-600 bg-health-100 rounded-full">
