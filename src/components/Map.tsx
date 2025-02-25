@@ -1,7 +1,73 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Map: React.FC = () => {
+  const svgRef = useRef<SVGSVGElement>(null);
+  
+  useEffect(() => {
+    if (!svgRef.current) return;
+    
+    // Função para animar as conexões de rede
+    const animateConnections = () => {
+      const connections = svgRef.current?.querySelectorAll('.connection');
+      if (!connections) return;
+      
+      connections.forEach((connection, index) => {
+        const line = connection as SVGLineElement;
+        
+        // Define a duração da animação baseada no índice
+        const duration = 2000 + (index * 300);
+        
+        // Anima o traço do linha
+        line.style.strokeDasharray = String(line.getTotalLength());
+        line.style.strokeDashoffset = String(line.getTotalLength());
+        
+        // Cria a animação
+        line.animate(
+          [
+            { strokeDashoffset: String(line.getTotalLength()) },
+            { strokeDashoffset: '0' }
+          ],
+          {
+            duration: duration,
+            fill: 'forwards',
+            easing: 'ease-out'
+          }
+        );
+      });
+      
+      // Anima os nós depois das conexões
+      const nodes = svgRef.current?.querySelectorAll('.node');
+      if (!nodes) return;
+      
+      nodes.forEach((node, index) => {
+        const circle = node as SVGCircleElement;
+        const delay = 500 + (index * 200);
+        
+        // Anima o aparecimento dos círculos
+        circle.animate(
+          [
+            { opacity: 0, r: 0 },
+            { opacity: 1, r: 12 }
+          ],
+          {
+            duration: 800,
+            delay: delay,
+            fill: 'forwards',
+            easing: 'ease-out'
+          }
+        );
+      });
+    };
+    
+    // Inicia a animação após um breve atraso
+    const timer = setTimeout(() => {
+      animateConnections();
+    }, 500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   const collaborationItems = [
     {
       region: "Norte",
@@ -30,6 +96,45 @@ const Map: React.FC = () => {
     }
   ];
 
+  // Coordenadas dos nós para a animação de rede
+  const nodes = [
+    { x: 400, y: 300, label: "CDC Brasil", color: "#0047AB", main: true },
+    { x: 250, y: 200, label: "Norte", color: "#FF7A66" },
+    { x: 550, y: 200, label: "Nordeste", color: "#2970F8" },
+    { x: 300, y: 400, label: "Centro-Oeste", color: "#50C878" },
+    { x: 500, y: 400, label: "Sudeste", color: "#FFD700" },
+    { x: 400, y: 500, label: "Sul", color: "#9370DB" },
+    { x: 200, y: 300, label: "Institutos de Pesquisa", color: "#FF7A66" },
+    { x: 600, y: 300, label: "Universidades", color: "#2970F8" },
+    { x: 350, y: 150, label: "Hospitais", color: "#50C878" },
+    { x: 450, y: 150, label: "Laboratórios", color: "#FFD700" },
+    { x: 300, y: 550, label: "Sociedades Científicas", color: "#9370DB" },
+    { x: 500, y: 550, label: "Organizações Internacionais", color: "#0047AB" },
+  ];
+
+  // Conexões entre os nós
+  const connections = [
+    { from: 0, to: 1 },
+    { from: 0, to: 2 },
+    { from: 0, to: 3 },
+    { from: 0, to: 4 },
+    { from: 0, to: 5 },
+    { from: 0, to: 6 },
+    { from: 0, to: 7 },
+    { from: 0, to: 8 },
+    { from: 0, to: 9 },
+    { from: 0, to: 10 },
+    { from: 0, to: 11 },
+    { from: 1, to: 6 },
+    { from: 2, to: 7 },
+    { from: 3, to: 8 },
+    { from: 4, to: 9 },
+    { from: 5, to: 10 },
+    { from: 6, to: 11 },
+    { from: 7, to: 10 },
+    { from: 8, to: 9 },
+  ];
+
   return (
     <section id="map" className="section bg-gray-50">
       <div className="container mx-auto">
@@ -44,70 +149,68 @@ const Map: React.FC = () => {
         </div>
         
         <div className="glass-card rounded-xl p-6 md:p-8 animate-fade-in">
-          <div className="aspect-w-16 aspect-h-9 mb-8 bg-white rounded-lg flex items-center justify-center relative">
+          <div className="aspect-w-16 aspect-h-9 mb-8 bg-white rounded-lg flex items-center justify-center relative overflow-hidden">
             <div className="w-full h-full relative">
               <svg 
-                viewBox="0 0 800 800" 
+                ref={svgRef}
+                viewBox="0 0 800 600" 
                 className="w-full h-full p-4"
               >
-                {/* Mapa do Brasil simplificado */}
-                <path 
-                  d="M280,160 Q380,120 400,200 Q450,180 500,220 Q530,210 550,230 Q600,200 650,270 Q630,350 650,400 Q600,450 620,500 Q580,550 600,600 Q550,630 500,600 Q450,650 400,600 Q350,620 300,600 Q250,630 200,600 Q180,550 200,500 Q150,450 170,400 Q150,350 170,300 Q220,280 240,240 Q260,220 280,160 Z" 
-                  fill="#E6EEF8" 
-                  stroke="#0047AB" 
-                  strokeWidth="4"
-                />
+                {/* Conexões da rede */}
+                {connections.map((connection, index) => (
+                  <line 
+                    key={`connection-${index}`}
+                    className="connection"
+                    x1={nodes[connection.from].x} 
+                    y1={nodes[connection.from].y} 
+                    x2={nodes[connection.to].x} 
+                    y2={nodes[connection.to].y} 
+                    stroke={nodes[connection.to].color}
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeDasharray="5,5"
+                    opacity="0.6"
+                  />
+                ))}
                 
-                {/* Pontos em cada estado */}
-                {/* Norte */}
-                <circle cx="300" cy="200" r="10" fill="#FF7A66" /> {/* Amazonas */}
-                <circle cx="380" cy="180" r="10" fill="#FF7A66" /> {/* Roraima */}
-                <circle cx="250" cy="250" r="10" fill="#FF7A66" /> {/* Acre */}
-                <circle cx="330" cy="250" r="10" fill="#FF7A66" /> {/* Rondônia */}
-                <circle cx="420" cy="250" r="10" fill="#FF7A66" /> {/* Pará */}
-                <circle cx="470" cy="200" r="10" fill="#FF7A66" /> {/* Amapá */}
-                <circle cx="440" cy="290" r="10" fill="#FF7A66" /> {/* Tocantins */}
+                {/* Nós da rede */}
+                {nodes.map((node, index) => (
+                  <g key={`node-${index}`}>
+                    <circle 
+                      className="node"
+                      cx={node.x} 
+                      cy={node.y} 
+                      r="0"
+                      fill={node.color}
+                      opacity="0"
+                      strokeWidth={node.main ? 3 : 1}
+                      stroke={node.main ? "#0047AB" : "white"}
+                    />
+                    <text 
+                      x={node.x} 
+                      y={node.y + 25} 
+                      textAnchor="middle" 
+                      fill="#333"
+                      fontSize="12"
+                      fontWeight={node.main ? "bold" : "normal"}
+                    >
+                      {node.label}
+                    </text>
+                  </g>
+                ))}
                 
-                {/* Nordeste */}
-                <circle cx="500" cy="300" r="10" fill="#2970F8" /> {/* Maranhão */}
-                <circle cx="540" cy="320" r="10" fill="#2970F8" /> {/* Piauí */}
-                <circle cx="570" cy="350" r="10" fill="#2970F8" /> {/* Ceará */}
-                <circle cx="580" cy="380" r="10" fill="#2970F8" /> {/* Rio Grande do Norte */}
-                <circle cx="590" cy="400" r="10" fill="#2970F8" /> {/* Paraíba */}
-                <circle cx="580" cy="420" r="10" fill="#2970F8" /> {/* Pernambuco */}
-                <circle cx="560" cy="440" r="10" fill="#2970F8" /> {/* Alagoas */}
-                <circle cx="550" cy="460" r="10" fill="#2970F8" /> {/* Sergipe */}
-                <circle cx="520" cy="470" r="10" fill="#2970F8" /> {/* Bahia */}
-                
-                {/* Centro-Oeste */}
-                <circle cx="380" cy="350" r="10" fill="#50C878" /> {/* Mato Grosso */}
-                <circle cx="400" cy="450" r="10" fill="#50C878" /> {/* Mato Grosso do Sul */}
-                <circle cx="450" cy="370" r="10" fill="#50C878" /> {/* Goiás */}
-                <circle cx="470" cy="330" r="10" fill="#50C878" /> {/* Distrito Federal */}
-                
-                {/* Sudeste */}
-                <circle cx="480" cy="480" r="10" fill="#FFD700" /> {/* Minas Gerais */}
-                <circle cx="450" cy="520" r="10" fill="#FFD700" /> {/* São Paulo */}
-                <circle cx="520" cy="530" r="10" fill="#FFD700" /> {/* Espírito Santo */}
-                <circle cx="500" cy="550" r="10" fill="#FFD700" /> {/* Rio de Janeiro */}
-                
-                {/* Sul */}
-                <circle cx="400" cy="550" r="10" fill="#9370DB" /> {/* Paraná */}
-                <circle cx="380" cy="590" r="10" fill="#9370DB" /> {/* Santa Catarina */}
-                <circle cx="350" cy="620" r="10" fill="#9370DB" /> {/* Rio Grande do Sul */}
-                
-                {/* Legenda */}
-                <text x="650" y="200" fill="#FF7A66" fontWeight="bold" fontSize="16">Norte</text>
-                <text x="650" y="240" fill="#2970F8" fontWeight="bold" fontSize="16">Nordeste</text>
-                <text x="650" y="280" fill="#50C878" fontWeight="bold" fontSize="16">Centro-Oeste</text>
-                <text x="650" y="320" fill="#FFD700" fontWeight="bold" fontSize="16">Sudeste</text>
-                <text x="650" y="360" fill="#9370DB" fontWeight="bold" fontSize="16">Sul</text>
+                {/* Título da animação */}
+                <text 
+                  x="400" 
+                  y="30" 
+                  textAnchor="middle" 
+                  fill="#0047AB"
+                  fontSize="18"
+                  fontWeight="bold"
+                >
+                  Rede de Colaboração Nacional
+                </text>
               </svg>
-              
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0">
-                <p className="mb-2">Mapa do Brasil com pontos de atuação</p>
-                <p className="text-sm">(Visualização em desenvolvimento)</p>
-              </div>
             </div>
           </div>
           
