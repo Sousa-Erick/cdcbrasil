@@ -37,15 +37,13 @@ const Map: React.FC = () => {
           <div className="inline-block px-3 py-1 mb-4 text-sm font-medium text-health-600 bg-health-100 rounded-full">
             Abrangência Nacional
           </div>
-          <h2 className="section-title">Mapa de Atuação</h2>
+          <h2 className="section-title">Rede de Colaboração</h2>
           <p className="text-lg text-gray-600">
             O CDC Brasil atuará em todo o território nacional em colaboração com instituições locais.
           </p>
         </div>
         
         <div className="glass-card rounded-xl p-6 md:p-8 animate-fade-in">
-          <h3 className="text-xl font-bold mb-6 text-center text-blue-700">Rede de Colaboração</h3>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {collaborationItems.map((item, index) => (
               <div 
