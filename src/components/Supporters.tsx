@@ -1,7 +1,23 @@
 
 import React from 'react';
+import { Building, GraduationCap, Users, Flask, BookOpen } from 'lucide-react';
 
 const Supporters: React.FC = () => {
+  const getIconByType = (type: string) => {
+    switch (type) {
+      case "Universidade":
+        return <GraduationCap className="h-10 w-10 mb-3 text-health-600" />;
+      case "Instituto de Pesquisa":
+        return <Flask className="h-10 w-10 mb-3 text-health-600" />;
+      case "Sociedade Científica":
+        return <Users className="h-10 w-10 mb-3 text-health-600" />;
+      case "Associação Científica":
+        return <BookOpen className="h-10 w-10 mb-3 text-health-600" />;
+      default:
+        return <Building className="h-10 w-10 mb-3 text-health-600" />;
+    }
+  };
+
   const supporters = [
     { 
       name: "Universidade de São Paulo", 
@@ -65,6 +81,7 @@ const Supporters: React.FC = () => {
               className="bg-white rounded-lg p-4 flex flex-col items-center text-center shadow-sm border border-gray-100 card-hover animate-fade-in"
               style={{ animationDelay: `${index * 50}ms` }}
             >
+              {getIconByType(supporter.type)}
               <div className="w-full h-16 mb-4 flex items-center justify-center">
                 <img 
                   src={supporter.logo} 
