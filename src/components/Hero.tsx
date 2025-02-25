@@ -1,8 +1,26 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Shield, Lightbulb, FileCog } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const contextItems = [
+    {
+      icon: <Shield className="h-8 w-8 mb-3 text-health-600" />,
+      title: "Emergências em Saúde",
+      description: "A pandemia de COVID-19 demonstrou a necessidade de uma instituição especializada para o enfrentamento de crises sanitárias."
+    },
+    {
+      icon: <Lightbulb className="h-8 w-8 mb-3 text-health-600" />,
+      title: "Coordenação Nacional",
+      description: "É essencial uma estrutura centralizada que articule ações coordenadas em território nacional durante emergências."
+    },
+    {
+      icon: <FileCog className="h-8 w-8 mb-3 text-health-600" />,
+      title: "Evidência Científica",
+      description: "Decisões em saúde pública devem ser baseadas em evidências científicas e coordenadas por especialistas."
+    }
+  ];
+
   return (
     <section id="about" className="pt-24 pb-16 md:pt-32 md:pb-24">
       <div className="container mx-auto">
@@ -26,31 +44,21 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      <div className="mt-16 md:mt-24 w-full glass-card p-6 md:p-8 animate-fade-in-slow" style={{ animationDelay: '400ms' }}>
+      <div className="mt-16 md:mt-24 w-full bg-gradient-to-br from-white to-gray-50 p-6 md:p-10 rounded-xl shadow-sm animate-fade-in-slow" style={{ animationDelay: '400ms' }}>
         <div className="container mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Contexto</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Contexto</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <div className="glass-card p-6 rounded-xl card-hover">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Emergências em Saúde</h3>
-              <p className="text-gray-700">
-                A pandemia de COVID-19 demonstrou a necessidade de uma instituição especializada para o enfrentamento de crises sanitárias.
-              </p>
-            </div>
-            
-            <div className="glass-card p-6 rounded-xl card-hover">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Coordenação Nacional</h3>
-              <p className="text-gray-700">
-                É essencial uma estrutura centralizada que articule ações coordenadas em território nacional durante emergências.
-              </p>
-            </div>
-            
-            <div className="glass-card p-6 rounded-xl card-hover">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Evidência Científica</h3>
-              <p className="text-gray-700">
-                Decisões em saúde pública devem ser baseadas em evidências científicas e coordenadas por especialistas.
-              </p>
-            </div>
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+            {contextItems.map((item, index) => (
+              <div 
+                key={index} 
+                className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:translate-y-[-4px] flex flex-col items-center text-center"
+              >
+                {item.icon}
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">{item.title}</h3>
+                <p className="text-gray-700">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
