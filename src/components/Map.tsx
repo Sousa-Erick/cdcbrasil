@@ -44,10 +44,70 @@ const Map: React.FC = () => {
         </div>
         
         <div className="glass-card rounded-xl p-6 md:p-8 animate-fade-in">
-          <div className="aspect-w-16 aspect-h-9 mb-8 bg-gray-200 rounded-lg flex items-center justify-center">
-            <div className="text-gray-500 text-center p-4">
-              <p className="mb-2">Mapa do Brasil com pontos de atuação</p>
-              <p className="text-sm">(Visualização em desenvolvimento)</p>
+          <div className="aspect-w-16 aspect-h-9 mb-8 bg-white rounded-lg flex items-center justify-center relative">
+            <div className="w-full h-full relative">
+              <svg 
+                viewBox="0 0 800 800" 
+                className="w-full h-full p-4"
+              >
+                {/* Mapa do Brasil simplificado */}
+                <path 
+                  d="M280,160 Q380,120 400,200 Q450,180 500,220 Q530,210 550,230 Q600,200 650,270 Q630,350 650,400 Q600,450 620,500 Q580,550 600,600 Q550,630 500,600 Q450,650 400,600 Q350,620 300,600 Q250,630 200,600 Q180,550 200,500 Q150,450 170,400 Q150,350 170,300 Q220,280 240,240 Q260,220 280,160 Z" 
+                  fill="#E6EEF8" 
+                  stroke="#0047AB" 
+                  strokeWidth="4"
+                />
+                
+                {/* Pontos em cada estado */}
+                {/* Norte */}
+                <circle cx="300" cy="200" r="10" fill="#FF7A66" /> {/* Amazonas */}
+                <circle cx="380" cy="180" r="10" fill="#FF7A66" /> {/* Roraima */}
+                <circle cx="250" cy="250" r="10" fill="#FF7A66" /> {/* Acre */}
+                <circle cx="330" cy="250" r="10" fill="#FF7A66" /> {/* Rondônia */}
+                <circle cx="420" cy="250" r="10" fill="#FF7A66" /> {/* Pará */}
+                <circle cx="470" cy="200" r="10" fill="#FF7A66" /> {/* Amapá */}
+                <circle cx="440" cy="290" r="10" fill="#FF7A66" /> {/* Tocantins */}
+                
+                {/* Nordeste */}
+                <circle cx="500" cy="300" r="10" fill="#2970F8" /> {/* Maranhão */}
+                <circle cx="540" cy="320" r="10" fill="#2970F8" /> {/* Piauí */}
+                <circle cx="570" cy="350" r="10" fill="#2970F8" /> {/* Ceará */}
+                <circle cx="580" cy="380" r="10" fill="#2970F8" /> {/* Rio Grande do Norte */}
+                <circle cx="590" cy="400" r="10" fill="#2970F8" /> {/* Paraíba */}
+                <circle cx="580" cy="420" r="10" fill="#2970F8" /> {/* Pernambuco */}
+                <circle cx="560" cy="440" r="10" fill="#2970F8" /> {/* Alagoas */}
+                <circle cx="550" cy="460" r="10" fill="#2970F8" /> {/* Sergipe */}
+                <circle cx="520" cy="470" r="10" fill="#2970F8" /> {/* Bahia */}
+                
+                {/* Centro-Oeste */}
+                <circle cx="380" cy="350" r="10" fill="#50C878" /> {/* Mato Grosso */}
+                <circle cx="400" cy="450" r="10" fill="#50C878" /> {/* Mato Grosso do Sul */}
+                <circle cx="450" cy="370" r="10" fill="#50C878" /> {/* Goiás */}
+                <circle cx="470" cy="330" r="10" fill="#50C878" /> {/* Distrito Federal */}
+                
+                {/* Sudeste */}
+                <circle cx="480" cy="480" r="10" fill="#FFD700" /> {/* Minas Gerais */}
+                <circle cx="450" cy="520" r="10" fill="#FFD700" /> {/* São Paulo */}
+                <circle cx="520" cy="530" r="10" fill="#FFD700" /> {/* Espírito Santo */}
+                <circle cx="500" cy="550" r="10" fill="#FFD700" /> {/* Rio de Janeiro */}
+                
+                {/* Sul */}
+                <circle cx="400" cy="550" r="10" fill="#9370DB" /> {/* Paraná */}
+                <circle cx="380" cy="590" r="10" fill="#9370DB" /> {/* Santa Catarina */}
+                <circle cx="350" cy="620" r="10" fill="#9370DB" /> {/* Rio Grande do Sul */}
+                
+                {/* Legenda */}
+                <text x="650" y="200" fill="#FF7A66" fontWeight="bold" fontSize="16">Norte</text>
+                <text x="650" y="240" fill="#2970F8" fontWeight="bold" fontSize="16">Nordeste</text>
+                <text x="650" y="280" fill="#50C878" fontWeight="bold" fontSize="16">Centro-Oeste</text>
+                <text x="650" y="320" fill="#FFD700" fontWeight="bold" fontSize="16">Sudeste</text>
+                <text x="650" y="360" fill="#9370DB" fontWeight="bold" fontSize="16">Sul</text>
+              </svg>
+              
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0">
+                <p className="mb-2">Mapa do Brasil com pontos de atuação</p>
+                <p className="text-sm">(Visualização em desenvolvimento)</p>
+              </div>
             </div>
           </div>
           
