@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, ChevronRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Youtube, Instagram, Twitter, ChevronRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -16,16 +16,13 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-health-400 transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-health-400 transition-colors">
-                <Twitter className="h-5 w-5" />
+                <Youtube className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-health-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-health-400 transition-colors">
-                <Linkedin className="h-5 w-5" />
+                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -33,11 +30,6 @@ const Footer: React.FC = () => {
           <div>
             <h2 className="font-bold text-lg mb-4">Links Rápidos</h2>
             <ul className="space-y-2">
-              <li>
-                <a href="#about" className="text-gray-400 hover:text-health-400 transition-colors flex items-center">
-                  <ChevronRight className="h-4 w-4 mr-1" /> Sobre
-                </a>
-              </li>
               <li>
                 <a href="#principles" className="text-gray-400 hover:text-health-400 transition-colors flex items-center">
                   <ChevronRight className="h-4 w-4 mr-1" /> Princípios
@@ -56,11 +48,6 @@ const Footer: React.FC = () => {
               <li>
                 <a href="#resources" className="text-gray-400 hover:text-health-400 transition-colors flex items-center">
                   <ChevronRight className="h-4 w-4 mr-1" /> Recursos
-                </a>
-              </li>
-              <li>
-                <a href="#map" className="text-gray-400 hover:text-health-400 transition-colors flex items-center">
-                  <ChevronRight className="h-4 w-4 mr-1" /> Mapa
                 </a>
               </li>
             </ul>

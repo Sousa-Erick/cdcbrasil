@@ -29,9 +29,6 @@ const Header: React.FC = () => {
           <a href="#resources" className="text-gray-700 hover:text-health-600 transition-colors font-medium">
             Recursos
           </a>
-          <a href="#map" className="text-gray-700 hover:text-health-600 transition-colors font-medium">
-            Mapa
-          </a>
         </nav>
         
         {/* Mobile Menu Button */}

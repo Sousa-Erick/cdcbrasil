@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { X, Book, FileText, Users, FileSpreadsheet, Map } from 'lucide-react';
+import { X, Book, FileText, Users, FileSpreadsheet } from 'lucide-react';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -87,16 +87,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               >
                 <FileSpreadsheet className="h-5 w-5 mr-3" />
                 <span>Recursos</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#map" 
-                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-health-600"
-                onClick={handleLinkClick}
-              >
-                <Map className="h-5 w-5 mr-3" />
-                <span>Mapa</span>
               </a>
             </li>
           </ul>
