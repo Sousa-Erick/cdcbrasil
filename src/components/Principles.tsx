@@ -37,25 +37,27 @@ const Principles: React.FC = () => {
   ];
 
   return (
-    <section id="principles" className="section bg-gray-50">
-      <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <div className="inline-block px-3 py-1 mb-4 text-sm font-medium text-health-600 bg-health-100 rounded-full">
+    <section id="principles" className="section py-20 md:py-28 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-health-600 bg-health-100 rounded-full border border-health-200">
             Nossa Base
           </div>
-          <h2 className="section-title">Princípios e Diretrizes</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Princípios e Diretrizes</h2>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {principles.map((principle, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 card-hover animate-fade-in"
+              className="bg-white rounded-xl p-8 shadow-md border border-gray-100 hover:border-health-200 transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="mb-4">{principle.icon}</div>
-              <h3 className="text-xl font-semibold mb-3">{principle.title}</h3>
-              <p className="text-gray-600">{principle.description}</p>
+              <div className="inline-flex items-center justify-center p-3 bg-health-50 rounded-full mb-6">
+                {principle.icon}
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">{principle.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{principle.description}</p>
             </div>
           ))}
         </div>
