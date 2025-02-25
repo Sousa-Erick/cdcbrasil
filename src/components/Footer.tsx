@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Youtube, Instagram, Twitter, ChevronRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Youtube, Instagram, X, ChevronRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-health-400 transition-colors">
-                <Twitter className="h-5 w-5" />
+                <X className="h-5 w-5" />
               </a>
             </div>
           </div>
