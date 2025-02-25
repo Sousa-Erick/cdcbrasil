@@ -49,7 +49,7 @@ const Header: React.FC = () => {
             Recursos
           </a>
           <a href="#" className="ml-4 bg-health-600 text-white hover:bg-health-700 px-5 py-2 rounded-full font-medium transition-all hover:shadow-md">
-            Apoie a causa
+            Apoie essa iniciativa
           </a>
         </nav>
         
