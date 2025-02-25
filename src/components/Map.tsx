@@ -47,7 +47,7 @@ const Map: React.FC = () => {
           <div className="aspect-w-16 aspect-h-9 mb-8 bg-white/50 rounded-lg flex items-center justify-center relative overflow-hidden">
             <div className="absolute inset-0 backdrop-blur-sm bg-gradient-to-br from-blue-50/40 to-pink-50/40"></div>
             <div className="w-full h-full relative">
-              {/* Vídeo de fundo com transparência */}
+              {/* Vídeo de fundo com transparência - usando uma fonte alternativa mais confiável */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <video 
                   autoPlay 
@@ -56,7 +56,7 @@ const Map: React.FC = () => {
                   playsInline
                   className="w-full h-full object-cover opacity-70"
                 >
-                  <source src="https://cdn.pixabay.com/vimeo/328218995/plexus-24538.mp4?width=1280&hash=7f9fe6bff95d06f9d9ef0b845b96a3fe92b1e3d0" type="video/mp4" />
+                  <source src="https://assets.mixkit.co/videos/preview/mixkit-network-node-lines-abstract-animation-10858-large.mp4" type="video/mp4" />
                   Seu navegador não suporta vídeos.
                 </video>
               </div>
