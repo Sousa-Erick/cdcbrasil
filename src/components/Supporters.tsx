@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Building, GraduationCap, Users, Flask, BookOpen } from 'lucide-react';
+import { Building, GraduationCap, Users, Microscope, BookOpen } from 'lucide-react';
 
 const Supporters: React.FC = () => {
   const getIconByType = (type: string) => {
@@ -8,7 +8,7 @@ const Supporters: React.FC = () => {
       case "Universidade":
         return <GraduationCap className="h-10 w-10 mb-3 text-health-600" />;
       case "Instituto de Pesquisa":
-        return <Flask className="h-10 w-10 mb-3 text-health-600" />;
+        return <Microscope className="h-10 w-10 mb-3 text-health-600" />;
       case "Sociedade Científica":
         return <Users className="h-10 w-10 mb-3 text-health-600" />;
       case "Associação Científica":
