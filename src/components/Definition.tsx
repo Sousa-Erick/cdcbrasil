@@ -52,24 +52,28 @@ const Definition: React.FC = () => {
             </ul>
           </div>
           
-          <div className="glass
+          <div className="glass-card rounded-xl p-6 md:p-8 animate-fade-in" style={{ animationDelay: '100ms' }}>
+            <h3 className="text-2xl font-bold mb-6 text-destructive flex items-center">
+              <X className="h-6 w-6 mr-2" /> O que não é
+            </h3>
+            
+            <ul className="space-y-4">
+              {isNotItems.map((item, index) => (
+                <li key={index} className="flex">
+                  <div className="mr-3 mt-1 flex-shrink-0">
+                    <div className="h-5 w-5 rounded-full bg-red-100 flex items-center justify-center">
+                      <X className="h-3 w-3 text-destructive" />
+                    </div>
+                  </div>
+                  <span className="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-### O que vem a seguir?
-- **Refine e personalize**: Ajuste o design, animações e layouts por meio de prompts ou edições visuais.
-- **Domine as prompts**: Use prompts claras, detalhadas e iterativas para melhores resultados.
-- **Expanda com backend**: Conecte o Supabase para adicionar login, armazenar dados ou recursos avançados de IA.  Considere o uso do Supabase para gerenciar notícias e documentos.
-- **Sincronize com o GitHub**: Transfira o código do seu projeto para o GitHub para sincronização bidirecional das edições.
-- **Depure com facilidade**: Ative nosso modo experimental de "chat" para solucionar problemas rapidamente.
-- **Adicione conhecimento do projeto**: Defina o contexto principal ou instruções personalizadas que você deseja incluir em cada edição deste projeto.
-
-<lov-actions>
-<lov-knowledge>
-</lov-actions>
-
-<lov-actions>
-<lov-message-prompt message="Saiba mais sobre o Supabase">Explore o Supabase</lov-message-prompt>
-</lov-actions>
-
-<lov-actions>
-<lov-link url="https://docs.lovable.dev/">Visite a documentação</lov-link>
-</lov-actions>
+export default Definition;

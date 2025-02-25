@@ -53,7 +53,7 @@ const Principles: React.FC = () => {
           {principles.map((principle, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 card-hover"
+              className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 card-hover animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="mb-4">{principle.icon}</div>
