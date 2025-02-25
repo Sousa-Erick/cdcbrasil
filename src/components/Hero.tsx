@@ -15,10 +15,6 @@ const Hero: React.FC = () => {
             Centro Brasileiro de Prevenção e Controle de Doenças
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 animate-fade-in" style={{ animationDelay: '200ms' }}>
-            Uma instituição moderna e científica para proteger a população brasileira de emergências em saúde pública.
-          </p>
-          
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in" style={{ animationDelay: '300ms' }}>
             <a href="#principles" className="btn-primary flex items-center justify-center gap-2">
               Conheça a proposta <ArrowRight className="h-4 w-4" />
