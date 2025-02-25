@@ -21,42 +21,34 @@ const Supporters: React.FC = () => {
   const supporters = [
     { 
       name: "Universidade de São Paulo", 
-      logo: "https://placekitten.com/100/60",
       type: "Universidade"
     },
     { 
       name: "FIOCRUZ", 
-      logo: "https://placekitten.com/100/60",
       type: "Instituto de Pesquisa"
     },
     { 
       name: "Sociedade Brasileira de Infectologia", 
-      logo: "https://placekitten.com/100/60",
       type: "Sociedade Científica"
     },
     { 
       name: "Instituto Butantan", 
-      logo: "https://placekitten.com/100/60",
       type: "Instituto de Pesquisa"
     },
     { 
       name: "UNICAMP", 
-      logo: "https://placekitten.com/100/60",
       type: "Universidade"
     },
     { 
       name: "Academia Brasileira de Ciências", 
-      logo: "https://placekitten.com/100/60",
       type: "Associação Científica"
     },
     { 
       name: "Sociedade Brasileira de Imunologia", 
-      logo: "https://placekitten.com/100/60",
       type: "Sociedade Científica"
     },
     { 
       name: "UFRJ", 
-      logo: "https://placekitten.com/100/60",
       type: "Universidade"
     }
   ];
@@ -82,13 +74,6 @@ const Supporters: React.FC = () => {
               style={{ animationDelay: `${index * 50}ms` }}
             >
               {getIconByType(supporter.type)}
-              <div className="w-full h-16 mb-4 flex items-center justify-center">
-                <img 
-                  src={supporter.logo} 
-                  alt={`Logo ${supporter.name}`} 
-                  className="max-h-full max-w-full object-contain"
-                />
-              </div>
               <h3 className="text-sm font-semibold text-gray-900">{supporter.name}</h3>
               <p className="text-xs text-gray-500 mt-1">{supporter.type}</p>
             </div>
