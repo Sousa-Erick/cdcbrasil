@@ -64,4 +64,22 @@ const Map: React.FC = () => {
                 <div className="mb-3">
                   <h5 className="text-sm font-medium text-gray-700 mb-1">Instituições parceiras:</h5>
                   <ul className="text-sm text-gray-600 list-disc ml-5">
-                    {
+                    {item.institutions.map((institution, idx) => (
+                      <li key={idx}>{institution}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="text-sm font-medium text-gray-700 mb-1">Foco principal:</h5>
+                  <p className="text-sm text-gray-600">{item.focus}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Map;
