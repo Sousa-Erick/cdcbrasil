@@ -44,9 +44,6 @@ const Principles: React.FC = () => {
             Nossa Base
           </div>
           <h2 className="section-title">Princípios e Diretrizes</h2>
-          <p className="text-lg text-gray-600">
-            O Centro Brasileiro de Prevenção e Controle de Doenças se guia por princípios fundamentais que orientam sua atuação.
-          </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
