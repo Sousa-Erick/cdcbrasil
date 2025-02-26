@@ -25,31 +25,39 @@ const Header: React.FC = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
         ? 'bg-white bg-opacity-95 backdrop-blur-md border-b border-gray-200 shadow-sm py-3' 
-        : 'bg-transparent py-5'
+        : 'bg-white py-3 border-b border-gray-200'
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <div className={`font-bold text-xl ${scrolled ? 'text-health-600' : 'text-health-600'}`}>
-            <span className={scrolled ? 'text-gray-900' : 'text-gray-900'}>CDC</span>Brasil
+          <div className="flex items-center">
+            <div className="w-32 h-16 relative">
+              <div className="absolute top-0 left-0 w-12 h-12">
+                <div className="bg-health-500 rounded-md w-10 h-10"></div>
+                <div className="bg-blue-500 rounded-md w-10 h-10 absolute top-2 left-2"></div>
+              </div>
+              <div className="ml-14 flex flex-col justify-center h-full">
+                <span className="text-blue-600 font-semibold text-sm leading-tight">Instituto</span>
+                <span className="text-blue-600 font-semibold text-sm leading-tight">Todos</span>
+                <span className="text-blue-600 font-semibold text-sm leading-tight">pela</span>
+                <span className="text-blue-600 font-semibold text-sm leading-tight">Saúde</span>
+              </div>
+            </div>
           </div>
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          <a href="#principles" className="text-gray-700 hover:text-health-600 transition-colors font-medium px-2 py-1 rounded hover:bg-health-50">
-            Princípios
+        <nav className="hidden md:flex space-x-12">
+          <a href="#features" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
+            Proposta
           </a>
-          <a href="#definition" className="text-gray-700 hover:text-health-600 transition-colors font-medium px-2 py-1 rounded hover:bg-health-50">
-            Definição
+          <a href="#principles" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
+            Diretrizes
           </a>
-          <a href="#supporters" className="text-gray-700 hover:text-health-600 transition-colors font-medium px-2 py-1 rounded hover:bg-health-50">
-            Apoiadores
+          <a href="#world-cdcs" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
+            Cenários
           </a>
-          <a href="#resources" className="text-gray-700 hover:text-health-600 transition-colors font-medium px-2 py-1 rounded hover:bg-health-50">
-            Recursos
-          </a>
-          <a href="#" className="ml-4 bg-health-600 text-white hover:bg-health-700 px-5 py-2 rounded-full font-medium transition-all hover:shadow-md">
-            Apoie essa iniciativa
+          <a href="#news" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
+            Notícias
           </a>
         </nav>
         

@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { X, Book, FileText, Users, FileSpreadsheet, Heart } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -34,8 +34,17 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       
       <div className="relative h-full w-4/5 max-w-xs bg-white shadow-xl flex flex-col animate-slide-in">
         <div className="flex justify-between items-center p-5 border-b">
-          <div className="text-health-600 font-bold text-xl">
-            <span className="text-gray-900">CDC</span>Brasil
+          <div className="flex items-center">
+            <div className="w-8 h-8 relative mr-2">
+              <div className="absolute top-0 left-0 w-6 h-6">
+                <div className="bg-health-500 rounded-sm w-5 h-5"></div>
+                <div className="bg-blue-500 rounded-sm w-5 h-5 absolute top-1 left-1"></div>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-blue-600 font-semibold text-xs leading-tight">Instituto Todos</span>
+              <span className="text-blue-600 font-semibold text-xs leading-tight">pela Saúde</span>
+            </div>
           </div>
           <button 
             className="p-1.5 rounded-full hover:bg-gray-100 transition-colors"
@@ -50,53 +59,41 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           <ul className="space-y-1 px-2">
             <li>
               <a 
+                href="#features" 
+                className="flex items-center px-4 py-3.5 text-gray-700 hover:bg-health-50 hover:text-health-600 rounded-lg transition-colors"
+                onClick={handleLinkClick}
+              >
+                <span className="font-medium">Proposta</span>
+              </a>
+            </li>
+            <li>
+              <a 
                 href="#principles" 
                 className="flex items-center px-4 py-3.5 text-gray-700 hover:bg-health-50 hover:text-health-600 rounded-lg transition-colors"
                 onClick={handleLinkClick}
               >
-                <Book className="h-5 w-5 mr-3 text-health-500" />
-                <span className="font-medium">Princípios</span>
+                <span className="font-medium">Diretrizes</span>
               </a>
             </li>
             <li>
               <a 
-                href="#definition" 
+                href="#world-cdcs" 
                 className="flex items-center px-4 py-3.5 text-gray-700 hover:bg-health-50 hover:text-health-600 rounded-lg transition-colors"
                 onClick={handleLinkClick}
               >
-                <FileText className="h-5 w-5 mr-3 text-health-500" />
-                <span className="font-medium">Definição</span>
+                <span className="font-medium">Cenários</span>
               </a>
             </li>
             <li>
               <a 
-                href="#supporters" 
+                href="#news" 
                 className="flex items-center px-4 py-3.5 text-gray-700 hover:bg-health-50 hover:text-health-600 rounded-lg transition-colors"
                 onClick={handleLinkClick}
               >
-                <Users className="h-5 w-5 mr-3 text-health-500" />
-                <span className="font-medium">Apoiadores</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#resources" 
-                className="flex items-center px-4 py-3.5 text-gray-700 hover:bg-health-50 hover:text-health-600 rounded-lg transition-colors"
-                onClick={handleLinkClick}
-              >
-                <FileSpreadsheet className="h-5 w-5 mr-3 text-health-500" />
-                <span className="font-medium">Recursos</span>
+                <span className="font-medium">Notícias</span>
               </a>
             </li>
           </ul>
-          
-          <div className="mt-6 px-6 pt-6 border-t border-gray-100">
-            <h3 className="text-sm font-medium text-gray-500 mb-3">Apoie nossa iniciativa</h3>
-            <a href="#" className="flex items-center px-4 py-3 bg-health-50 text-health-700 rounded-lg hover:bg-health-100 transition-colors">
-              <Heart className="h-5 w-5 mr-2.5 text-health-500" />
-              <span className="font-medium">Apoie a causa</span>
-            </a>
-          </div>
         </nav>
       </div>
     </div>
