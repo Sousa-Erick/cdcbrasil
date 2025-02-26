@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
           </div>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight animate-fade-in">
-            Por que o Brasil precisa de uma instituição para enfrentar as emergências em Saúde?
+            Por que o Brasil precisa de uma instituição para enfrentar as emergências em Saúde
           </h1>
           
           <p className="text-lg md:text-xl text-gray-700 mb-12 max-w-3xl animate-fade-in" style={{ animationDelay: '200ms' }}>
