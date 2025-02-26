@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Youtube, Instagram, X, ChevronRight, Heart } from 'lucide-react';
+import { Mail, Phone, MapPin, Youtube, Instagram, X, ChevronRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -103,13 +103,6 @@ const Footer: React.FC = () => {
                 <a href="tel:+551199999999" className="text-gray-400 hover:text-health-400 transition-colors">(11) 9XXXX-XXXX</a>
               </li>
             </ul>
-            
-            <div className="mt-8 p-4 bg-gray-800 rounded-lg border border-gray-700">
-              <a href="#" className="flex items-center justify-center gap-2 text-health-400 hover:text-health-300 font-medium transition-colors">
-                <Heart className="h-5 w-5" />
-                <span>Apoie esta iniciativa</span>
-              </a>
-            </div>
           </div>
         </div>
         

@@ -64,9 +64,6 @@ const Map: React.FC = () => {
               Assim como outros países, o Brasil precisa de uma instituição dedicada à prevenção e controle de doenças,
               baseada em evidências científicas e com autonomia para proteger a saúde pública.
             </p>
-            <a href="#hero" className="btn-primary inline-flex items-center px-8 py-3">
-              Apoie esta iniciativa
-            </a>
           </div>
         </div>
       </div>
