@@ -23,9 +23,6 @@ const Hero: React.FC = () => {
             <a href="#features" className="btn-primary flex items-center justify-center gap-2 py-3 px-6 text-base">
               Conheça a proposta <ArrowRight className="h-5 w-5" />
             </a>
-            <a href="#definition" className="btn-secondary flex items-center justify-center py-3 px-6 text-base">
-              Saiba mais
-            </a>
           </div>
         </div>
         
