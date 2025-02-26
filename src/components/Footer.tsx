@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin, Youtube, Instagram, X, ChevronRight } from 'lucide-react';
 
@@ -8,20 +7,12 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div>
-            <div className="flex items-center mb-6">
-              <div className="relative w-10 h-10 mr-3">
-                {/* Cruz vermelha */}
-                <div style={{ backgroundColor: '#ea384c' }} className="absolute w-3 h-10 top-0 left-3.5"></div>
-                <div style={{ backgroundColor: '#ea384c' }} className="absolute w-10 h-3 top-3.5 left-0"></div>
-                {/* Quadrado azul central */}
-                <div style={{ backgroundColor: '#0056b3' }} className="absolute w-3 h-3 top-3.5 left-3.5"></div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-bold text-sm leading-tight">Instituto</span>
-                <span className="text-white font-bold text-sm leading-tight">Todos</span>
-                <span className="text-white font-bold text-sm leading-tight">pela</span>
-                <span className="text-white font-bold text-sm leading-tight">Saúde</span>
-              </div>
+            <div className="mb-6">
+              <img 
+                src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
+                alt="Instituto Todos pela Saúde"
+                className="h-10 brightness-0 invert"
+              />
             </div>
             <p className="text-gray-400 mb-8 leading-relaxed">
               Centro Brasileiro de Prevenção e Controle de Doenças - Uma iniciativa para proteger a saúde da população brasileira.

@@ -29,21 +29,11 @@ const Header: React.FC = () => {
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="flex items-center h-16">
-            <div className="relative w-14 h-14 mr-3">
-              {/* Cruz vermelha */}
-              <div style={{ backgroundColor: '#ea384c' }} className="absolute w-4 h-12 top-1 left-5"></div>
-              <div style={{ backgroundColor: '#ea384c' }} className="absolute w-12 h-4 top-5 left-1"></div>
-              {/* Quadrado azul central */}
-              <div style={{ backgroundColor: '#0056b3' }} className="absolute w-4 h-4 top-5 left-5"></div>
-            </div>
-            <div className="flex flex-col justify-center">
-              <span style={{ color: '#0056b3' }} className="font-semibold text-sm leading-tight">Instituto</span>
-              <span style={{ color: '#0056b3' }} className="font-semibold text-sm leading-tight">Todos</span>
-              <span style={{ color: '#0056b3' }} className="font-semibold text-sm leading-tight">pela</span>
-              <span style={{ color: '#0056b3' }} className="font-semibold text-sm leading-tight">Saúde</span>
-            </div>
-          </div>
+          <img 
+            src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
+            alt="Instituto Todos pela Saúde"
+            className="h-12"
+          />
         </div>
         
         {/* Desktop Navigation */}
