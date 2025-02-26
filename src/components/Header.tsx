@@ -79,7 +79,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
     </header>
   );
