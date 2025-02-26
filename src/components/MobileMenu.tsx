@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, Instagram, Facebook, Linkedin } from 'lucide-react';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -54,29 +54,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           <ul className="space-y-1 px-2">
             <li>
               <a 
-                href="#hero" 
-                className="flex items-center px-4 py-3.5 text-gray-700 hover:bg-health-50 hover:text-health-600 rounded-lg transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">Início</span>
-              </a>
-            </li>
-            <li>
-              <a 
                 href="#features" 
                 className="flex items-center px-4 py-3.5 text-gray-700 hover:bg-health-50 hover:text-health-600 rounded-lg transition-colors"
                 onClick={handleLinkClick}
               >
                 <span className="font-medium">Proposta</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#definition" 
-                className="flex items-center px-4 py-3.5 text-gray-700 hover:bg-health-50 hover:text-health-600 rounded-lg transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">O que é</span>
               </a>
             </li>
             <li>
@@ -90,6 +72,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             </li>
             <li>
               <a 
+                href="#world-cdcs" 
+                className="flex items-center px-4 py-3.5 text-gray-700 hover:bg-health-50 hover:text-health-600 rounded-lg transition-colors"
+                onClick={handleLinkClick}
+              >
+                <span className="font-medium">Cenários</span>
+              </a>
+            </li>
+            <li>
+              <a 
                 href="#news" 
                 className="flex items-center px-4 py-3.5 text-gray-700 hover:bg-health-50 hover:text-health-600 rounded-lg transition-colors"
                 onClick={handleLinkClick}
@@ -97,16 +88,22 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 <span className="font-medium">Notícias</span>
               </a>
             </li>
-            <li>
-              <a 
-                href="#world-cdcs" 
-                className="flex items-center px-4 py-3.5 text-gray-700 hover:bg-health-50 hover:text-health-600 rounded-lg transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">CDCs pelo Mundo</span>
-              </a>
-            </li>
           </ul>
+          
+          <div className="mt-8 px-6">
+            <h3 className="text-sm font-medium text-gray-500 mb-3">Redes Sociais</h3>
+            <div className="flex space-x-5">
+              <a href="#" className="text-health-600 hover:text-health-800 transition-colors">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-health-600 hover:text-health-800 transition-colors">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-health-600 hover:text-health-800 transition-colors">
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
         </nav>
       </div>
     </div>
