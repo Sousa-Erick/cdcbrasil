@@ -1,71 +1,72 @@
 
 import React from 'react';
+import { Globe } from 'lucide-react';
 
 const Map: React.FC = () => {
-  const collaborationItems = [
+  const worldCdcs = [
     {
-      region: "Norte",
-      institutions: ["Centro de Pesquisas Amazônicas", "Universidade Federal do Amazonas"],
-      focus: "Doenças tropicais e emergentes na região amazônica"
+      name: "CDC - Estados Unidos",
+      location: "Atlanta, EUA",
+      founded: "1946",
+      focus: "Controle e prevenção de doenças em nível nacional e internacional"
     },
     {
-      region: "Nordeste",
-      institutions: ["FIOCRUZ Pernambuco", "Universidade Federal da Bahia"],
-      focus: "Arboviroses e doenças negligenciadas"
+      name: "ECDC - União Europeia",
+      location: "Estocolmo, Suécia",
+      founded: "2005",
+      focus: "Fortalecer as defesas da Europa contra doenças infecciosas"
     },
     {
-      region: "Centro-Oeste",
-      institutions: ["Universidade de Brasília", "Hospital das Forças Armadas"],
-      focus: "Coordenação nacional e resposta a emergências"
+      name: "China CDC",
+      location: "Pequim, China",
+      founded: "2002",
+      focus: "Prevenção, controle e pesquisa de doenças na China"
     },
     {
-      region: "Sudeste",
-      institutions: ["FIOCRUZ Rio de Janeiro", "USP", "Instituto Butantan"],
-      focus: "Pesquisa, desenvolvimento de vacinas e produtos biológicos"
-    },
-    {
-      region: "Sul",
-      institutions: ["Universidade Federal do Rio Grande do Sul", "Hospital de Clínicas de Porto Alegre"],
-      focus: "Vigilância epidemiológica e de fronteiras"
+      name: "Africa CDC",
+      location: "Adis Abeba, Etiópia",
+      founded: "2017",
+      focus: "Apoiar iniciativas de saúde pública dos Estados-Membros da União Africana"
     }
   ];
 
   return (
-    <section id="map" className="section bg-gray-50">
-      <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <div className="inline-block px-3 py-1 mb-4 text-sm font-medium text-health-600 bg-health-100 rounded-full">
-            Abrangência Nacional
-          </div>
-          <h2 className="section-title">Rede de Colaboração</h2>
-          <p className="text-lg text-gray-600">
-            O CDC Brasil atuará em todo o território nacional em colaboração com instituições locais.
-          </p>
+    <section id="world-cdcs" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12">Veja outros Centros ao redor do mundo...</h2>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+          {worldCdcs.map((cdc, index) => (
+            <div 
+              key={index} 
+              className="bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-all animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="flex items-center mb-3">
+                <Globe className="h-5 w-5 text-blue-500 mr-2" />
+                <h4 className="font-semibold text-gray-900">{cdc.name}</h4>
+              </div>
+              <div className="space-y-1 text-sm text-gray-600">
+                <p><span className="font-medium">Localização:</span> {cdc.location}</p>
+                <p><span className="font-medium">Fundação:</span> {cdc.founded}</p>
+                <p><span className="font-medium">Foco:</span> {cdc.focus}</p>
+              </div>
+            </div>
+          ))}
         </div>
         
-        <div className="glass-card rounded-xl p-6 md:p-8 animate-fade-in">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {collaborationItems.map((item, index) => (
-              <div 
-                key={index} 
-                className="bg-blue-50 rounded-lg p-5 border border-blue-100 shadow-sm animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <h4 className="text-lg font-semibold mb-2 text-blue-700">Região {item.region}</h4>
-                <div className="mb-3">
-                  <h5 className="text-sm font-medium text-gray-700 mb-1">Instituições parceiras:</h5>
-                  <ul className="text-sm text-gray-600 list-disc ml-5">
-                    {item.institutions.map((institution, idx) => (
-                      <li key={idx}>{institution}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h5 className="text-sm font-medium text-gray-700 mb-1">Foco principal:</h5>
-                  <p className="text-sm text-gray-600">{item.focus}</p>
-                </div>
-              </div>
-            ))}
+        <div className="bg-blue-50 rounded-lg p-6 max-w-4xl mx-auto border border-blue-200 animate-fade-in">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-4 text-blue-800">
+              É hora do Brasil ter o seu próprio CDC
+            </h3>
+            <p className="text-blue-700 mb-6">
+              Assim como outros países, o Brasil precisa de uma instituição dedicada à prevenção e controle de doenças,
+              baseada em evidências científicas e com autonomia para proteger a saúde pública.
+            </p>
+            <a href="#hero" className="btn-primary inline-flex items-center px-8 py-3">
+              Apoie esta iniciativa
+            </a>
           </div>
         </div>
       </div>

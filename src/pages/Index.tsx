@@ -2,9 +2,9 @@
 import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import Principles from '../components/Principles';
+import FeatureGrid from '../components/FeatureGrid';
 import Definition from '../components/Definition';
-import Supporters from '../components/Supporters';
+import Principles from '../components/Principles';
 import Resources from '../components/Resources';
 import Map from '../components/Map';
 import Footer from '../components/Footer';
@@ -15,9 +15,9 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <Principles />
+        <FeatureGrid />
         <Definition />
-        <Supporters />
+        <Principles />
         <Resources />
         <Map />
       </main>

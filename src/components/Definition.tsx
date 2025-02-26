@@ -4,38 +4,30 @@ import { Check, X } from 'lucide-react';
 
 const Definition: React.FC = () => {
   const isItems = [
-    "Uma instituição de excelência científica dedicada à saúde pública",
-    "Um órgão de resposta rápida a emergências sanitárias",
-    "Um centro de pesquisa e vigilância em doenças infecciosas",
     "Uma instituição com autonomia técnica e científica",
-    "Um articulador nacional de ações em saúde pública"
+    "Um centro de prevenção e controle de doenças",
+    "Um órgão de vigilância e resposta rápida a ameaças",
+    "Uma estrutura de coordenação nacional em saúde pública",
+    "Um centro de excelência em pesquisa epidemiológica"
   ];
 
   const isNotItems = [
-    "Uma duplicação de órgãos já existentes no SUS",
-    "Uma estrutura burocrática sem capacidade executiva",
-    "Um órgão político sujeito a interferências partidárias",
-    "Um centro isolado sem articulação com estados e municípios",
-    "Uma instituição subordinada a interesses não científicos"
+    "Uma duplicação de estruturas já existentes no SUS",
+    "Uma instituição subordinada a interesses políticos",
+    "Um órgão sem coordenação com estados e municípios",
+    "Um centro com atuação limitada a doenças específicas",
+    "Uma instituição sem independência científica"
   ];
 
   return (
-    <section id="definition" className="section">
-      <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <div className="inline-block px-3 py-1 mb-4 text-sm font-medium text-health-600 bg-health-100 rounded-full">
-            Missão & Propósito
-          </div>
-          <h2 className="section-title">Identidade Institucional</h2>
-          <p className="text-lg text-gray-600">
-            Uma visão clara sobre o papel do Centro Brasileiro de Prevenção e Controle de Doenças.
-          </p>
-        </div>
+    <section id="definition" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12">O que será...</h2>
         
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-          <div className="glass-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 md:p-8 animate-fade-in shadow-md hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1">
-            <h3 className="text-2xl font-bold mb-6 text-blue-700 flex items-center">
-              <Check className="h-6 w-6 mr-2" /> Nosso papel
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="bg-white rounded-lg p-6 shadow-md animate-fade-in">
+            <h3 className="text-xl font-bold mb-6 text-health-600 flex items-center">
+              <Check className="h-6 w-6 mr-2" /> O que somos
             </h3>
             
             <ul className="space-y-4">
@@ -43,11 +35,11 @@ const Definition: React.FC = () => {
                 <li 
                   key={index} 
                   className="flex animate-fade-in" 
-                  style={{ animationDelay: `${index * 150}ms` }}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="mr-3 mt-1 flex-shrink-0">
                     <div className="h-5 w-5 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Check className="h-3 w-3 text-blue-700" />
+                      <Check className="h-3 w-3 text-blue-600" />
                     </div>
                   </div>
                   <span className="text-gray-700">{item}</span>
@@ -56,8 +48,8 @@ const Definition: React.FC = () => {
             </ul>
           </div>
           
-          <div className="glass-card bg-gradient-to-br from-health-50 to-health-100 rounded-xl p-6 md:p-8 animate-fade-in shadow-md hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1" style={{ animationDelay: '100ms' }}>
-            <h3 className="text-2xl font-bold mb-6 text-health-700 flex items-center">
+          <div className="bg-white rounded-lg p-6 shadow-md animate-fade-in" style={{ animationDelay: '100ms' }}>
+            <h3 className="text-xl font-bold mb-6 text-health-600 flex items-center">
               <X className="h-6 w-6 mr-2" /> O que não somos
             </h3>
             
@@ -66,11 +58,11 @@ const Definition: React.FC = () => {
                 <li 
                   key={index} 
                   className="flex animate-fade-in" 
-                  style={{ animationDelay: `${(index + 5) * 150}ms` }}
+                  style={{ animationDelay: `${(index + 5) * 100}ms` }}
                 >
                   <div className="mr-3 mt-1 flex-shrink-0">
                     <div className="h-5 w-5 rounded-full bg-health-100 flex items-center justify-center">
-                      <X className="h-3 w-3 text-health-700" />
+                      <X className="h-3 w-3 text-health-600" />
                     </div>
                   </div>
                   <span className="text-gray-700">{item}</span>
@@ -78,6 +70,13 @@ const Definition: React.FC = () => {
               ))}
             </ul>
           </div>
+        </div>
+        
+        <div className="mt-16 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8">Preparo para enfrentar epidemias...</h2>
+          <p className="text-lg text-center text-gray-700 max-w-2xl mx-auto">
+            O CDC Brasil será uma instituição preparada para detectar, prevenir e responder a emergências epidemiológicas, coordenando ações em todo o território nacional.
+          </p>
         </div>
       </div>
     </section>
