@@ -40,17 +40,23 @@ const Header: React.FC = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-12">
+          <a href="#hero" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
+            Início
+          </a>
           <a href="#features" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
             Proposta
+          </a>
+          <a href="#definition" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
+            O que é
           </a>
           <a href="#principles" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
             Diretrizes
           </a>
-          <a href="#world-cdcs" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
-            Cenários
-          </a>
           <a href="#news" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
             Notícias
+          </a>
+          <a href="#world-cdcs" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
+            CDCs pelo Mundo
           </a>
         </nav>
         

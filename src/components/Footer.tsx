@@ -37,51 +37,51 @@ const Footer: React.FC = () => {
             <h2 className="font-bold text-lg mb-6 relative pl-4 border-l-2 border-health-500">Links Rápidos</h2>
             <ul className="space-y-3">
               <li>
-                <a href="#principles" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
+                <a href="#hero" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
-                  <span>Princípios</span>
+                  <span>Início</span>
+                </a>
+              </li>
+              <li>
+                <a href="#features" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
+                  <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
+                  <span>Proposta</span>
                 </a>
               </li>
               <li>
                 <a href="#definition" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
-                  <span>Definição</span>
+                  <span>O que é</span>
                 </a>
               </li>
               <li>
-                <a href="#supporters" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
+                <a href="#principles" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
-                  <span>Apoiadores</span>
-                </a>
-              </li>
-              <li>
-                <a href="#resources" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
-                  <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
-                  <span>Recursos</span>
+                  <span>Diretrizes</span>
                 </a>
               </li>
             </ul>
           </div>
           
           <div>
-            <h2 className="font-bold text-lg mb-6 relative pl-4 border-l-2 border-health-500">Documentos</h2>
+            <h2 className="font-bold text-lg mb-6 relative pl-4 border-l-2 border-health-500">Mais Informações</h2>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
+                <a href="#news" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
-                  <span>Proposta de Criação</span>
+                  <span>Notícias</span>
+                </a>
+              </li>
+              <li>
+                <a href="#world-cdcs" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
+                  <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
+                  <span>CDCs pelo Mundo</span>
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
                   <span>Artigos Científicos</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-health-400 transition-colors flex items-center group">
-                  <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
-                  <span>Relação com SUS</span>
                 </a>
               </li>
               <li>
