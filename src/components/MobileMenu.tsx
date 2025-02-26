@@ -36,15 +36,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         <div className="flex justify-between items-center p-5 border-b">
           <div className="flex items-center">
             <div className="relative w-8 h-8 mr-2">
-              {/* Cruz vermelha (salmão) */}
-              <div className="absolute bg-health-500 w-2 h-8 top-0 left-3"></div>
-              <div className="absolute bg-health-500 w-8 h-2 top-3 left-0"></div>
+              {/* Cruz vermelha */}
+              <div style={{ backgroundColor: '#ea384c' }} className="absolute w-2 h-8 top-0 left-3"></div>
+              <div style={{ backgroundColor: '#ea384c' }} className="absolute w-8 h-2 top-3 left-0"></div>
               {/* Quadrado azul central */}
-              <div className="absolute bg-blue-600 w-2 h-2 top-3 left-3"></div>
+              <div style={{ backgroundColor: '#0056b3' }} className="absolute w-2 h-2 top-3 left-3"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-blue-600 font-semibold text-xs leading-tight">Instituto Todos</span>
-              <span className="text-blue-600 font-semibold text-xs leading-tight">pela Saúde</span>
+              <span style={{ color: '#0056b3' }} className="font-semibold text-xs leading-tight">Instituto Todos</span>
+              <span style={{ color: '#0056b3' }} className="font-semibold text-xs leading-tight">pela Saúde</span>
             </div>
           </div>
           <button 

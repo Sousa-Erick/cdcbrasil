@@ -29,25 +29,19 @@ const Header: React.FC = () => {
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="flex items-center">
-            <div className="flex items-center h-16">
-              <div className="relative w-14 h-14 mr-2">
-                <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
-                  <div className="relative w-12 h-12">
-                    {/* Cruz vermelha (salmão) */}
-                    <div className="absolute bg-health-500 w-4 h-12 top-0 left-4"></div>
-                    <div className="absolute bg-health-500 w-12 h-4 top-4 left-0"></div>
-                    {/* Quadrado azul central */}
-                    <div className="absolute bg-blue-600 w-4 h-4 top-4 left-4"></div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col justify-center">
-                <span className="text-blue-600 font-semibold text-sm leading-tight">Instituto</span>
-                <span className="text-blue-600 font-semibold text-sm leading-tight">Todos</span>
-                <span className="text-blue-600 font-semibold text-sm leading-tight">pela</span>
-                <span className="text-blue-600 font-semibold text-sm leading-tight">Saúde</span>
-              </div>
+          <div className="flex items-center h-16">
+            <div className="relative w-14 h-14 mr-3">
+              {/* Cruz vermelha */}
+              <div style={{ backgroundColor: '#ea384c' }} className="absolute w-4 h-12 top-1 left-5"></div>
+              <div style={{ backgroundColor: '#ea384c' }} className="absolute w-12 h-4 top-5 left-1"></div>
+              {/* Quadrado azul central */}
+              <div style={{ backgroundColor: '#0056b3' }} className="absolute w-4 h-4 top-5 left-5"></div>
+            </div>
+            <div className="flex flex-col justify-center">
+              <span style={{ color: '#0056b3' }} className="font-semibold text-sm leading-tight">Instituto</span>
+              <span style={{ color: '#0056b3' }} className="font-semibold text-sm leading-tight">Todos</span>
+              <span style={{ color: '#0056b3' }} className="font-semibold text-sm leading-tight">pela</span>
+              <span style={{ color: '#0056b3' }} className="font-semibold text-sm leading-tight">Saúde</span>
             </div>
           </div>
         </div>

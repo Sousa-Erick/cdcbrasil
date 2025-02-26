@@ -10,11 +10,11 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center mb-6">
               <div className="relative w-10 h-10 mr-3">
-                {/* Cruz vermelha (salmão) */}
-                <div className="absolute bg-health-500 w-3 h-10 top-0 left-3.5"></div>
-                <div className="absolute bg-health-500 w-10 h-3 top-3.5 left-0"></div>
+                {/* Cruz vermelha */}
+                <div style={{ backgroundColor: '#ea384c' }} className="absolute w-3 h-10 top-0 left-3.5"></div>
+                <div style={{ backgroundColor: '#ea384c' }} className="absolute w-10 h-3 top-3.5 left-0"></div>
                 {/* Quadrado azul central */}
-                <div className="absolute bg-blue-500 w-3 h-3 top-3.5 left-3.5"></div>
+                <div style={{ backgroundColor: '#0056b3' }} className="absolute w-3 h-3 top-3.5 left-3.5"></div>
               </div>
               <div className="flex flex-col">
                 <span className="text-white font-bold text-sm leading-tight">Instituto</span>
