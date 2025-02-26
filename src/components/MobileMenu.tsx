@@ -34,11 +34,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       
       <div className="relative h-full w-4/5 max-w-xs bg-white shadow-xl flex flex-col animate-slide-in">
         <div className="flex justify-between items-center p-5 border-b">
-          <img 
-            src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
-            alt="Instituto Todos pela Saúde"
-            className="h-8"
-          />
+          <a href="https://itps.org.br" target="_blank" rel="noopener noreferrer">
+            <img 
+              src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
+              alt="Instituto Todos pela Saúde"
+              className="h-8"
+            />
+          </a>
           <button 
             className="p-1.5 rounded-full hover:bg-gray-100 transition-colors"
             onClick={onClose}

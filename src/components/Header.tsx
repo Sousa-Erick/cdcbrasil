@@ -29,11 +29,13 @@ const Header: React.FC = () => {
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <img 
-            src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
-            alt="Instituto Todos pela Saúde"
-            className="h-12"
-          />
+          <a href="https://itps.org.br" target="_blank" rel="noopener noreferrer">
+            <img 
+              src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
+              alt="Instituto Todos pela Saúde"
+              className="h-12"
+            />
+          </a>
         </div>
         
         {/* Desktop Navigation */}
