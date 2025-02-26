@@ -73,9 +73,9 @@ const Definition: React.FC = () => {
         </div>
         
         <div className="mt-16 max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Preparo para enfrentar epidemias...</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">Preparo para enfrentar epidemias e pandemias</h2>
           <p className="text-lg text-center text-gray-700 max-w-2xl mx-auto">
-            O CDC Brasil será uma instituição preparada para detectar, prevenir e responder a emergências epidemiológicas, coordenando ações em todo o território nacional.
+            O CDC Brasil será uma instituição preparada para detectar, prevenir e responder a emergências epidemiológicas e pandêmicas, coordenando ações em todo o território nacional.
           </p>
         </div>
       </div>
