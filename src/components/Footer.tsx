@@ -8,8 +8,20 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div>
-            <div className="text-health-400 font-bold text-2xl mb-6">
-              <span className="text-white">CDC</span>Brasil
+            <div className="flex items-center mb-6">
+              <div className="relative w-10 h-10 mr-3">
+                {/* Cruz vermelha (salmão) */}
+                <div className="absolute bg-health-500 w-3 h-10 top-0 left-3.5"></div>
+                <div className="absolute bg-health-500 w-10 h-3 top-3.5 left-0"></div>
+                {/* Quadrado azul central */}
+                <div className="absolute bg-blue-500 w-3 h-3 top-3.5 left-3.5"></div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-white font-bold text-sm leading-tight">Instituto</span>
+                <span className="text-white font-bold text-sm leading-tight">Todos</span>
+                <span className="text-white font-bold text-sm leading-tight">pela</span>
+                <span className="text-white font-bold text-sm leading-tight">Saúde</span>
+              </div>
             </div>
             <p className="text-gray-400 mb-8 leading-relaxed">
               Centro Brasileiro de Prevenção e Controle de Doenças - Uma iniciativa para proteger a saúde da população brasileira.
@@ -107,8 +119,8 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} CDC Brasil. Todos os direitos reservados.</p>
-          <p className="mt-3">Este é um site de proposta conceitual. A instituição ainda não existe oficialmente.</p>
+          <p>&copy; {new Date().getFullYear()} Instituto Todos pela Saúde. Todos os direitos reservados.</p>
+          <p className="mt-3">Este é um site de proposta conceitual.</p>
         </div>
       </div>
     </footer>

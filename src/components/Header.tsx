@@ -30,12 +30,19 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <div className="flex items-center">
-            <div className="w-32 h-16 relative">
-              <div className="absolute top-0 left-0 w-12 h-12">
-                <div className="bg-health-500 rounded-md w-10 h-10"></div>
-                <div className="bg-blue-500 rounded-md w-10 h-10 absolute top-2 left-2"></div>
+            <div className="flex items-center h-16">
+              <div className="relative w-14 h-14 mr-2">
+                <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+                  <div className="relative w-12 h-12">
+                    {/* Cruz vermelha (salmão) */}
+                    <div className="absolute bg-health-500 w-4 h-12 top-0 left-4"></div>
+                    <div className="absolute bg-health-500 w-12 h-4 top-4 left-0"></div>
+                    {/* Quadrado azul central */}
+                    <div className="absolute bg-blue-600 w-4 h-4 top-4 left-4"></div>
+                  </div>
+                </div>
               </div>
-              <div className="ml-14 flex flex-col justify-center h-full">
+              <div className="flex flex-col justify-center">
                 <span className="text-blue-600 font-semibold text-sm leading-tight">Instituto</span>
                 <span className="text-blue-600 font-semibold text-sm leading-tight">Todos</span>
                 <span className="text-blue-600 font-semibold text-sm leading-tight">pela</span>
