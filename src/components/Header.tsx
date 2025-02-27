@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import MobileMenu from './MobileMenu';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,17 +41,13 @@ const Header: React.FC = () => {
       }`}>
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
           <div className="flex items-center">
-            <a 
-              href="#hero" 
-              className="block"
-              onClick={(e) => handleNavClick(e, 'hero')}
-            >
+            <Link to="/" className="block">
               <img 
                 src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
                 alt="Instituto Todos pela Saúde"
                 className="h-10 md:h-12"
               />
-            </a>
+            </Link>
           </div>
           
           <div className="flex items-center">
