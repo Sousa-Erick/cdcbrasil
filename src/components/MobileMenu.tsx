@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { X, ChevronRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 
 interface MobileMenuProps {
   isOpen: boolean;

@@ -150,9 +150,9 @@
 
   /* Botões */
   .btn-primary {
-    @apply bg-health-600 hover:bg-health-700 text-white font-medium py-3 px-5 rounded-lg 
+    @apply bg-[#0067A0] hover:bg-[#00558a] text-white font-medium py-3 px-5 rounded-lg 
     transition-all duration-300 hover:shadow-md active:scale-[0.98]
-    focus:outline-none focus:ring-2 focus:ring-health-500 focus:ring-opacity-50;
+    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
   }
 
   .btn-secondary {
@@ -172,7 +172,7 @@
   }
   
   .icon-container-primary {
-    @apply bg-health-50 text-health-600;
+    @apply bg-blue-50 text-blue-600;
   }
   
   .icon-container-secondary {
@@ -201,7 +201,7 @@
   }
   
   .carousel-dot-active {
-    @apply bg-health-600;
+    @apply bg-blue-600;
   }
 }
 
