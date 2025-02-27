@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { AlertTriangle, Biohazard } from 'lucide-react';
+import { AlertTriangle, Biohazard, Virus, Ambulance, Syringe, Droplets, Thermometer } from 'lucide-react';
 
 const EmergenciesSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -34,14 +34,15 @@ const EmergenciesSection: React.FC = () => {
     };
   }, []);
 
+  // Lista de emergências com nomes capitalizados e seus respectivos ícones
   const emergencies = [
-    "aids",
-    "cólera",
-    "influenza H1N1",
-    "dengue",
-    "Zika",
-    "febre amarela",
-    "covid-19"
+    { name: "Aids", icon: <Biohazard className="h-5 w-5 text-health-500 mb-2" /> },
+    { name: "Cólera", icon: <Droplets className="h-5 w-5 text-health-500 mb-2" /> },
+    { name: "Influenza H1N1", icon: <Virus className="h-5 w-5 text-health-500 mb-2" /> },
+    { name: "Dengue", icon: <Thermometer className="h-5 w-5 text-health-500 mb-2" /> },
+    { name: "Zika", icon: <Virus className="h-5 w-5 text-health-500 mb-2" /> },
+    { name: "Febre amarela", icon: <Thermometer className="h-5 w-5 text-health-500 mb-2" /> },
+    { name: "Covid-19", icon: <Virus className="h-5 w-5 text-health-500 mb-2" /> },
   ];
 
   return (
@@ -62,8 +63,9 @@ const EmergenciesSection: React.FC = () => {
                   key={index}
                   className="carousel-item flex-shrink-0 px-3 w-1/3 md:w-1/4"
                 >
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 flex items-center justify-center h-full hover:bg-blue-100 transition-colors">
-                    <span className="font-medium text-blue-700">{emergency}</span>
+                  <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex flex-col items-center justify-center h-full hover:bg-gray-50 transition-colors">
+                    {emergency.icon}
+                    <span className="font-medium text-blue-700">{emergency.name}</span>
                   </div>
                 </div>
               ))}
