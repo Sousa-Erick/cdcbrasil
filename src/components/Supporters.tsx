@@ -5,7 +5,6 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const Supporters: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const sliderRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -218,7 +217,7 @@ const Supporters: React.FC = () => {
               </div>
             </div>
             
-            {/* Carrossel para Mobile (único apoiador por vez) */}
+            {/* Carrossel para Mobile (único apoiador por vez) - Redesenhado para melhor legibilidade */}
             <div className="md:hidden">
               <div className="relative overflow-hidden">
                 <div 
@@ -240,7 +239,7 @@ const Supporters: React.FC = () => {
                           </div>
                         </div>
                         <h3 className="text-xl font-semibold mb-3 text-gray-800 text-center">{supporter.name}</h3>
-                        <p className="text-gray-600 text-center">{supporter.role}</p>
+                        <p className="text-gray-600 text-sm text-center leading-relaxed">{supporter.role}</p>
                       </div>
                     </div>
                   ))}
@@ -248,29 +247,29 @@ const Supporters: React.FC = () => {
               </div>
             </div>
             
-            {/* Navigation arrows */}
+            {/* Navigation arrows - Redesenhados para serem mais visíveis e maiores em mobile */}
             <button 
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:translate-x-0 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-blue transition-colors z-10"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 md:-translate-x-4 bg-white rounded-full p-3 shadow-md text-gray-600 hover:text-blue transition-colors z-10"
               onClick={() => navigateSlider('prev')}
               aria-label="Anterior"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
             </button>
             
             <button 
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-0 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-blue transition-colors z-10"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1 md:translate-x-4 bg-white rounded-full p-3 shadow-md text-gray-600 hover:text-blue transition-colors z-10"
               onClick={() => navigateSlider('next')}
               aria-label="Próximo"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
             </button>
             
-            {/* Pagination dots */}
-            <div className="flex justify-center mt-6 space-x-2">
+            {/* Pagination dots - Redesenhadas para serem maiores e mais espaçadas em mobile */}
+            <div className="flex justify-center mt-6 space-x-3">
               {Array.from({ length: totalSlides }).map((_, index) => (
                 <button 
                   key={index}
-                  className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                  className={`w-3 h-3 rounded-full transition-colors ${
                     currentSlide === index ? 'bg-salmon' : 'bg-gray-300'
                   }`}
                   onClick={() => setCurrentSlide(index)}
