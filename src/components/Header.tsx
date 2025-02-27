@@ -22,59 +22,61 @@ const Header: React.FC = () => {
   }, [scrolled]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white bg-opacity-95 backdrop-blur-md shadow-sm py-3' 
-        : 'bg-white py-4'
-    }`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center">
-          <a href="https://itps.org.br" target="_blank" rel="noopener noreferrer">
-            <img 
-              src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
-              alt="Instituto Todos pela Saúde"
-              className="h-12"
-            />
-          </a>
-        </div>
-        
-        <div className="flex items-center">
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-4 lg:space-x-6">
-            <a href="#emergencies" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
-              Contexto
+    <>
+      <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white bg-opacity-95 backdrop-blur-md shadow-sm py-3' 
+          : 'bg-white py-4'
+      }`}>
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <div className="flex items-center">
+            <a href="https://itps.org.br" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
+                alt="Instituto Todos pela Saúde"
+                className="h-12"
+              />
             </a>
-            <a href="#strategies" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
-              Estratégias
-            </a>
-            <a href="#characteristics" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
-              Características
-            </a>
-            <a href="#principles-directives" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
-              Princípios
-            </a>
-            <a href="#what-is" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
-              Proposta
-            </a>
-            <a href="#documents" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
-              Documentos
-            </a>
-          </nav>
+          </div>
           
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden flex items-center p-2 rounded-md hover:bg-gray-100"
-            onClick={() => setMobileMenuOpen(true)}
-            aria-label="Abrir menu"
-          >
-            <Menu className="h-6 w-6 text-gray-700" />
-          </button>
+          <div className="flex items-center">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-4 lg:space-x-6">
+              <a href="#emergencies" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+                Contexto
+              </a>
+              <a href="#strategies" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+                Estratégias
+              </a>
+              <a href="#characteristics" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+                Características
+              </a>
+              <a href="#principles-directives" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+                Princípios
+              </a>
+              <a href="#what-is" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+                Proposta
+              </a>
+              <a href="#documents" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+                Documentos
+              </a>
+            </nav>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden flex items-center p-2 rounded-md hover:bg-gray-100"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Abrir menu"
+            >
+              <Menu className="h-6 w-6 text-gray-700" />
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
       
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Movido para fora do header para evitar problemas de posicionamento */}
       <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
-    </header>
+    </>
   );
 };
 
