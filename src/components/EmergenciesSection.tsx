@@ -13,9 +13,9 @@ const EmergenciesSection: React.FC = () => {
             const listItems = entry.target.querySelectorAll('.list-item');
             listItems.forEach((item, index) => {
               setTimeout(() => {
-                item.classList.add('opacity-100', 'translate-y-0');
-                item.classList.remove('opacity-0', 'translate-y-8');
-              }, index * 100);
+                item.classList.add('opacity-100', 'translate-x-0');
+                item.classList.remove('opacity-0', 'translate-x-[-100px]');
+              }, index * 150);
             });
           }
         });
@@ -60,22 +60,22 @@ const EmergenciesSection: React.FC = () => {
   return (
     <section id="emergencies" ref={sectionRef} className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-blue-700">
             As emergências em saúde pública são uma ameaça constante
           </h2>
           
-          <p className="text-base md:text-lg text-gray-600 mb-12 text-center">
+          <p className="text-base md:text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">
             O Brasil enfrenta recorrentemente emergências em saúde pública que impactam a vida de milhões de pessoas.
             A covid-19 foi apenas a mais recente de uma longa série de crises.
           </p>
           
-          <div className="flex flex-col gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {emergencies.map((item, index) => (
               <div 
                 key={index}
-                className="list-item opacity-0 translate-y-8 transition-all duration-500 bg-white rounded-lg p-6 shadow-md border border-gray-100 flex flex-col items-start w-full"
-                style={{ transitionDelay: `${index * 100}ms` }}
+                className="list-item opacity-0 translate-x-[-100px] transition-all duration-700 ease-in-out bg-white rounded-lg p-6 shadow-md border border-gray-100 flex flex-col items-start w-full h-full"
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className="bg-health-50 p-3 rounded-full mb-5">
                   {item.icon}
