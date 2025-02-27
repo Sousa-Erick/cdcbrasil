@@ -1,9 +1,7 @@
 
-import React, { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, User } from 'lucide-react';
+import React, { useRef, useEffect } from 'react';
 
 const Supporters: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -121,55 +119,6 @@ const Supporters: React.FC = () => {
     }
   ];
 
-  const visibleSupporters = 3; // Número de apoiadores visíveis por vez em desktop
-  const totalSlides = Math.ceil(supporters.length / visibleSupporters);
-
-  const navigateSlider = (direction: 'prev' | 'next') => {
-    if (direction === 'prev') {
-      setCurrentSlide(current => (current > 0 ? current - 1 : totalSlides - 1));
-    } else {
-      setCurrentSlide(current => (current < totalSlides - 1 ? current + 1 : 0));
-    }
-  };
-
-  useEffect(() => {
-    // Auto slide a cada 7 segundos
-    const interval = setInterval(() => {
-      navigateSlider('next');
-    }, 7000);
-    
-    return () => clearInterval(interval);
-  }, []);
-
-  // Enable touch swipe functionality
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
-  
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-  
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-  
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-    
-    if (isLeftSwipe) {
-      navigateSlider('next');
-    } else if (isRightSwipe) {
-      navigateSlider('prev');
-    }
-    
-    setTouchStart(null);
-    setTouchEnd(null);
-  };
-
   return (
     <section id="supporters" className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
@@ -186,95 +135,26 @@ const Supporters: React.FC = () => {
             conta com o apoio de diversos especialistas e instituições.
           </p>
           
-          <div className="relative">
-            {/* Carrossel para Desktop */}
-            <div className="hidden md:block">
-              <div className="relative overflow-hidden">
-                <div 
-                  className="flex transition-transform duration-500 ease-out"
-                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                  onTouchStart={handleTouchStart}
-                  onTouchMove={handleTouchMove}
-                  onTouchEnd={handleTouchEnd}
-                >
-                  {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-                    <div key={slideIndex} className="min-w-full flex-shrink-0 flex gap-6">
-                      {supporters.slice(slideIndex * visibleSupporters, (slideIndex + 1) * visibleSupporters).map((supporter, idx) => (
-                        <div 
-                          key={idx} 
-                          className="flex-1 bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center"
-                        >
-                          <div className="mb-4 w-16 h-16 bg-blue-light rounded-full flex items-center justify-center overflow-hidden">
-                            <User className="h-8 w-8 text-blue" />
-                          </div>
-                          <h3 className="text-lg font-semibold mb-2 text-gray-800">{supporter.name}</h3>
-                          <p className="text-gray-600 text-sm leading-relaxed">{supporter.role}</p>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            
-            {/* Carrossel para Mobile (único apoiador por vez) - Redesenhado para melhor legibilidade */}
-            <div className="md:hidden">
-              <div className="relative overflow-hidden">
-                <div 
-                  className="flex transition-transform duration-500 ease-out"
-                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                  onTouchStart={handleTouchStart}
-                  onTouchMove={handleTouchMove}
-                  onTouchEnd={handleTouchEnd}
-                >
-                  {supporters.map((supporter, index) => (
-                    <div 
-                      key={index} 
-                      className="min-w-full flex-shrink-0 px-6"
-                    >
-                      <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center max-w-md mx-auto">
-                        <div className="mb-4 w-20 h-20 bg-blue-light rounded-full flex items-center justify-center overflow-hidden">
-                          <User className="h-10 w-10 text-blue" />
-                        </div>
-                        <h3 className="text-xl font-semibold mb-3 text-gray-800 text-center">{supporter.name}</h3>
-                        <p className="text-gray-600 text-sm text-center leading-relaxed max-w-xs">{supporter.role}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            
-            {/* Navigation arrows - Redesenhados para serem mais visíveis e maiores em mobile */}
-            <button 
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 md:-translate-x-4 bg-white rounded-full p-3 shadow-md text-gray-600 hover:text-blue transition-colors z-10"
-              onClick={() => navigateSlider('prev')}
-              aria-label="Anterior"
-            >
-              <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
-            </button>
-            
-            <button 
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1 md:translate-x-4 bg-white rounded-full p-3 shadow-md text-gray-600 hover:text-blue transition-colors z-10"
-              onClick={() => navigateSlider('next')}
-              aria-label="Próximo"
-            >
-              <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
-            </button>
-            
-            {/* Pagination dots - Redesenhadas para serem maiores e mais espaçadas em mobile */}
-            <div className="flex justify-center mt-6 space-x-3">
-              {Array.from({ length: totalSlides }).map((_, index) => (
-                <button 
-                  key={index}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    currentSlide === index ? 'bg-salmon' : 'bg-gray-300'
-                  }`}
-                  onClick={() => setCurrentSlide(index)}
-                  aria-label={`Ir para slide ${index + 1}`}
-                ></button>
-              ))}
-            </div>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-blue text-white">
+                  <th className="py-3 px-4 text-left font-medium border-b border-blue-700">Nome</th>
+                  <th className="py-3 px-4 text-left font-medium border-b border-blue-700">Cargo/Função</th>
+                </tr>
+              </thead>
+              <tbody className="bg-blue-500 text-white">
+                {supporters.map((supporter, index) => (
+                  <tr 
+                    key={index} 
+                    className="hover:bg-blue-600 transition-colors"
+                  >
+                    <td className="py-3 px-4 border-b border-blue-600 font-medium">{supporter.name}</td>
+                    <td className="py-3 px-4 border-b border-blue-600">{supporter.role}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
