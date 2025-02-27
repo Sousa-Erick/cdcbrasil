@@ -98,73 +98,112 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-medium tracking-tight text-center;
+    @apply font-sans font-medium tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl font-bold text-blue-700;
+  }
+
+  h3 {
+    @apply text-lg md:text-xl font-semibold;
+  }
+
+  p {
+    @apply text-base md:text-lg text-gray-600;
   }
 
   .container {
     @apply px-4 md:px-6 max-w-[1400px];
   }
   
-  /* Aumentando o padding padrão em todas as seções */
+  /* Seções */
   section {
     @apply py-16 md:py-24;
   }
   
-  /* Aumentando o padding nos parágrafos de texto */
-  p {
-    @apply py-2 text-center;
+  /* Alternância de fundos */
+  section:nth-child(odd) {
+    @apply bg-white;
   }
   
-  /* Mantendo o background branco em todas as seções */
-  section {
-    @apply bg-white;
+  section:nth-child(even) {
+    @apply bg-gray-50;
   }
 }
 
 @layer components {
+  /* Cards e Containers */
   .glass-card {
     @apply bg-white bg-opacity-80 backdrop-blur-md border border-gray-200 shadow-sm;
   }
   
-  .section {
-    @apply py-12 md:py-24 w-full;
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-gray-100;
+  }
+  
+  .section-header {
+    @apply max-w-xl mx-auto text-center mb-10;
   }
 
-  .section-title {
-    @apply text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-center text-blue-700;
-  }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-md hover:-translate-y-1;
-  }
-
+  /* Botões */
   .btn-primary {
-    @apply bg-health-500 hover:bg-health-700 text-white font-medium py-3 px-5 rounded-lg 
+    @apply bg-health-600 hover:bg-health-700 text-white font-medium py-3 px-5 rounded-lg 
     transition-all duration-300 hover:shadow-md active:scale-[0.98]
     focus:outline-none focus:ring-2 focus:ring-health-500 focus:ring-opacity-50;
   }
 
   .btn-secondary {
-    @apply bg-blue-500 hover:bg-blue-700 text-white font-medium py-3 px-5 rounded-lg 
-    transition-all duration-300 hover:shadow-sm active:scale-[0.98]
+    @apply border border-blue-700 text-blue-700 hover:bg-blue-50 font-medium py-3 px-5 rounded-lg 
+    transition-all duration-300 active:scale-[0.98]
     focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50;
   }
   
-  /* Novo estilo para carrossel automático */
+  .btn-outline {
+    @apply border border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 
+    font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  /* Ícones */
+  .icon-container {
+    @apply rounded-full p-3 inline-flex items-center justify-center;
+  }
+  
+  .icon-container-primary {
+    @apply bg-health-50 text-health-600;
+  }
+  
+  .icon-container-secondary {
+    @apply bg-blue-50 text-blue-700;
+  }
+  
+  /* Carrousels */
   .carousel-container {
     @apply relative overflow-hidden;
   }
   
   .carousel-track {
-    animation: carousel 30s linear infinite;
+    @apply flex transition-transform duration-500 ease-in-out;
   }
   
   .carousel-item {
-    height: 100px;
+    @apply flex-shrink-0 w-full;
+  }
+  
+  .carousel-dots {
+    @apply flex justify-center mt-6 space-x-2;
+  }
+  
+  .carousel-dot {
+    @apply w-2.5 h-2.5 rounded-full transition-colors bg-gray-300;
+  }
+  
+  .carousel-dot-active {
+    @apply bg-health-600;
   }
 }
 
-/* Aspect ratio utility for the map container */
+/* Aspect ratio utility */
 .aspect-w-16 {
   position: relative;
   padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
@@ -197,17 +236,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Animações de carrossel */
-@keyframes carousel {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Animações adicionais */
+/* Animações */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -263,18 +292,7 @@ body {
   }
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
+/* Classes para animações */
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease forwards;
 }
@@ -295,15 +313,7 @@ body {
   animation: zoomIn 0.6s ease forwards;
 }
 
-.animate-pulse-slow {
-  animation: pulse 3s ease-in-out infinite;
-}
-
-.animate-slide {
-  animation: carousel 30s linear infinite;
-}
-
-/* Corrigindo problema de animações que desaparecem */
+/* Garantir que elementos animados permaneçam visíveis */
 .animation-element.opacity-100,
 .fade-in-element.opacity-100,
 .list-item.opacity-100,
@@ -317,12 +327,11 @@ body {
   transform: translateY(0) !important;
 }
 
-/* Quando elementos são animados, garantir que permaneçam visíveis */
 [class*="animate-"] {
   animation-fill-mode: forwards;
 }
 
-/* Garantir que todos os elementos que recebem animações estejam visíveis após a animação */
+/* Elementos animados - transições */
 .animation-element,
 .fade-in-element,
 .list-item,
@@ -333,4 +342,23 @@ body {
 .characteristic-card {
   will-change: opacity, transform;
   transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Media queries para melhorar responsividade */
+@media (max-width: 640px) {
+  section {
+    @apply py-12;
+  }
+  
+  h1 {
+    @apply text-2xl;
+  }
+  
+  h2 {
+    @apply text-xl;
+  }
+  
+  .container {
+    @apply px-4;
+  }
 }

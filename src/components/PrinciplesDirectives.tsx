@@ -59,33 +59,33 @@ const PrinciplesDirectives: React.FC = () => {
   ];
 
   return (
-    <section id="principles-directives" ref={sectionRef} className="py-24 bg-white">
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="max-w-xl mx-auto text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Princípios e diretrizes</h2>
-          <p className="text-gray-600 px-4">
+    <section id="principles-directives" ref={sectionRef} className="py-16 md:py-24 bg-gray-50">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-xl mx-auto text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-blue-700">Princípios e diretrizes</h2>
+          <p className="text-base md:text-lg text-gray-600">
             Fundamentos que nortearão o funcionamento do Centro Brasileiro de Prevenção e Controle de Doenças.
           </p>
         </div>
         
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-8">
           <div className="inline-flex rounded-md shadow-sm p-1 bg-gray-100">
             <button
               onClick={() => setActiveTab('principles')}
-              className={`px-6 py-3 rounded-md text-sm md:text-base font-medium transition-all ${
+              className={`px-4 py-2 sm:px-6 sm:py-3 rounded-md text-sm font-medium transition-all ${
                 activeTab === 'principles'
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'text-gray-700 hover:text-blue-600'
+                  ? 'bg-blue-700 text-white shadow-sm'
+                  : 'text-gray-700 hover:text-blue-700'
               }`}
             >
               Princípios
             </button>
             <button
               onClick={() => setActiveTab('directives')}
-              className={`px-6 py-3 rounded-md text-sm md:text-base font-medium transition-all ${
+              className={`px-4 py-2 sm:px-6 sm:py-3 rounded-md text-sm font-medium transition-all ${
                 activeTab === 'directives'
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'text-gray-700 hover:text-blue-600'
+                  ? 'bg-blue-700 text-white shadow-sm'
+                  : 'text-gray-700 hover:text-blue-700'
               }`}
             >
               Diretrizes
@@ -95,27 +95,27 @@ const PrinciplesDirectives: React.FC = () => {
         
         <div className="max-w-4xl mx-auto">
           {activeTab === 'principles' && (
-            <div className="animate-fadeInRight bg-white rounded-lg p-8 shadow-md">
-              <div className="flex items-center mb-8">
-                <div className="rounded-full bg-blue-100 p-4 mr-5">
-                  <BookOpen className="h-6 w-6 text-blue-600" />
+            <div className="animate-fadeInRight bg-white rounded-lg p-6 md:p-8 shadow-md">
+              <div className="flex items-center mb-6">
+                <div className="rounded-full bg-blue-100 p-3 mr-4">
+                  <BookOpen className="h-5 w-5 text-blue-700" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Princípios</h3>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900">Princípios</h3>
               </div>
               
-              <ul className="space-y-6">
+              <ul className="space-y-5">
                 {principles.map((principle, index) => (
                   <li 
                     key={index} 
                     className="animate-item opacity-0 translate-y-4 transition-all duration-500 flex"
                     style={{ transitionDelay: `${index * 150}ms` }}
                   >
-                    <div className="mr-4 mt-1 flex-shrink-0">
-                      <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center">
-                        <Check className="h-4 w-4 text-green-600" />
+                    <div className="mr-3 mt-1 flex-shrink-0">
+                      <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center">
+                        <Check className="h-3 w-3 text-green-600" />
                       </div>
                     </div>
-                    <span className="text-gray-700 text-lg">{principle}</span>
+                    <span className="text-gray-700 text-base md:text-lg">{principle}</span>
                   </li>
                 ))}
               </ul>
@@ -123,27 +123,27 @@ const PrinciplesDirectives: React.FC = () => {
           )}
           
           {activeTab === 'directives' && (
-            <div className="animate-fadeInLeft bg-white rounded-lg p-8 shadow-md">
-              <div className="flex items-center mb-8">
-                <div className="rounded-full bg-blue-100 p-4 mr-5">
-                  <FileText className="h-6 w-6 text-blue-600" />
+            <div className="animate-fadeInLeft bg-white rounded-lg p-6 md:p-8 shadow-md">
+              <div className="flex items-center mb-6">
+                <div className="rounded-full bg-blue-100 p-3 mr-4">
+                  <FileText className="h-5 w-5 text-blue-700" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Diretrizes</h3>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900">Diretrizes</h3>
               </div>
               
-              <ul className="space-y-5">
+              <ul className="space-y-4">
                 {directives.map((directive, index) => (
                   <li 
                     key={index} 
                     className="animate-item opacity-0 translate-y-4 transition-all duration-500 flex"
                     style={{ transitionDelay: `${index * 100}ms` }}
                   >
-                    <div className="mr-4 mt-1 flex-shrink-0">
-                      <div className="h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center">
-                        <Check className="h-4 w-4 text-blue-600" />
+                    <div className="mr-3 mt-1 flex-shrink-0">
+                      <div className="h-5 w-5 rounded-full bg-blue-100 flex items-center justify-center">
+                        <Check className="h-3 w-3 text-blue-700" />
                       </div>
                     </div>
-                    <span className="text-gray-700">{directive}</span>
+                    <span className="text-gray-700 text-sm md:text-base">{directive}</span>
                   </li>
                 ))}
               </ul>

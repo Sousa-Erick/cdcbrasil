@@ -15,7 +15,6 @@ const DocumentsSection: React.FC = () => {
               setTimeout(() => {
                 item.classList.add('opacity-100', 'translate-y-0');
                 item.classList.remove('opacity-0', 'translate-y-4');
-                // Garantir que os itens permaneçam visíveis
                 item.classList.add('animation-visible');
               }, index * 100);
             });
@@ -55,34 +54,34 @@ const DocumentsSection: React.FC = () => {
   ];
 
   return (
-    <section id="documents" ref={sectionRef} className="py-16 md:py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-xl mx-auto text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Você quer saber mais sobre a proposta?</h2>
-          <p className="text-gray-600">
+    <section id="documents" ref={sectionRef} className="py-16 md:py-24 bg-white">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-xl mx-auto text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-blue-700">Documentos</h2>
+          <p className="text-base md:text-lg text-gray-600">
             Acesse os documentos completos com todos os detalhes sobre a proposta
             de criação do Centro Brasileiro de Prevenção e Controle de Doenças.
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-4xl mx-auto space-y-5">
           {documents.map((doc, index) => (
             <div 
               key={index} 
-              className="document-item opacity-0 translate-y-4 transition-all duration-500 bg-white rounded-lg p-6 shadow-md"
+              className="document-item opacity-0 translate-y-4 transition-all duration-500 bg-white rounded-lg p-5 md:p-6 shadow-md border border-gray-100"
             >
-              <div className="flex">
-                <div className="flex-shrink-0 mr-4">
+              <div className="flex flex-col md:flex-row">
+                <div className="flex-shrink-0 mr-0 md:mr-5 mb-4 md:mb-0 flex justify-center md:justify-start">
                   <div className="p-3 bg-blue-100 rounded-lg">
-                    <FileText className="h-8 w-8 text-blue-600" />
+                    <FileText className="h-8 w-8 text-blue-700" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">{doc.title}</h3>
-                  <p className="text-gray-700 mb-4">{doc.description}</p>
+                  <h3 className="text-lg md:text-xl font-bold mb-3 text-gray-900">{doc.title}</h3>
+                  <p className="text-gray-600 text-sm md:text-base mb-4">{doc.description}</p>
                   <a 
                     href={doc.link} 
-                    className="inline-flex items-center text-health-600 hover:text-health-700 transition-colors font-medium"
+                    className="inline-flex items-center text-health-600 hover:text-health-700 transition-colors font-medium text-sm md:text-base"
                   >
                     <Download className="h-4 w-4 mr-2" />
                     <span>Baixar documento</span>

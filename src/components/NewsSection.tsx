@@ -75,18 +75,40 @@ const NewsSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="news-section" ref={sectionRef} className="py-24 bg-white">
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="max-w-xl mx-auto text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Notícias</h2>
-          <p className="text-gray-600 px-4">
+    <section id="news-section" ref={sectionRef} className="py-16 md:py-24 bg-gray-50">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-xl mx-auto text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-blue-700">Notícias</h2>
+          <p className="text-base md:text-lg text-gray-600">
             Acompanhe as últimas notícias sobre a proposta de criação do 
             Centro Brasileiro de Prevenção e Controle de Doenças.
           </p>
         </div>
         
         <div className="max-w-4xl mx-auto relative">
-          <div className="flex justify-between items-center absolute top-1/2 -mt-4 left-4 right-4 z-10">
+          {/* Mobile controls */}
+          <div className="sm:hidden flex justify-between items-center mb-4">
+            <button 
+              onClick={prevSlide}
+              className="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors"
+              aria-label="Notícia anterior"
+            >
+              <ArrowLeft className="h-4 w-4 text-gray-700" />
+            </button>
+            
+            <span className="text-sm text-gray-500">{`${activeSlide + 1}/${newsItems.length}`}</span>
+            
+            <button 
+              onClick={nextSlide}
+              className="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors"
+              aria-label="Próxima notícia"
+            >
+              <ArrowRight className="h-4 w-4 text-gray-700" />
+            </button>
+          </div>
+          
+          {/* Desktop controls - hidden on mobile */}
+          <div className="hidden sm:flex justify-between items-center absolute top-1/2 -mt-4 left-4 right-4 z-10">
             <button 
               onClick={prevSlide}
               className="p-3 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors"
@@ -106,39 +128,38 @@ const NewsSection: React.FC = () => {
           
           <div className="overflow-hidden">
             <div 
-              className="transition-all duration-700 ease-in-out"
+              className="transition-all duration-700 ease-in-out flex"
               style={{
                 transform: `translateX(-${activeSlide * 100}%)`,
-                display: 'flex',
                 width: `${newsItems.length * 100}%`
               }}
             >
               {newsItems.map((item, index) => (
                 <div 
                   key={item.id} 
-                  className="w-full flex-shrink-0 px-4"
+                  className="w-full flex-shrink-0 px-2 sm:px-4"
                 >
                   <a 
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer" 
-                    className="block bg-gray-50 hover:bg-gray-100 rounded-lg p-8 shadow-md hover:shadow-lg transition-all group h-full animate-zoomIn"
+                    className="block bg-white rounded-lg p-5 md:p-8 shadow-md hover:shadow-lg transition-all group h-full border border-gray-100"
                   >
                     <div className="flex flex-col h-full">
                       <div className="flex-grow">
-                        <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center justify-between mb-5">
                           {item.type === 'video' ? (
-                            <div className="p-3 bg-health-100 rounded-full">
-                              <PlayCircle className="h-6 w-6 text-health-600" />
+                            <div className="p-2 bg-health-50 rounded-full">
+                              <PlayCircle className="h-5 w-5 text-health-600" />
                             </div>
                           ) : (
-                            <div className="p-3 bg-blue-100 rounded-full">
-                              <ExternalLink className="h-6 w-6 text-blue-600" />
+                            <div className="p-2 bg-blue-50 rounded-full">
+                              <ExternalLink className="h-5 w-5 text-blue-700" />
                             </div>
                           )}
-                          <span className="text-sm text-gray-500">{`${index + 1}/${newsItems.length}`}</span>
+                          <span className="text-xs text-gray-500 hidden sm:block">{`${index + 1}/${newsItems.length}`}</span>
                         </div>
-                        <h3 className="text-xl font-semibold mb-6 text-gray-900">{item.title}</h3>
+                        <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6 text-gray-900">{item.title}</h3>
                       </div>
                       
                       <div className="flex items-center text-health-600 text-sm font-medium transition-all group-hover:translate-x-1">
@@ -152,12 +173,12 @@ const NewsSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 space-x-2">
             {newsItems.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActiveSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${
                   index === activeSlide ? 'bg-health-600' : 'bg-gray-300'
                 }`}
                 aria-label={`Ir para notícia ${index + 1}`}
