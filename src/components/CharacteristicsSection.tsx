@@ -65,15 +65,6 @@ const CharacteristicsSection: React.FC = () => {
     setActiveSlide((prev) => (prev === 0 ? characteristics.length - 1 : prev - 1));
   };
 
-  // Auto-rotate carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, [activeSlide]);
-
   // Calculate which slides to show based on screen size
   const getVisibleCards = () => {
     // On mobile: 1 card, tablet: 2 cards, desktop: 3 cards
@@ -113,32 +104,24 @@ const CharacteristicsSection: React.FC = () => {
         </div>
         
         <div className="relative max-w-5xl mx-auto px-4">
-          <div className="flex justify-between items-center absolute top-1/2 left-0 right-0 -mt-4 px-4 z-10">
+          <div className="overflow-hidden relative">
+            {/* Navegação à esquerda - agora do lado de fora e centralizada verticalmente */}
             <button 
               onClick={prevSlide}
-              className="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-health-500"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 md:-translate-x-16 z-10 p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-health-500"
               aria-label="Anterior"
             >
               <ChevronLeft className="h-6 w-6 text-gray-700" />
             </button>
             
-            <button 
-              onClick={nextSlide}
-              className="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-health-500"
-              aria-label="Próximo"
-            >
-              <ChevronRight className="h-6 w-6 text-gray-700" />
-            </button>
-          </div>
-          
-          <div className="overflow-hidden">
-            <div className="flex space-x-6 transition-all duration-500 ease-in-out">
+            {/* Carrossel de cards */}
+            <div className="flex space-x-6 transition-transform duration-500 ease-in-out">
               {visibleCards.map((item, index) => (
                 <div 
                   key={index} 
                   className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2"
                 >
-                  <div className="bg-health-600 text-white rounded-lg overflow-hidden shadow-md h-full transform transition-transform duration-300 hover:scale-105">
+                  <div className="bg-health-600 text-white rounded-lg overflow-hidden shadow-md h-full">
                     <div className="p-8">
                       <div className="rounded-full bg-white bg-opacity-20 p-4 w-16 h-16 flex items-center justify-center mb-6">
                         {item.icon}
@@ -150,6 +133,15 @@ const CharacteristicsSection: React.FC = () => {
                 </div>
               ))}
             </div>
+            
+            {/* Navegação à direita - agora do lado de fora e centralizada verticalmente */}
+            <button 
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 md:translate-x-16 z-10 p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-health-500"
+              aria-label="Próximo"
+            >
+              <ChevronRight className="h-6 w-6 text-gray-700" />
+            </button>
           </div>
           
           <div className="flex justify-center mt-8 space-x-2">
