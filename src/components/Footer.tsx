@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
               <img 
                 src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
                 alt="Logo"
-                className="h-16 md:h-20"
+                className="h-10 md:h-12 w-auto"
               />
             </div>
           </div>
