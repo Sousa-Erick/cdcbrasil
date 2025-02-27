@@ -50,9 +50,6 @@ const EmergenciesSection: React.FC = () => {
       <div className="container mx-auto px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="animation-element opacity-0 transition-opacity duration-700 mb-16 text-center">
-            <div className="inline-flex items-center justify-center p-3 bg-red-100 rounded-full mb-6">
-              <Biohazard className="h-6 w-6 text-health-500" />
-            </div>
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-blue-700">Emergências sanitárias enfrentadas pelo Brasil</h2>
           </div>
           
