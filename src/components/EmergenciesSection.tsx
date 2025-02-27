@@ -70,18 +70,18 @@ const EmergenciesSection: React.FC = () => {
             A covid-19 foi apenas a mais recente de uma longa série de crises.
           </p>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="flex flex-col gap-6">
             {emergencies.map((item, index) => (
               <div 
                 key={index}
-                className="list-item opacity-0 translate-y-8 transition-all duration-500 bg-white rounded-lg p-6 shadow-md border border-gray-100 flex flex-col items-center text-center"
+                className="list-item opacity-0 translate-y-8 transition-all duration-500 bg-white rounded-lg p-6 shadow-md border border-gray-100 flex flex-col items-start w-full"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="bg-health-50 p-3 rounded-full mb-5 inline-flex">
+                <div className="bg-health-50 p-3 rounded-full mb-5">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-900">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <p className="text-gray-600 text-left">{item.description}</p>
               </div>
             ))}
           </div>
