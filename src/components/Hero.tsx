@@ -14,8 +14,7 @@ const Hero: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
+  const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
@@ -50,25 +49,23 @@ const Hero: React.FC = () => {
             "flex justify-center items-center transition-all duration-700 delay-500 ease-in-out",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
-            <a 
-              href="#documents" 
+            <button 
+              onClick={() => scrollToSection('documents')}
               className="figma-button hover:shadow-md"
-              onClick={(e) => handleScrollToSection(e, 'documents')}
             >
               Conheça a proposta
-            </a>
+            </button>
           </div>
         </div>
         
         <div className="pt-10 md:pt-16 text-center absolute bottom-8 left-0 right-0">
-          <a 
-            href="#emergencies" 
+          <button 
+            onClick={() => scrollToSection('emergencies')}
             className="inline-flex flex-col items-center text-gray-400 hover:text-gray-500 transition-colors"
-            onClick={(e) => handleScrollToSection(e, 'emergencies')}
           >
             <span className="text-sm font-medium mb-2">Deslize para saber mais</span>
             <ChevronDown className="h-5 w-5 animate-bounce" />
-          </a>
+          </button>
         </div>
       </div>
     </section>

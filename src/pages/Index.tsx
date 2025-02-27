@@ -18,11 +18,12 @@ const Index = () => {
     // Implementa smooth scroll para navegação interna
     const handleLinkClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
+      const link = target.closest('a');
       
       // Verifica se é um link de navegação interna
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+      if (link && link.getAttribute('href')?.startsWith('#')) {
         e.preventDefault();
-        const id = target.getAttribute('href')?.substring(1);
+        const id = link.getAttribute('href')?.substring(1);
         
         if (id) {
           const element = document.getElementById(id);
@@ -48,20 +49,31 @@ const Index = () => {
   
   // Verifica se há um hash na URL ao carregar a página
   useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash.substring(1);
-      const element = document.getElementById(id);
-      
-      if (element) {
-        // Pequeno timeout para garantir que a página carregou completamente
-        setTimeout(() => {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
-        }, 100);
+    const scrollToHashSection = () => {
+      if (window.location.hash) {
+        const id = window.location.hash.substring(1);
+        const element = document.getElementById(id);
+        
+        if (element) {
+          // Pequeno timeout para garantir que a página carregou completamente
+          setTimeout(() => {
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }, 100);
+        }
       }
-    }
+    };
+    
+    scrollToHashSection();
+    
+    // Adiciona um ouvinte para mudanças no hash da URL
+    window.addEventListener('hashchange', scrollToHashSection);
+    
+    return () => {
+      window.removeEventListener('hashchange', scrollToHashSection);
+    };
   }, []);
 
   return (
