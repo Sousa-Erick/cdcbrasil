@@ -120,22 +120,22 @@ const Supporters: React.FC = () => {
   ];
 
   return (
-    <section id="supporters" className="py-16 bg-gray-100">
+    <section id="supporters" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div 
           ref={sectionRef} 
           className="max-w-5xl mx-auto opacity-0 translate-y-8 transition-all duration-700"
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 text-center">
+          <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center">
             Apoiadores da Proposta
           </h2>
           
-          <p className="text-gray-600 mb-8 text-center">
+          <p className="text-gray-600 mb-10 text-center max-w-3xl mx-auto">
             A criação do Centro Brasileiro de Prevenção e Controle de Doenças 
             conta com o apoio de diversos especialistas e instituições.
           </p>
           
-          <div className="overflow-x-auto rounded-lg shadow">
+          <div className="overflow-x-auto rounded-lg shadow-md">
             <table className="w-full border-collapse bg-white">
               <tbody>
                 {supporters.map((supporter, index) => (
@@ -143,11 +143,11 @@ const Supporters: React.FC = () => {
                     key={index} 
                     className="hover:bg-gray-50 transition-colors"
                   >
-                    <td className="py-3 px-6 border-b border-gray-100 font-medium text-gray-800 relative">
+                    <td className="py-4 px-6 border-b border-gray-100 font-medium text-gray-800 relative">
                       {supporter.name}
-                      <div className="absolute top-1/2 right-0 w-px h-4/5 bg-gray-300 bg-opacity-30 transform -translate-y-1/2"></div>
+                      <div className="absolute top-1/2 right-0 w-px h-4/5 bg-gray-200 bg-opacity-40 transform -translate-y-1/2"></div>
                     </td>
-                    <td className="py-3 px-6 border-b border-gray-100 text-gray-600 leading-relaxed text-sm">
+                    <td className="py-4 px-6 border-b border-gray-100 text-gray-600 leading-relaxed text-sm">
                       {supporter.role}
                     </td>
                   </tr>
