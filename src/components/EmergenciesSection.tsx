@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { AlertCircle, AlertTriangle, Heart, TrendingUp, ShieldAlert } from 'lucide-react';
+import { TrendingUp, AlertTriangle, ShieldAlert, Heart } from 'lucide-react';
 
 const EmergenciesSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -77,11 +77,11 @@ const EmergenciesSection: React.FC = () => {
                 className="list-item opacity-0 translate-x-[-100px] transition-all duration-700 ease-in-out bg-white rounded-lg p-6 shadow-md border border-gray-100 flex flex-col items-start w-full h-full"
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <div className="bg-health-50 p-3 rounded-full mb-5">
+                <div className="bg-health-50 p-3 rounded-full mb-4">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-900">{item.title}</h3>
-                <p className="text-gray-600 text-left">{item.description}</p>
+                <p className="text-gray-600 text-sm">{item.description}</p>
               </div>
             ))}
           </div>
