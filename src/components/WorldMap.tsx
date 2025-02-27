@@ -78,10 +78,10 @@ const WorldMap: React.FC = () => {
           </div>
           
           <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
-            <div className="p-6 bg-blue-light flex flex-col items-center justify-center">
+            <div className="p-6 bg-blue-light bg-blue.light bg-[#DFEAF3] flex flex-col items-center justify-center">
               <div className="relative w-full max-w-4xl mx-auto">
                 <img 
-                  src="/lovable-uploads/b45acc37-13e4-44f0-8385-7ff3683eae3d.png"
+                  src="/lovable-uploads/b408b790-fa2b-4c56-bd5b-5418c62bf351.png"
                   alt="Mapa mundial mostrando CDCs em diferentes países"
                   className="w-full h-auto object-contain rounded-lg"
                 />
@@ -96,7 +96,7 @@ const WorldMap: React.FC = () => {
                 {cdcs.map((cdc, index) => (
                   <div 
                     key={index}
-                    className="p-4 border border-gray-200 rounded-lg hover:bg-blue-light transition-colors"
+                    className="p-4 border border-gray-200 rounded-lg hover:bg-[#DFEAF3] transition-colors"
                   >
                     <div className="flex flex-col md:flex-row md:items-center">
                       <div className="font-semibold text-salmon md:w-1/4 mb-2 md:mb-0">
