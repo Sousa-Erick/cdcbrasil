@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Youtube, Instagram, X, ChevronRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Youtube, Instagram, X, ChevronRight, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (

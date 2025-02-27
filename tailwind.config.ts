@@ -63,7 +63,33 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Atualizada paleta de cores conforme especificação
+				// Paleta de cores do Canny
+				indigo: {
+					50: '#eef2ff',
+					100: '#e0e7ff',
+					200: '#c7d2fe',
+					300: '#a5b4fc',
+					400: '#818cf8',
+					500: '#6366f1',
+					600: '#4f46e5',
+					700: '#4338ca',
+					800: '#3730a3',
+					900: '#312e81',
+					950: '#1e1b4b',
+				},
+				purple: {
+					50: '#faf5ff',
+					100: '#f3e8ff',
+					200: '#e9d5ff',
+					300: '#d8b4fe',
+					400: '#c084fc',
+					500: '#a855f7',
+					600: '#9333ea',
+					700: '#7e22ce',
+					800: '#6b21a8',
+					900: '#581c87',
+					950: '#3b0764',
+				},
 				health: {
 					500: '#ED5B61', // Vermelho principal
 					600: '#ED5B61', // Mantido igual para compatibilidade
@@ -83,6 +109,12 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			boxShadow: {
+				'canny-sm': '0 2px 8px rgba(0, 0, 0, 0.05)',
+				'canny-md': '0 4px 20px rgba(0, 0, 0, 0.08)',
+				'canny-lg': '0 8px 30px rgba(0, 0, 0, 0.12)',
+				'canny-xl': '0 15px 50px rgba(0, 0, 0, 0.15)',
 			},
 			keyframes: {
 				'accordion-down': {
