@@ -1,155 +1,160 @@
 
-import React, { useEffect, useRef } from 'react';
-import { Check, X, FileText, AlertTriangle, Shield } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Check, X } from 'lucide-react';
 
 const Definition: React.FC = () => {
-  const isItemsRef = useRef<HTMLUListElement>(null);
-  const isNotItemsRef = useRef<HTMLUListElement>(null);
+  const [activeTab, setActiveTab] = useState<'is' | 'isNot'>('is');
+  const sectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const delay = 50;
-          const items = entry.target.querySelectorAll('li');
-          items.forEach((item, index) => {
-            setTimeout(() => {
-              item.classList.add('opacity-100', 'translate-y-0');
-              item.classList.remove('opacity-0', 'translate-y-4');
-            }, index * delay);
-          });
-        }
-      });
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-    const observer = new IntersectionObserver(observerCallback, { threshold: 0.1 });
-
-    if (isItemsRef.current) observer.observe(isItemsRef.current);
-    if (isNotItemsRef.current) observer.observe(isNotItemsRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => {
-      observer.disconnect();
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
     };
   }, []);
 
-  const isItems = [
-    "Uma instituição com autonomia técnica e científica",
-    "Um centro de prevenção e controle de doenças",
-    "Um órgão de vigilância e resposta rápida a ameaças",
-    "Uma estrutura de coordenação nacional em saúde pública",
-    "Um centro de excelência em pesquisa epidemiológica"
+  const whatIs = [
+    "Uma instituição de Estado que fortalece o SUS",
+    "Um centro de referência em prevenção e controle de doenças",
+    "Uma fonte confiável de informações para a população",
+    "Um órgão articulador entre diferentes setores da saúde",
+    "Uma instituição de pesquisa e desenvolvimento científico"
   ];
 
-  const isNotItems = [
-    "Uma duplicação de estruturas já existentes no SUS",
-    "Uma instituição subordinada a interesses políticos",
-    "Um órgão sem coordenação com estados e municípios",
-    "Um centro com atuação limitada a doenças específicas",
-    "Uma instituição sem independência científica"
+  const whatIsNot = [
+    "Uma substituição para as estruturas atuais do SUS",
+    "Um órgão burocrático que dificulta a resposta às emergências",
+    "Uma instituição de atuação apenas durante crises",
+    "Um centro isolado, sem integração com outros órgãos",
+    "Uma entidade sem embasamento científico em suas ações"
   ];
 
   return (
-    <section id="definition" className="py-16 md:py-20 bg-gray-50">
+    <section id="definition" className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-xl mx-auto text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">O que será o CDC Brasil</h2>
-          <p className="text-gray-600">
-            Uma instituição autônoma focada na proteção da saúde da população brasileira,
-            com base em evidências científicas e coordenação nacional.
+        <div 
+          ref={sectionRef} 
+          className="max-w-3xl mx-auto opacity-0 translate-y-8 transition-all duration-700"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 text-center">
+            O Que É e O Que Não É
+          </h2>
+          
+          <p className="text-gray-600 mb-8 text-center">
+            É importante entender claramente o papel do Centro Brasileiro 
+            de Prevenção e Controle de Doenças no sistema de saúde.
           </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg p-6 shadow-md animate-fade-in">
-            <h3 className="text-xl font-bold mb-6 text-health-600 flex items-center">
-              <Check className="h-6 w-6 mr-2" /> O que somos
-            </h3>
-            
-            <ul ref={isItemsRef} className="space-y-4">
-              {isItems.map((item, index) => (
-                <li 
-                  key={index} 
-                  className="flex opacity-0 translate-y-4 transition-all duration-300"
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <div className="mr-3 mt-1 flex-shrink-0">
-                    <div className="h-5 w-5 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Check className="h-3 w-3 text-blue-600" />
-                    </div>
-                  </div>
-                  <span className="text-gray-700">{item}</span>
-                </li>
-              ))}
-            </ul>
+          
+          {/* Tabs para mobile */}
+          <div className="mb-6 sm:hidden">
+            <div className="flex rounded-lg overflow-hidden border border-gray-200">
+              <button
+                className={`flex-1 py-3 px-4 text-sm font-medium ${
+                  activeTab === 'is' 
+                    ? 'bg-indigo-600 text-white' 
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+                onClick={() => setActiveTab('is')}
+              >
+                O Que É
+              </button>
+              <button
+                className={`flex-1 py-3 px-4 text-sm font-medium ${
+                  activeTab === 'isNot' 
+                    ? 'bg-indigo-600 text-white' 
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+                onClick={() => setActiveTab('isNot')}
+              >
+                O Que Não É
+              </button>
+            </div>
           </div>
           
-          <div className="bg-white rounded-lg p-6 shadow-md animate-fade-in" style={{ animationDelay: '100ms' }}>
-            <h3 className="text-xl font-bold mb-6 text-health-600 flex items-center">
-              <X className="h-6 w-6 mr-2" /> O que não somos
-            </h3>
+          {/* Conteúdo para mobile (tabs) */}
+          <div className="sm:hidden">
+            <div className={activeTab === 'is' ? 'block' : 'hidden'}>
+              <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                <h3 className="text-xl font-semibold mb-4 text-green-600 flex items-center">
+                  <Check className="h-5 w-5 mr-2" /> O Que É
+                </h3>
+                
+                <ul className="space-y-4">
+                  {whatIs.map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="h-5 w-5 mr-3 mt-0.5 text-green-600 flex-shrink-0" />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             
-            <ul ref={isNotItemsRef} className="space-y-4">
-              {isNotItems.map((item, index) => (
-                <li 
-                  key={index} 
-                  className="flex opacity-0 translate-y-4 transition-all duration-300"
-                  style={{ transitionDelay: `${(index + 5) * 100}ms` }}
-                >
-                  <div className="mr-3 mt-1 flex-shrink-0">
-                    <div className="h-5 w-5 rounded-full bg-health-100 flex items-center justify-center">
-                      <X className="h-3 w-3 text-health-600" />
-                    </div>
-                  </div>
-                  <span className="text-gray-700">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        
-        <div className="mt-12 md:mt-16 max-w-4xl mx-auto bg-white rounded-lg p-6 shadow-md">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Preparo para enfrentar epidemias e pandemias</h3>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              O CDC Brasil será uma instituição preparada para detectar, prevenir e responder a emergências epidemiológicas e pandêmicas, coordenando ações em todo o território nacional.
-            </p>
+            <div className={activeTab === 'isNot' ? 'block' : 'hidden'}>
+              <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+                <h3 className="text-xl font-semibold mb-4 text-red-600 flex items-center">
+                  <X className="h-5 w-5 mr-2" /> O Que Não É
+                </h3>
+                
+                <ul className="space-y-4">
+                  {whatIsNot.map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <X className="h-5 w-5 mr-3 mt-0.5 text-red-600 flex-shrink-0" />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-4 mt-8">
-            <div className="bg-gray-50 p-5 rounded-lg">
-              <div className="flex items-center mb-3">
-                <div className="bg-health-100 p-2 rounded-full mr-3">
-                  <AlertTriangle className="h-5 w-5 text-health-600" />
-                </div>
-                <h4 className="font-medium">Detecção precoce</h4>
-              </div>
-              <p className="text-sm text-gray-600">
-                Sistemas de vigilância para identificação rápida de surtos e epidemias.
-              </p>
+          {/* Conteúdo para desktop (duas colunas) */}
+          <div className="hidden sm:grid sm:grid-cols-2 sm:gap-6">
+            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+              <h3 className="text-xl font-semibold mb-4 text-green-600 flex items-center">
+                <Check className="h-5 w-5 mr-2" /> O Que É
+              </h3>
+              
+              <ul className="space-y-4">
+                {whatIs.map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <Check className="h-5 w-5 mr-3 mt-0.5 text-green-600 flex-shrink-0" />
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
             
-            <div className="bg-gray-50 p-5 rounded-lg">
-              <div className="flex items-center mb-3">
-                <div className="bg-health-100 p-2 rounded-full mr-3">
-                  <Shield className="h-5 w-5 text-health-600" />
-                </div>
-                <h4 className="font-medium">Resposta coordenada</h4>
-              </div>
-              <p className="text-sm text-gray-600">
-                Mobilização eficiente de recursos e equipes para contenção de ameaças.
-              </p>
-            </div>
-            
-            <div className="bg-gray-50 p-5 rounded-lg">
-              <div className="flex items-center mb-3">
-                <div className="bg-health-100 p-2 rounded-full mr-3">
-                  <FileText className="h-5 w-5 text-health-600" />
-                </div>
-                <h4 className="font-medium">Diretrizes baseadas em evidências</h4>
-              </div>
-              <p className="text-sm text-gray-600">
-                Protocolos e recomendações fundamentados nos mais recentes conhecimentos científicos.
-              </p>
+            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+              <h3 className="text-xl font-semibold mb-4 text-red-600 flex items-center">
+                <X className="h-5 w-5 mr-2" /> O Que Não É
+              </h3>
+              
+              <ul className="space-y-4">
+                {whatIsNot.map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <X className="h-5 w-5 mr-3 mt-0.5 text-red-600 flex-shrink-0" />
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

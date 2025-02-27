@@ -1,7 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { X, ChevronRight } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { X } from 'lucide-react';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -9,110 +8,124 @@ interface MobileMenuProps {
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
+  // Close menu when ESC key is pressed
   useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+    
+    window.addEventListener('keydown', handleEsc);
+    
+    // Prevent scrolling when menu is open
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
     }
-
+    
     return () => {
-      document.body.style.overflow = 'auto';
+      window.removeEventListener('keydown', handleEsc);
+      document.body.style.overflow = '';
     };
-  }, [isOpen]);
-
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      // Atualiza a URL sem causar navegação
-      window.history.pushState(null, '', `#${sectionId}`);
-      // Fecha o menu após clicar
-      onClose();
-    }
-  };
-
-  // Para animação e acessibilidade
-  useEffect(() => {
-    function handleEscapeKey(event: KeyboardEvent) {
-      if (event.key === 'Escape' && isOpen) {
-        onClose();
-      }
-    }
-
-    document.addEventListener('keydown', handleEscapeKey);
-    return () => document.removeEventListener('keydown', handleEscapeKey);
   }, [isOpen, onClose]);
 
+  const handleLinkClick = (sectionId: string) => {
+    onClose();
+    
+    // Small delay to allow menu to close before scrolling
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 300);
+  };
+
   return (
-    <>
-      {/* Overlay */}
-      <div
-        className={cn(
-          "fixed inset-0 z-[200] bg-black/50 backdrop-blur-sm transition-opacity duration-300",
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        )}
-        aria-hidden={!isOpen}
-        onClick={onClose}
+    <div 
+      className={`fixed inset-0 bg-gray-800 bg-opacity-50 z-50 transition-opacity duration-300 ${
+        isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      }`}
+      onClick={onClose}
+    >
+      <div 
+        className={`fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        onClick={(e) => e.stopPropagation()}
       >
-        {/* Menu content */}
-        <div 
-          className={cn(
-            "fixed top-0 right-0 h-full w-[85%] max-w-[300px] z-[201] bg-white shadow-xl transition-transform duration-300 ease-in-out transform",
-            isOpen ? "translate-x-0" : "translate-x-full"
-          )}
-          onClick={e => e.stopPropagation()}
-        >
-          {/* Header */}
-          <div className="flex justify-between items-center p-4 border-b border-gray-200">
-            <div>
-              <img 
-                src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
-                alt="Instituto Todos pela Saúde"
-                className="h-8"
-              />
-            </div>
-            <button 
-              className="p-2 hover:bg-gray-100 rounded-full"
-              onClick={onClose}
-              aria-label="Fechar menu"
-            >
-              <X className="h-5 w-5 text-gray-700" />
-            </button>
-          </div>
-          
-          {/* Menu items */}
-          <div className="overflow-y-auto h-[calc(100%-60px)]">
-            <nav className="py-2">
-              <ul>
-                {[
-                  { href: "#emergencies", id: "emergencies", label: "Contexto" },
-                  { href: "#strategies", id: "strategies", label: "Estratégias" },
-                  { href: "#characteristics", id: "characteristics", label: "Características" },
-                  { href: "#principles-directives", id: "principles-directives", label: "Princípios" },
-                  { href: "#what-is", id: "what-is", label: "Proposta" },
-                  { href: "#documents", id: "documents", label: "Documentos" },
-                  { href: "#news-section", id: "news-section", label: "Notícias" },
-                  { href: "#world-map", id: "world-map", label: "CDCs pelo mundo" }
-                ].map((item, index) => (
-                  <li key={index}>
-                    <a 
-                      href={item.href} 
-                      className="flex items-center justify-between px-4 py-3 text-gray-800 hover:bg-gray-50 active:bg-gray-100 border-b border-gray-100"
-                      onClick={(e) => handleLinkClick(e, item.id)}
-                    >
-                      <span className="text-[15px] font-medium">{item.label}</span>
-                      <ChevronRight className="h-4 w-4 text-gray-400" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
+        <div className="p-5 flex justify-between items-center border-b">
+          <h2 className="text-xl font-bold text-gray-800">Menu</h2>
+          <button 
+            onClick={onClose}
+            className="p-2 rounded-md hover:bg-gray-100 transition-colors"
+            aria-label="Fechar menu"
+          >
+            <X className="h-6 w-6 text-gray-700" />
+          </button>
+        </div>
+        
+        <nav className="py-6 px-5 space-y-4">
+          <a 
+            href="#hero" 
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            onClick={() => handleLinkClick('hero')}
+          >
+            Início
+          </a>
+          <a 
+            href="#context" 
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            onClick={() => handleLinkClick('context')}
+          >
+            Por que Precisamos?
+          </a>
+          <a 
+            href="#characteristics" 
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            onClick={() => handleLinkClick('characteristics')}
+          >
+            Características
+          </a>
+          <a 
+            href="#supporters" 
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            onClick={() => handleLinkClick('supporters')}
+          >
+            Apoio
+          </a>
+          <a 
+            href="#materials" 
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            onClick={() => handleLinkClick('materials')}
+          >
+            Materiais
+          </a>
+          <a 
+            href="#news" 
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            onClick={() => handleLinkClick('news')}
+          >
+            Notícias
+          </a>
+          <a 
+            href="#contact" 
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            onClick={() => handleLinkClick('contact')}
+          >
+            Contato
+          </a>
+        </nav>
+        
+        <div className="absolute bottom-0 left-0 right-0 p-5 border-t">
+          <button className="w-full py-3 px-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+            Apoie a Proposta
+          </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
