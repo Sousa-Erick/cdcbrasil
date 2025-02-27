@@ -122,7 +122,7 @@ const CharacteristicsSection: React.FC = () => {
                   className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2"
                 >
                   <div className="bg-health-600 text-white rounded-lg overflow-hidden shadow-md h-full">
-                    <div className="p-8">
+                    <div className="p-8 flex flex-col items-center text-center">
                       <div className="rounded-full bg-white bg-opacity-20 p-4 w-16 h-16 flex items-center justify-center mb-6">
                         {item.icon}
                       </div>
