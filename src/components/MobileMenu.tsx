@@ -63,7 +63,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           
           {/* Cabeçalho do menu */}
           <div className="flex justify-between items-center p-4 border-b">
-            <a href="https://itps.org.br" target="_blank" rel="noopener noreferrer">
+            <a href="/" className="block">
               <img 
                 src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
                 alt="Instituto Todos pela Saúde"

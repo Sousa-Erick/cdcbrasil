@@ -30,7 +30,7 @@ const Header: React.FC = () => {
       }`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center">
-            <a href="https://itps.org.br" target="_blank" rel="noopener noreferrer">
+            <a href="/" className="block">
               <img 
                 src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
                 alt="Instituto Todos pela Saúde"
