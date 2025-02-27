@@ -24,12 +24,14 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="flex flex-col md:flex-row md:justify-between">
           {/* Logo sem texto */}
-          <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 md:max-w-[180px]">
-            <img 
-              src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
-              alt="Logo"
-              className="h-12 md:h-16"
-            />
+          <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 md:w-[200px] pr-8">
+            <div className="py-2">
+              <img 
+                src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
+                alt="Logo"
+                className="h-16 md:h-20"
+              />
+            </div>
           </div>
           
           {/* Links de navegação - alinhados com o cabeçalho */}
