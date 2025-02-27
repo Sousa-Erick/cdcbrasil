@@ -15,12 +15,12 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" className="pt-20 pb-12 md:pt-32 md:pb-16 bg-white min-h-[90vh] flex flex-col justify-center relative">
+    <section id="hero" className="pt-20 pb-12 md:pt-28 md:pb-16 figma-hero min-h-[90vh] flex flex-col justify-center relative">
       <div className="container mx-auto px-4 md:px-8 flex flex-col h-full">
         <div className="flex-grow flex flex-col justify-center items-center text-center mx-auto">
           <h1 
             className={cn(
-              "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight text-blue-700 transition-all duration-700 ease-in-out max-w-4xl",
+              "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight figma-heading transition-all duration-700 ease-in-out max-w-4xl",
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             )}
           >
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           
           <p 
             className={cn(
-              "text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mb-8 md:mb-12 transition-all duration-700 delay-300 ease-in-out",
+              "text-base sm:text-lg md:text-xl figma-text max-w-2xl mb-8 md:mb-12 transition-all duration-700 delay-300 ease-in-out",
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             )}
           >
@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
           )}>
             <a 
               href="#documents" 
-              className="bg-health-600 hover:bg-health-700 text-white py-3 px-6 rounded-lg font-medium transition-colors shadow-md"
+              className="figma-button hover:shadow-md"
             >
               Conheça a proposta
             </a>

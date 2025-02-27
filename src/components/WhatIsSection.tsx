@@ -62,18 +62,18 @@ const WhatIsSection: React.FC = () => {
   ];
 
   return (
-    <section id="what-is" className="py-16 md:py-20 bg-white">
+    <section id="what-is" className="figma-section bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-xl mx-auto text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">O que é, o que não é</h2>
-          <p className="text-gray-600">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 figma-heading">O que é, o que não é</h2>
+          <p className="figma-text">
             Entenda a natureza e os limites da proposta para o Centro Brasileiro de Prevenção e Controle de Doenças.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="bg-white rounded-lg p-6 shadow-md">
-            <h3 className="text-xl font-bold mb-6 text-health-600 flex items-center">
+          <div className="figma-card">
+            <h3 className="text-xl font-bold mb-6 text-[#0067A0] flex items-center">
               <CheckCircle className="h-6 w-6 mr-2" /> A proposta prevê que o novo centro será:
             </h3>
             
@@ -88,14 +88,14 @@ const WhatIsSection: React.FC = () => {
                       <CheckCircle className="h-3 w-3 text-green-600" />
                     </div>
                   </div>
-                  <span className="text-gray-700 text-sm md:text-base">{item}</span>
+                  <span className="figma-text text-sm md:text-base">{item}</span>
                 </div>
               ))}
             </div>
           </div>
           
-          <div className="bg-white rounded-lg p-6 shadow-md">
-            <h3 className="text-xl font-bold mb-6 text-health-600 flex items-center">
+          <div className="figma-card">
+            <h3 className="text-xl font-bold mb-6 text-[#ED4C13] flex items-center">
               <XCircle className="h-6 w-6 mr-2" /> A proposta prevê que o novo centro não será:
             </h3>
             
@@ -110,7 +110,7 @@ const WhatIsSection: React.FC = () => {
                       <XCircle className="h-3 w-3 text-red-600" />
                     </div>
                   </div>
-                  <span className="text-gray-700 text-sm md:text-base">{item}</span>
+                  <span className="figma-text text-sm md:text-base">{item}</span>
                 </div>
               ))}
             </div>

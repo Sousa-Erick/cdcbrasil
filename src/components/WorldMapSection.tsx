@@ -81,21 +81,21 @@ const WorldMapSection: React.FC = () => {
   ];
 
   return (
-    <section id="world-map" ref={sectionRef} className="py-16 md:py-20 bg-gray-50">
+    <section id="world-map" ref={sectionRef} className="figma-section bg-[#F6F9FC]">
       <div className="container mx-auto px-4">
         <div className="max-w-xl mx-auto text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Mapa</h2>
-          <p className="text-gray-600">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 figma-heading">Mapa</h2>
+          <p className="figma-text">
             CDCs pelo mundo: conheça instituições similares em outros países e como 
             contribuem para a saúde pública global.
           </p>
         </div>
         
         <div className="mb-12 relative">
-          <div className="rounded-lg overflow-hidden bg-blue-100 p-4 max-w-5xl mx-auto">
+          <div className="rounded-lg overflow-hidden bg-[#E5F0F8] p-4 max-w-5xl mx-auto">
             <div className="aspect-video relative">
               <div className="absolute inset-0 flex items-center justify-center">
-                <Globe className="h-16 w-16 text-blue-300" />
+                <Globe className="h-16 w-16 text-[#0067A0] opacity-50" />
                 <span className="sr-only">Mapa mundial de CDCs</span>
               </div>
               <img 
@@ -116,7 +116,7 @@ const WorldMapSection: React.FC = () => {
                     }}
                   >
                     <div className="relative group">
-                      <MapPin className="h-6 w-6 text-health-600 animate-pulse" />
+                      <MapPin className="h-6 w-6 text-[#ED4C13] animate-pulse" />
                       <div className="hidden group-hover:block absolute left-1/2 bottom-full mb-2 -translate-x-1/2 bg-white p-2 rounded shadow-lg z-10 w-48">
                         <p className="font-bold text-sm">{cdc.name} - {cdc.country}</p>
                         <p className="text-xs text-gray-600">Fundado em {cdc.year}</p>
@@ -133,18 +133,18 @@ const WorldMapSection: React.FC = () => {
           {cdcs.map((cdc, index) => (
             <div 
               key={index} 
-              className="map-item opacity-0 translate-y-4 transition-all duration-500 bg-white rounded-lg p-5 shadow-sm"
+              className="map-item opacity-0 translate-y-4 transition-all duration-500 figma-card"
             >
               <div className="flex items-center mb-3">
-                <div className="p-2 bg-blue-100 rounded-full mr-3">
-                  <Globe className="h-5 w-5 text-blue-600" />
+                <div className="p-2 bg-[#E5F0F8] rounded-full mr-3">
+                  <Globe className="h-5 w-5 text-[#0067A0]" />
                 </div>
                 <h3 className="font-semibold">{cdc.name}</h3>
               </div>
               <div>
-                <p className="text-sm text-gray-700 mb-1"><span className="font-medium">País:</span> {cdc.country}</p>
-                <p className="text-sm text-gray-700 mb-1"><span className="font-medium">Fundação:</span> {cdc.year}</p>
-                <p className="text-sm text-gray-700">{cdc.description}</p>
+                <p className="text-sm figma-text mb-1"><span className="font-medium">País:</span> {cdc.country}</p>
+                <p className="text-sm figma-text mb-1"><span className="font-medium">Fundação:</span> {cdc.year}</p>
+                <p className="text-sm figma-text">{cdc.description}</p>
               </div>
             </div>
           ))}

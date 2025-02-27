@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -93,12 +93,14 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: 'Roboto', sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-sans font-medium tracking-tight;
+    font-family: 'Roboto', sans-serif;
   }
 
   h2 {
@@ -231,7 +233,6 @@ html {
 
 /* Font settings */
 body {
-  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -361,4 +362,43 @@ body {
   .container {
     @apply px-4;
   }
+}
+
+/* Estilos específicos do design do Figma */
+.figma-button {
+  @apply py-3 px-5 rounded-lg font-medium transition-all duration-300;
+  background-color: #0067A0;
+  color: white;
+}
+
+.figma-button:hover {
+  background-color: #00558a;
+}
+
+.figma-hero {
+  background-color: #F6F9FC;
+}
+
+.figma-section {
+  @apply py-12 md:py-16;
+}
+
+.figma-card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-100 p-5;
+}
+
+.figma-heading {
+  color: #0067A0;
+}
+
+.figma-subheading {
+  color: #333333;
+}
+
+.figma-text {
+  color: #4A4A4A;
+}
+
+.figma-highlight {
+  color: #ED4C13;
 }
