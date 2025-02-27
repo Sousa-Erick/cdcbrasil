@@ -36,9 +36,6 @@ const Header: React.FC = () => {
               className="h-12"
             />
           </a>
-          <div className="hidden md:block ml-4">
-            <h1 className="text-blue-700 text-lg font-semibold">Centro Brasileiro de Prevenção e Controle de Doenças</h1>
-          </div>
         </div>
         
         <div className="flex items-center">
