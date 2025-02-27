@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 
 const Header: React.FC = () => {
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
         ? 'bg-white bg-opacity-95 backdrop-blur-md shadow-sm py-3' 
         : 'bg-white py-4'
     }`}>
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center">
           <a href="https://itps.org.br" target="_blank" rel="noopener noreferrer">
             <img 
@@ -40,39 +40,26 @@ const Header: React.FC = () => {
         
         <div className="flex items-center">
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-4 lg:space-x-6 mr-6 lg:mr-10">
-            <a href="#emergencies" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
+          <nav className="hidden md:flex space-x-4 lg:space-x-6">
+            <a href="#emergencies" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Contexto
             </a>
-            <a href="#strategies" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
+            <a href="#strategies" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Estratégias
             </a>
-            <a href="#characteristics" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
+            <a href="#characteristics" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Características
             </a>
-            <a href="#principles-directives" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
+            <a href="#principles-directives" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Princípios
             </a>
-            <a href="#what-is" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
+            <a href="#what-is" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Proposta
             </a>
-            <a href="#documents" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
+            <a href="#documents" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Documentos
             </a>
           </nav>
-          
-          {/* Social Media Icons - Desktop */}
-          <div className="hidden md:flex space-x-4">
-            <a href="#" className="text-health-600 hover:text-health-800 transition-colors">
-              <Instagram className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-health-600 hover:text-health-800 transition-colors">
-              <Facebook className="h-5 w-5" />
-            </a>
-            <a href="#" className="text-health-600 hover:text-health-800 transition-colors">
-              <Linkedin className="h-5 w-5" />
-            </a>
-          </div>
           
           {/* Mobile Menu Button */}
           <button 

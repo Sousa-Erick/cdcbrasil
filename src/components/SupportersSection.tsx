@@ -11,9 +11,8 @@ interface Supporter {
 
 const SupportersSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const sliderRef = useRef<HTMLDivElement>(null);
-  
-  // Lista de apoiadores (dados simulados)
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
   const supporters: Supporter[] = [
     {
       id: "supporter-1",
@@ -58,8 +57,27 @@ const SupportersSection: React.FC = () => {
       prevIndex === 0 ? supporters.length - 1 : prevIndex - 1
     );
   };
+
+  // Setup autoplay
+  useEffect(() => {
+    if (isAutoPlay) {
+      autoPlayRef.current = setInterval(() => {
+        nextSlide();
+      }, 4000);
+    }
+    
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [isAutoPlay, activeIndex]);
   
-  // Para telas pequenas, mostra 1 card, para médias 2, para grandes 3
+  // Pause autoplay on hover
+  const pauseAutoPlay = () => setIsAutoPlay(false);
+  const resumeAutoPlay = () => setIsAutoPlay(true);
+  
+  // Calculate visible supporters
   const getVisibleSupporters = () => {
     const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
     let visibleCount = 1;
@@ -96,21 +114,25 @@ const SupportersSection: React.FC = () => {
   }, [activeIndex]);
   
   return (
-    <section id="supporters" className="py-16 md:py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-xl mx-auto text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Quem são as pessoas que apoiam a proposta</h2>
-          <p className="text-gray-600">
+    <section id="supporters" className="py-24 bg-white">
+      <div className="container mx-auto px-6 md:px-8">
+        <div className="max-w-xl mx-auto text-center mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Quem são as pessoas que apoiam a proposta</h2>
+          <p className="text-gray-600 px-4">
             Conheça os especialistas e autoridades que defendem a criação do 
             Centro Brasileiro de Prevenção e Controle de Doenças.
           </p>
         </div>
         
-        <div className="max-w-6xl mx-auto">
-          <div className="flex justify-between items-center mb-6">
+        <div 
+          className="max-w-6xl mx-auto relative"
+          onMouseEnter={pauseAutoPlay}
+          onMouseLeave={resumeAutoPlay}
+        >
+          <div className="flex justify-between items-center absolute top-1/2 -mt-4 left-0 right-0 z-10 px-4">
             <button 
               onClick={prevSlide}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              className="p-3 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors"
               aria-label="Anterior"
             >
               <ArrowLeft className="h-5 w-5 text-gray-700" />
@@ -118,26 +140,26 @@ const SupportersSection: React.FC = () => {
             
             <button 
               onClick={nextSlide}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              className="p-3 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors"
               aria-label="Próximo"
             >
               <ArrowRight className="h-5 w-5 text-gray-700" />
             </button>
           </div>
           
-          <div 
-            ref={sliderRef} 
-            className="overflow-hidden"
-          >
-            <div className="flex transition-all duration-500" style={{ transform: `translateX(0)` }}>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-                {visibleSupporters.map((supporter) => (
-                  <div 
-                    key={supporter.id}
-                    className="p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all"
-                  >
+          <div className="overflow-hidden px-4">
+            <div 
+              className="flex space-x-6 transition-all duration-700 ease-in-out" 
+            >
+              {visibleSupporters.map((supporter, index) => (
+                <div 
+                  key={`${supporter.id}-${index}`}
+                  className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2 animate-fadeInUp"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <div className="p-8 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1 duration-300 h-full">
                     <div className="flex flex-col items-center">
-                      <div className="w-24 h-24 rounded-full bg-gray-200 mb-4 overflow-hidden">
+                      <div className="w-28 h-28 rounded-full bg-gray-200 mb-6 overflow-hidden shadow-md">
                         {supporter.imageUrl ? (
                           <img 
                             src={supporter.imageUrl} 
@@ -146,30 +168,39 @@ const SupportersSection: React.FC = () => {
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center bg-blue-100">
-                            <User className="h-10 w-10 text-blue-500" />
+                            <User className="h-12 w-12 text-blue-500" />
                           </div>
                         )}
                       </div>
-                      <h3 className="text-lg font-semibold mb-1">{supporter.name}</h3>
+                      <h3 className="text-xl font-semibold mb-2 text-gray-900">{supporter.name}</h3>
                       <p className="text-gray-600 text-center">{supporter.role}</p>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
           
-          <div className="flex justify-center mt-6 space-x-2">
+          <div className="flex justify-center mt-8 space-x-2">
             {supporters.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full ${
+                className={`w-3 h-3 rounded-full transition-colors ${
                   index === activeIndex ? 'bg-health-600' : 'bg-gray-300'
                 }`}
                 aria-label={`Ir para slide ${index + 1}`}
               />
             ))}
+          </div>
+          
+          <div className="text-center mt-4">
+            <button 
+              onClick={() => setIsAutoPlay(!isAutoPlay)}
+              className="text-sm text-gray-500 hover:text-health-600 transition-colors"
+            >
+              {isAutoPlay ? 'Pausar reprodução automática' : 'Reprodução automática'}
+            </button>
           </div>
         </div>
       </div>

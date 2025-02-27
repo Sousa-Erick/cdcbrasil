@@ -1,16 +1,19 @@
 
-import React, { useEffect, useRef } from 'react';
-import { Check, FileText, Network, BookOpen } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Check, FileText, BookOpen } from 'lucide-react';
 
 const PrinciplesDirectives: React.FC = () => {
-  const principlesRef = useRef<HTMLDivElement>(null);
-  const directivesRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [activeTab, setActiveTab] = useState<'principles' | 'directives'>('principles');
   
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+            
+            // Animação para os itens internos
             const items = entry.target.querySelectorAll('.animate-item');
             items.forEach((item, index) => {
               setTimeout(() => {
@@ -24,12 +27,14 @@ const PrinciplesDirectives: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    if (principlesRef.current) observer.observe(principlesRef.current);
-    if (directivesRef.current) observer.observe(directivesRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => {
-      if (principlesRef.current) observer.unobserve(principlesRef.current);
-      if (directivesRef.current) observer.unobserve(directivesRef.current);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
     };
   }, []);
 
@@ -54,65 +59,96 @@ const PrinciplesDirectives: React.FC = () => {
   ];
 
   return (
-    <section id="principles-directives" className="py-16 md:py-20 bg-blue-600 text-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-xl mx-auto text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Princípios e diretrizes</h2>
-          <p className="text-white text-opacity-80">
+    <section id="principles-directives" ref={sectionRef} className="py-24 bg-white">
+      <div className="container mx-auto px-6 md:px-8">
+        <div className="max-w-xl mx-auto text-center mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Princípios e diretrizes</h2>
+          <p className="text-gray-600 px-4">
             Fundamentos que nortearão o funcionamento do Centro Brasileiro de Prevenção e Controle de Doenças.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <div ref={principlesRef} className="bg-white bg-opacity-10 rounded-lg p-6 border border-white border-opacity-20">
-            <div className="flex items-center mb-6">
-              <div className="rounded-full bg-white bg-opacity-20 p-3 mr-4">
-                <BookOpen className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold">Princípios</h3>
-            </div>
-            
-            <ul className="space-y-4">
-              {principles.map((principle, index) => (
-                <li 
-                  key={index} 
-                  className="animate-item opacity-0 translate-y-4 transition-all duration-300 flex"
-                >
-                  <div className="mr-3 mt-1 flex-shrink-0">
-                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
-                      <Check className="h-3 w-3 text-white" />
-                    </div>
-                  </div>
-                  <span className="text-white">{principle}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex rounded-md shadow-sm p-1 bg-gray-100">
+            <button
+              onClick={() => setActiveTab('principles')}
+              className={`px-6 py-3 rounded-md text-sm md:text-base font-medium transition-all ${
+                activeTab === 'principles'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
+              Princípios
+            </button>
+            <button
+              onClick={() => setActiveTab('directives')}
+              className={`px-6 py-3 rounded-md text-sm md:text-base font-medium transition-all ${
+                activeTab === 'directives'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
+              Diretrizes
+            </button>
           </div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto">
+          {activeTab === 'principles' && (
+            <div className="animate-fadeInRight bg-white rounded-lg p-8 shadow-md">
+              <div className="flex items-center mb-8">
+                <div className="rounded-full bg-blue-100 p-4 mr-5">
+                  <BookOpen className="h-6 w-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Princípios</h3>
+              </div>
+              
+              <ul className="space-y-6">
+                {principles.map((principle, index) => (
+                  <li 
+                    key={index} 
+                    className="animate-item opacity-0 translate-y-4 transition-all duration-500 flex"
+                    style={{ transitionDelay: `${index * 150}ms` }}
+                  >
+                    <div className="mr-4 mt-1 flex-shrink-0">
+                      <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center">
+                        <Check className="h-4 w-4 text-green-600" />
+                      </div>
+                    </div>
+                    <span className="text-gray-700 text-lg">{principle}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           
-          <div ref={directivesRef} className="bg-white bg-opacity-10 rounded-lg p-6 border border-white border-opacity-20">
-            <div className="flex items-center mb-6">
-              <div className="rounded-full bg-white bg-opacity-20 p-3 mr-4">
-                <FileText className="h-6 w-6 text-white" />
+          {activeTab === 'directives' && (
+            <div className="animate-fadeInLeft bg-white rounded-lg p-8 shadow-md">
+              <div className="flex items-center mb-8">
+                <div className="rounded-full bg-blue-100 p-4 mr-5">
+                  <FileText className="h-6 w-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Diretrizes</h3>
               </div>
-              <h3 className="text-xl font-bold">Diretrizes</h3>
-            </div>
-            
-            <ul className="space-y-4">
-              {directives.map((directive, index) => (
-                <li 
-                  key={index} 
-                  className="animate-item opacity-0 translate-y-4 transition-all duration-300 flex"
-                >
-                  <div className="mr-3 mt-1 flex-shrink-0">
-                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
-                      <Check className="h-3 w-3 text-white" />
+              
+              <ul className="space-y-5">
+                {directives.map((directive, index) => (
+                  <li 
+                    key={index} 
+                    className="animate-item opacity-0 translate-y-4 transition-all duration-500 flex"
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
+                    <div className="mr-4 mt-1 flex-shrink-0">
+                      <div className="h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center">
+                        <Check className="h-4 w-4 text-blue-600" />
+                      </div>
                     </div>
-                  </div>
-                  <span className="text-white text-sm md:text-base">{directive}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+                    <span className="text-gray-700">{directive}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </section>
