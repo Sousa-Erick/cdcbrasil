@@ -14,6 +14,16 @@ const Hero: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      // Atualiza a URL sem causar navegação
+      window.history.pushState(null, '', `#${sectionId}`);
+    }
+  };
+
   return (
     <section id="hero" className="pt-20 pb-12 md:pt-28 md:pb-16 figma-hero min-h-[90vh] flex flex-col justify-center relative">
       <div className="container mx-auto px-4 md:px-8 flex flex-col h-full">
@@ -43,6 +53,7 @@ const Hero: React.FC = () => {
             <a 
               href="#documents" 
               className="figma-button hover:shadow-md"
+              onClick={(e) => handleScrollToSection(e, 'documents')}
             >
               Conheça a proposta
             </a>
@@ -53,6 +64,7 @@ const Hero: React.FC = () => {
           <a 
             href="#emergencies" 
             className="inline-flex flex-col items-center text-gray-400 hover:text-gray-500 transition-colors"
+            onClick={(e) => handleScrollToSection(e, 'emergencies')}
           >
             <span className="text-sm font-medium mb-2">Deslize para saber mais</span>
             <ChevronDown className="h-5 w-5 animate-bounce" />

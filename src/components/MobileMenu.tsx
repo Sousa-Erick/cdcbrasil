@@ -21,8 +21,16 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
-  const handleLinkClick = () => {
-    onClose();
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      // Atualiza a URL sem causar navegação
+      window.history.pushState(null, '', `#${sectionId}`);
+      // Fecha o menu após clicar
+      onClose();
+    }
   };
 
   // Para animação e acessibilidade
@@ -79,20 +87,20 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             <nav className="py-2">
               <ul>
                 {[
-                  { href: "#emergencies", label: "Contexto" },
-                  { href: "#strategies", label: "Estratégias" },
-                  { href: "#characteristics", label: "Características" },
-                  { href: "#principles-directives", label: "Princípios" },
-                  { href: "#what-is", label: "Proposta" },
-                  { href: "#documents", label: "Documentos" },
-                  { href: "#news-section", label: "Notícias" },
-                  { href: "#world-map", label: "CDCs pelo mundo" }
+                  { href: "#emergencies", id: "emergencies", label: "Contexto" },
+                  { href: "#strategies", id: "strategies", label: "Estratégias" },
+                  { href: "#characteristics", id: "characteristics", label: "Características" },
+                  { href: "#principles-directives", id: "principles-directives", label: "Princípios" },
+                  { href: "#what-is", id: "what-is", label: "Proposta" },
+                  { href: "#documents", id: "documents", label: "Documentos" },
+                  { href: "#news-section", id: "news-section", label: "Notícias" },
+                  { href: "#world-map", id: "world-map", label: "CDCs pelo mundo" }
                 ].map((item, index) => (
                   <li key={index}>
                     <a 
                       href={item.href} 
                       className="flex items-center justify-between px-4 py-3 text-gray-800 hover:bg-gray-50 active:bg-gray-100 border-b border-gray-100"
-                      onClick={handleLinkClick}
+                      onClick={(e) => handleLinkClick(e, item.id)}
                     >
                       <span className="text-[15px] font-medium">{item.label}</span>
                       <ChevronRight className="h-4 w-4 text-gray-400" />

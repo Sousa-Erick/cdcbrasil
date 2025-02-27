@@ -21,6 +21,16 @@ const Header: React.FC = () => {
     };
   }, [scrolled]);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      // Atualiza a URL sem causar navegação
+      window.history.pushState(null, '', `#${sectionId}`);
+    }
+  };
+
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -30,7 +40,11 @@ const Header: React.FC = () => {
       }`}>
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
           <div className="flex items-center">
-            <a href="/" className="block">
+            <a 
+              href="#hero" 
+              className="block"
+              onClick={(e) => handleNavClick(e, 'hero')}
+            >
               <img 
                 src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
                 alt="Instituto Todos pela Saúde"
@@ -42,22 +56,46 @@ const Header: React.FC = () => {
           <div className="flex items-center">
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-1 lg:space-x-2">
-              <a href="#emergencies" className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm">
+              <a 
+                href="#emergencies" 
+                className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm"
+                onClick={(e) => handleNavClick(e, 'emergencies')}
+              >
                 Contexto
               </a>
-              <a href="#strategies" className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm">
+              <a 
+                href="#strategies" 
+                className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm"
+                onClick={(e) => handleNavClick(e, 'strategies')}
+              >
                 Estratégias
               </a>
-              <a href="#characteristics" className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm">
+              <a 
+                href="#characteristics" 
+                className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm"
+                onClick={(e) => handleNavClick(e, 'characteristics')}
+              >
                 Características
               </a>
-              <a href="#principles-directives" className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm">
+              <a 
+                href="#principles-directives" 
+                className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm"
+                onClick={(e) => handleNavClick(e, 'principles-directives')}
+              >
                 Princípios
               </a>
-              <a href="#what-is" className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm">
+              <a 
+                href="#what-is" 
+                className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm"
+                onClick={(e) => handleNavClick(e, 'what-is')}
+              >
                 Proposta
               </a>
-              <a href="#documents" className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm">
+              <a 
+                href="#documents" 
+                className="text-gray-800 hover:text-[#0067A0] transition-colors font-medium px-3 py-2 text-sm"
+                onClick={(e) => handleNavClick(e, 'documents')}
+              >
                 Documentos
               </a>
             </nav>
