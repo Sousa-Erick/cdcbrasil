@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { AlertTriangle, Virus } from 'lucide-react';
+import { AlertTriangle, Biohazard } from 'lucide-react';
 
 const EmergenciesSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -45,7 +45,7 @@ const EmergenciesSection: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="animation-element opacity-0 mb-12 text-center">
             <div className="inline-flex items-center justify-center p-3 bg-health-100 rounded-full mb-4">
-              <Virus className="h-6 w-6 text-health-600" />
+              <Biohazard className="h-6 w-6 text-health-600" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Emergências sanitárias enfrentadas pelo Brasil</h2>
           </div>
