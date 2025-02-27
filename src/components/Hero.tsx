@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             )}
           >
-            Por que o Brasil precisa de uma instituição para enfrentar as Emergências em Saúde?
+            Por que o Brasil precisa de uma instituição para enfrentar as Emergências em Saúde Pública?
           </h1>
           
           <p 
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
             )}
           >
             <a 
-              href="#features" 
+              href="#emergencies" 
               className="inline-flex items-center bg-health-600 hover:bg-health-700 text-white px-6 py-3 rounded-lg transition-all group"
             >
               <span className="mr-2">Saiba mais</span>
@@ -56,13 +56,13 @@ const Hero: React.FC = () => {
           <div className="max-w-xl mx-auto bg-transparent text-right hidden md:block">
             <p className="text-xl text-gray-800 leading-relaxed">
               Por que o Brasil precisa de uma instituição para 
-              enfrentar as Emergências em Saúde?
+              enfrentar as Emergências em Saúde Pública?
             </p>
           </div>
           
           <div className="mt-12 mb-8 flex justify-center animate-fade-in">
             <a 
-              href="#features" 
+              href="#emergencies" 
               className="animate-bounce inline-flex items-center flex-col text-gray-700 hover:text-health-600 transition-colors"
             >
               <span className="mb-2">Leia mais</span>

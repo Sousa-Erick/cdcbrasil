@@ -54,8 +54,44 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           <ul className="py-2">
             <li>
               <a 
-                href="#features" 
-                className="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-100 transition-colors"
+                href="#emergencies" 
+                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
+                onClick={handleLinkClick}
+              >
+                <span className="font-medium">Contexto</span>
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#strategies" 
+                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
+                onClick={handleLinkClick}
+              >
+                <span className="font-medium">Estratégias</span>
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#characteristics" 
+                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
+                onClick={handleLinkClick}
+              >
+                <span className="font-medium">Características</span>
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#principles-directives" 
+                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
+                onClick={handleLinkClick}
+              >
+                <span className="font-medium">Princípios</span>
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#what-is" 
+                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
                 onClick={handleLinkClick}
               >
                 <span className="font-medium">Proposta</span>
@@ -63,29 +99,29 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             </li>
             <li>
               <a 
-                href="#principles" 
-                className="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-100 transition-colors"
+                href="#documents" 
+                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
                 onClick={handleLinkClick}
               >
-                <span className="font-medium">Diretrizes</span>
+                <span className="font-medium">Documentos</span>
               </a>
             </li>
             <li>
               <a 
-                href="#world-cdcs" 
-                className="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-100 transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">Cenários</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#news" 
-                className="flex items-center px-4 py-4 text-gray-700 hover:bg-gray-100 transition-colors"
+                href="#news-section" 
+                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
                 onClick={handleLinkClick}
               >
                 <span className="font-medium">Notícias</span>
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#world-map" 
+                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
+                onClick={handleLinkClick}
+              >
+                <span className="font-medium">CDCs pelo mundo</span>
               </a>
             </li>
           </ul>

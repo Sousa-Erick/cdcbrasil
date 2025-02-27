@@ -2,14 +2,17 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import FeatureGrid from '../components/FeatureGrid';
-import Definition from '../components/Definition';
-import Principles from '../components/Principles';
-import Resources from '../components/Resources';
-import Map from '../components/Map';
+import EmergenciesSection from '../components/EmergenciesSection';
+import StrategiesSection from '../components/StrategiesSection';
+import CharacteristicsSection from '../components/CharacteristicsSection';
+import PrinciplesDirectives from '../components/PrinciplesDirectives';
+import WhatIsSection from '../components/WhatIsSection';
+import SupportersSection from '../components/SupportersSection';
+import DocumentsSection from '../components/DocumentsSection';
+import NewsSection from '../components/NewsSection';
+import WorldMapSection from '../components/WorldMapSection';
 import Footer from '../components/Footer';
 
-// Versão atualizada com smooth scroll
 const Index = () => {
   useEffect(() => {
     // Implementa smooth scroll para navegação interna
@@ -66,11 +69,15 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <FeatureGrid />
-        <Definition />
-        <Principles />
-        <Resources />
-        <Map />
+        <EmergenciesSection />
+        <StrategiesSection />
+        <CharacteristicsSection />
+        <PrinciplesDirectives />
+        <WhatIsSection />
+        <SupportersSection />
+        <DocumentsSection />
+        <NewsSection />
+        <WorldMapSection />
       </main>
       <Footer />
     </div>

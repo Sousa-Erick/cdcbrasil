@@ -40,31 +40,37 @@ const Header: React.FC = () => {
         
         <div className="flex items-center">
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-10 mr-10">
-            <a href="#features" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
+          <nav className="hidden md:flex space-x-4 lg:space-x-6 mr-6 lg:mr-10">
+            <a href="#emergencies" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
+              Contexto
+            </a>
+            <a href="#strategies" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
+              Estratégias
+            </a>
+            <a href="#characteristics" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
+              Características
+            </a>
+            <a href="#principles-directives" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
+              Princípios
+            </a>
+            <a href="#what-is" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
               Proposta
             </a>
-            <a href="#principles" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
-              Diretrizes
-            </a>
-            <a href="#world-cdcs" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
-              Cenários
-            </a>
-            <a href="#news" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-lg">
-              Notícias
+            <a href="#documents" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-2 py-1 text-sm lg:text-base">
+              Documentos
             </a>
           </nav>
           
           {/* Social Media Icons - Desktop */}
           <div className="hidden md:flex space-x-4">
             <a href="#" className="text-health-600 hover:text-health-800 transition-colors">
-              <Instagram className="h-6 w-6" />
+              <Instagram className="h-5 w-5" />
             </a>
             <a href="#" className="text-health-600 hover:text-health-800 transition-colors">
-              <Facebook className="h-6 w-6" />
+              <Facebook className="h-5 w-5" />
             </a>
             <a href="#" className="text-health-600 hover:text-health-800 transition-colors">
-              <Linkedin className="h-6 w-6" />
+              <Linkedin className="h-5 w-5" />
             </a>
           </div>
           
