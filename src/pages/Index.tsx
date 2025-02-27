@@ -2,15 +2,11 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import EmergenciesSection from '../components/EmergenciesSection';
-import StrategiesSection from '../components/StrategiesSection';
-import CharacteristicsSection from '../components/CharacteristicsSection';
-import PrinciplesDirectives from '../components/PrinciplesDirectives';
-import WhatIsSection from '../components/WhatIsSection';
-import SupportersSection from '../components/SupportersSection';
-import DocumentsSection from '../components/DocumentsSection';
-import NewsSection from '../components/NewsSection';
-import WorldMapSection from '../components/WorldMapSection';
+import ServicesSection from '../components/ServicesSection';
+import ProjectsSection from '../components/ProjectsSection';
+import TestimonialsSection from '../components/TestimonialsSection';
+import TeamSection from '../components/TeamSection';
+import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -81,15 +77,11 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <EmergenciesSection />
-        <StrategiesSection />
-        <CharacteristicsSection />
-        <PrinciplesDirectives />
-        <WhatIsSection />
-        <SupportersSection />
-        <DocumentsSection />
-        <NewsSection />
-        <WorldMapSection />
+        <ServicesSection />
+        <ProjectsSection />
+        <TestimonialsSection />
+        <TeamSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>
