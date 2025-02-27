@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, User } from 'lucide-react';
 
 const Supporters: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -198,17 +198,17 @@ const Supporters: React.FC = () => {
                   onTouchEnd={handleTouchEnd}
                 >
                   {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-                    <div key={slideIndex} className="min-w-full flex-shrink-0 flex gap-4">
+                    <div key={slideIndex} className="min-w-full flex-shrink-0 flex gap-6">
                       {supporters.slice(slideIndex * visibleSupporters, (slideIndex + 1) * visibleSupporters).map((supporter, idx) => (
                         <div 
                           key={idx} 
-                          className="flex-1 bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300"
+                          className="flex-1 bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center"
                         >
-                          <div className="mb-3 w-12 h-12 bg-blue-light rounded-full flex items-center justify-center">
-                            <span className="text-blue font-semibold text-lg">{supporter.name.charAt(0)}</span>
+                          <div className="mb-4 w-16 h-16 bg-blue-light rounded-full flex items-center justify-center overflow-hidden">
+                            <User className="h-8 w-8 text-blue" />
                           </div>
                           <h3 className="text-lg font-semibold mb-2 text-gray-800">{supporter.name}</h3>
-                          <p className="text-gray-600 text-sm">{supporter.role}</p>
+                          <p className="text-gray-600 text-sm leading-relaxed">{supporter.role}</p>
                         </div>
                       ))}
                     </div>
@@ -230,16 +230,14 @@ const Supporters: React.FC = () => {
                   {supporters.map((supporter, index) => (
                     <div 
                       key={index} 
-                      className="min-w-full flex-shrink-0 px-4"
+                      className="min-w-full flex-shrink-0 px-6"
                     >
-                      <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                        <div className="flex justify-center mb-4">
-                          <div className="w-16 h-16 bg-blue-light rounded-full flex items-center justify-center">
-                            <span className="text-blue font-semibold text-xl">{supporter.name.charAt(0)}</span>
-                          </div>
+                      <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center max-w-md mx-auto">
+                        <div className="mb-4 w-20 h-20 bg-blue-light rounded-full flex items-center justify-center overflow-hidden">
+                          <User className="h-10 w-10 text-blue" />
                         </div>
                         <h3 className="text-xl font-semibold mb-3 text-gray-800 text-center">{supporter.name}</h3>
-                        <p className="text-gray-600 text-sm text-center leading-relaxed">{supporter.role}</p>
+                        <p className="text-gray-600 text-sm text-center leading-relaxed max-w-xs">{supporter.role}</p>
                       </div>
                     </div>
                   ))}
