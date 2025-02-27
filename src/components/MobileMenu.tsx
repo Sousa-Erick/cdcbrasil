@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
-import { X, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { X, Instagram, Facebook, Linkedin, ChevronRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -24,15 +25,40 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     onClose();
   };
 
-  if (!isOpen) return null;
+  // Para animação e acessibilidade
+  useEffect(() => {
+    function handleEscapeKey(event: KeyboardEvent) {
+      if (event.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    }
+
+    document.addEventListener('keydown', handleEscapeKey);
+    return () => document.removeEventListener('keydown', handleEscapeKey);
+  }, [isOpen, onClose]);
 
   return (
-    <div 
-      className="fixed inset-0 z-[100] bg-black bg-opacity-50"
+    <div
+      className={cn(
+        "fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm transition-opacity duration-300",
+        isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+      )}
+      aria-hidden={!isOpen}
+      onClick={onClose}
     >
-      <div className="absolute inset-0" onClick={onClose} />
-      
-      <div className="relative h-full w-[80%] max-w-sm bg-white shadow-xl flex flex-col">
+      <div 
+        className={cn(
+          "fixed bottom-0 left-0 right-0 z-[101] bg-white rounded-t-2xl max-h-[85vh] overflow-hidden shadow-xl transition-transform duration-300 ease-in-out transform",
+          isOpen ? "translate-y-0" : "translate-y-full"
+        )}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Puxador visual para indicar que é arrastável */}
+        <div className="w-full flex justify-center pt-2 pb-1">
+          <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
+        </div>
+        
+        {/* Cabeçalho do menu */}
         <div className="flex justify-between items-center p-4 border-b">
           <a href="https://itps.org.br" target="_blank" rel="noopener noreferrer">
             <img 
@@ -50,97 +76,53 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
         
-        <nav className="flex-1 overflow-y-auto">
-          <ul className="py-2">
-            <li>
-              <a 
-                href="#emergencies" 
-                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">Contexto</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#strategies" 
-                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">Estratégias</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#characteristics" 
-                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">Características</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#principles-directives" 
-                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">Princípios</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#what-is" 
-                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">Proposta</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#documents" 
-                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">Documentos</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#news-section" 
-                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">Notícias</span>
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#world-map" 
-                className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors"
-                onClick={handleLinkClick}
-              >
-                <span className="font-medium">CDCs pelo mundo</span>
-              </a>
-            </li>
-          </ul>
+        {/* Conteúdo do menu com scroll */}
+        <div className="overflow-y-auto max-h-[calc(85vh-130px)]">
+          <nav className="pb-4">
+            <ul>
+              {[
+                { href: "#emergencies", label: "Contexto" },
+                { href: "#strategies", label: "Estratégias" },
+                { href: "#characteristics", label: "Características" },
+                { href: "#principles-directives", label: "Princípios" },
+                { href: "#what-is", label: "Proposta" },
+                { href: "#documents", label: "Documentos" },
+                { href: "#news-section", label: "Notícias" },
+                { href: "#world-map", label: "CDCs pelo mundo" }
+              ].map((item, index) => (
+                <li key={index}>
+                  <a 
+                    href={item.href} 
+                    className="flex items-center justify-between px-6 py-4 text-gray-800 hover:bg-gray-50 active:bg-gray-100 transition-colors border-b border-gray-100"
+                    onClick={handleLinkClick}
+                  >
+                    <span className="text-base font-medium">{item.label}</span>
+                    <ChevronRight className="h-5 w-5 text-gray-400" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
           
-          <div className="mt-4 px-4 py-4 border-t">
+          {/* Redes sociais */}
+          <div className="px-6 py-6 mt-2">
             <h3 className="text-sm font-medium text-gray-500 mb-4">Redes Sociais</h3>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-600 hover:text-health-600 transition-colors">
+              <a href="#" className="p-2 bg-gray-100 rounded-full text-gray-600 hover:text-health-600 hover:bg-health-50 transition-colors">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-health-600 transition-colors">
+              <a href="#" className="p-2 bg-gray-100 rounded-full text-gray-600 hover:text-health-600 hover:bg-health-50 transition-colors">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-health-600 transition-colors">
+              <a href="#" className="p-2 bg-gray-100 rounded-full text-gray-600 hover:text-health-600 hover:bg-health-50 transition-colors">
                 <Linkedin className="h-6 w-6" />
               </a>
             </div>
           </div>
-        </nav>
+          
+          {/* Área adicional para garantir scroll */}
+          <div className="h-safe-area-bottom"></div>
+        </div>
       </div>
     </div>
   );
