@@ -23,21 +23,13 @@ const Footer: React.FC = () => {
       {/* Conteúdo principal do rodapé */}
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="flex flex-col md:flex-row md:justify-between">
-          {/* Logo e nome */}
+          {/* Logo sem texto */}
           <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 md:max-w-[180px]">
-            <div className="flex items-center md:items-start">
-              <img 
-                src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
-                alt="Logo"
-                className="h-12 md:h-16"
-              />
-              <div className="text-blue-500 font-medium ml-2 md:mt-1">
-                <div className="text-lg">Instituto</div>
-                <div className="text-lg">Todos</div>
-                <div className="text-lg">pela</div>
-                <div className="text-lg">Saúde</div>
-              </div>
-            </div>
+            <img 
+              src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
+              alt="Logo"
+              className="h-12 md:h-16"
+            />
           </div>
           
           {/* Links de navegação - alinhados com o cabeçalho */}
