@@ -67,9 +67,9 @@ const CharacteristicsSection: React.FC = () => {
 
   // Calculate which slides to show based on screen size
   const getVisibleCards = () => {
-    // On mobile: 1 card, tablet: 2 cards, desktop: 3 cards
+    // On mobile: 1 card, tablet: 1 card (modified), desktop: 2 cards (modified - doubled width)
     const cardsToShow = typeof window !== 'undefined' ? 
-      window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3 : 3;
+      window.innerWidth < 768 ? 1 : 2 : 2;
     
     const cards = [];
     for (let i = 0; i < cardsToShow; i++) {
@@ -147,7 +147,7 @@ const CharacteristicsSection: React.FC = () => {
               {visibleCards.map((item, index) => (
                 <div 
                   key={index} 
-                  className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-2"
+                  className="flex-shrink-0 w-full md:w-1/2"
                 >
                   <div className="bg-health-600 text-white rounded-lg overflow-hidden shadow-md h-full">
                     <div className="p-6 md:p-8 flex flex-col items-center text-center">
@@ -169,19 +169,6 @@ const CharacteristicsSection: React.FC = () => {
             >
               <ChevronRight className="h-6 w-6 text-gray-700" />
             </button>
-          </div>
-          
-          <div className="flex justify-center mt-6 space-x-2">
-            {characteristics.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveSlide(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  index === activeSlide ? 'bg-health-600' : 'bg-gray-300'
-                }`}
-                aria-label={`Ir para slide ${index + 1}`}
-              />
-            ))}
           </div>
         </div>
       </div>
