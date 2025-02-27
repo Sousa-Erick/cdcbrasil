@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { AlertTriangle, Biohazard, Virus, Ambulance, Syringe, Droplets, Thermometer } from 'lucide-react';
+import { AlertTriangle, Biohazard, Ambulance, Syringe, Droplets, Thermometer, Bug } from 'lucide-react';
 
 const EmergenciesSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -38,11 +38,11 @@ const EmergenciesSection: React.FC = () => {
   const emergencies = [
     { name: "Aids", icon: <Biohazard className="h-5 w-5 text-health-500 mb-2" /> },
     { name: "Cólera", icon: <Droplets className="h-5 w-5 text-health-500 mb-2" /> },
-    { name: "Influenza H1N1", icon: <Virus className="h-5 w-5 text-health-500 mb-2" /> },
+    { name: "Influenza H1N1", icon: <Bug className="h-5 w-5 text-health-500 mb-2" /> },
     { name: "Dengue", icon: <Thermometer className="h-5 w-5 text-health-500 mb-2" /> },
-    { name: "Zika", icon: <Virus className="h-5 w-5 text-health-500 mb-2" /> },
+    { name: "Zika", icon: <Bug className="h-5 w-5 text-health-500 mb-2" /> },
     { name: "Febre amarela", icon: <Thermometer className="h-5 w-5 text-health-500 mb-2" /> },
-    { name: "Covid-19", icon: <Virus className="h-5 w-5 text-health-500 mb-2" /> },
+    { name: "Covid-19", icon: <Biohazard className="h-5 w-5 text-health-500 mb-2" /> },
   ];
 
   return (
