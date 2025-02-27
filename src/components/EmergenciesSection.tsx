@@ -78,9 +78,6 @@ const EmergenciesSection: React.FC = () => {
           
           <div className="animation-element opacity-0 transition-opacity duration-700 rounded-lg bg-blue-500 text-white p-8 md:p-10 shadow-md">
             <div className="flex flex-col md:flex-row md:items-start">
-              <div className="p-3 bg-white bg-opacity-20 rounded-full mb-4 md:mb-0 md:mr-6 flex-shrink-0 self-start">
-                <AlertTriangle className="h-10 w-10 text-[#FF8370]" />
-              </div>
               <div>
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-center md:text-left">Com a covid-19, o mundo viveu desafios sem precedentes</h3>
                 <p className="text-white text-opacity-90 mb-3 text-lg text-center md:text-left">
