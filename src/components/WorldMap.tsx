@@ -78,8 +78,17 @@ const WorldMap: React.FC = () => {
           </div>
           
           <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
-            <div className="p-6 bg-blue-light flex items-center justify-center">
-              <Globe className="h-24 w-24 text-blue" />
+            <div className="p-6 bg-blue-light flex flex-col items-center justify-center">
+              <div className="relative w-full max-w-4xl mx-auto">
+                <img 
+                  src="/lovable-uploads/b45acc37-13e4-44f0-8385-7ff3683eae3d.png"
+                  alt="Mapa mundial mostrando CDCs em diferentes países"
+                  className="w-full h-auto object-contain rounded-lg"
+                />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <Globe className="h-16 w-16 text-blue-500 opacity-30" />
+                </div>
+              </div>
             </div>
             
             <div className="p-6">
