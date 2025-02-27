@@ -74,6 +74,9 @@ export default {
 					600: '#2567AA', // Mantido igual para compatibilidade
 					700: '#15365D', // Azul mais escuro para destaques
 					800: '#102a4a', // Versão ainda mais escura
+				},
+				salmon: {
+					500: '#FF8370', // Cor de salmão
 				}
 			},
 			borderRadius: {
