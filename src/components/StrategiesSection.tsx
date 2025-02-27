@@ -14,8 +14,8 @@ const StrategiesSection: React.FC = () => {
             fadeElements.forEach((el) => {
               el.classList.add('opacity-100');
               el.classList.remove('opacity-0');
-              el.classList.add('translate-y-0');
-              el.classList.remove('translate-y-4');
+              // Garantir que os elementos permaneçam visíveis após a animação
+              el.classList.add('animation-visible');
             });
           }
         });
@@ -23,31 +23,29 @@ const StrategiesSection: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      const fadeElements = sectionRef.current.querySelectorAll('.fade-in-element');
-      fadeElements.forEach((el) => {
-        observer.observe(el);
-      });
+    const childElements = sectionRef.current?.querySelectorAll('.fade-in-element');
+    childElements?.forEach((el) => {
+      observer.observe(el);
+    });
 
-      return () => {
-        fadeElements.forEach((el) => {
-          observer.unobserve(el);
-        });
-      };
-    }
+    return () => {
+      childElements?.forEach((el) => {
+        observer.unobserve(el);
+      });
+    };
   }, []);
 
   return (
     <section id="strategies" ref={sectionRef} className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="fade-in-element opacity-0 transform transition-all duration-700 ease-in-out translate-y-4 mb-12 text-center">
+          <div className="fade-in-element opacity-0 mb-12 text-center">
             <ShieldAlert className="h-10 w-10 text-health-600 mx-auto mb-4" />
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Novos instrumentos e estratégias</h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="fade-in-element opacity-0 transform transition-all duration-700 ease-in-out translate-y-4 delay-100 bg-white p-6 rounded-lg shadow-md">
+            <div className="fade-in-element opacity-0 bg-white p-6 rounded-lg shadow-md">
               <Target className="h-8 w-8 text-health-600 mb-4" />
               <h3 className="text-xl font-bold mb-3 text-gray-900">Exigência de novas abordagens</h3>
               <p className="text-gray-700">
@@ -58,7 +56,7 @@ const StrategiesSection: React.FC = () => {
               </p>
             </div>
             
-            <div className="fade-in-element opacity-0 transform transition-all duration-700 ease-in-out translate-y-4 delay-200 bg-white p-6 rounded-lg shadow-md">
+            <div className="fade-in-element opacity-0 bg-white p-6 rounded-lg shadow-md" style={{ transitionDelay: '100ms' }}>
               <Milestone className="h-8 w-8 text-health-600 mb-4" />
               <h3 className="text-xl font-bold mb-3 text-gray-900">Política de Estado</h3>
               <p className="text-gray-700">
@@ -84,7 +82,7 @@ const StrategiesSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="fade-in-element opacity-0 transform transition-all duration-700 ease-in-out translate-y-4 delay-300 mt-10 p-6 bg-blue-600 text-white rounded-lg shadow-md">
+          <div className="fade-in-element opacity-0 mt-10 p-6 bg-blue-600 text-white rounded-lg shadow-md" style={{ transitionDelay: '200ms' }}>
             <p className="text-lg font-medium">
               Para executar essa política, o Brasil precisa de uma nova instituição federal nos moldes de um Centro de Prevenção, Preparação e Resposta às Emergências em Saúde Pública, capaz de fornecer respostas rápidas, coordenadas e sustentadas.
             </p>
