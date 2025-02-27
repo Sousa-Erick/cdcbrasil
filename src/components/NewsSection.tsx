@@ -59,7 +59,7 @@ const NewsSection: React.FC = () => {
   ];
 
   return (
-    <section id="news" ref={sectionRef} className="py-16 bg-gray-50">
+    <section id="news" ref={sectionRef} className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
@@ -76,10 +76,10 @@ const NewsSection: React.FC = () => {
           {news.map((item, index) => (
             <div 
               key={index} 
-              className="news-item opacity-0 translate-y-8 transition-all duration-500 bg-white rounded-lg p-5 shadow-md border border-gray-100"
+              className="news-item opacity-0 translate-y-8 transition-all duration-500 bg-white rounded-lg p-5 shadow-md border border-gray-200"
             >
               <a href={item.link} className="block hover:no-underline">
-                <h3 className="text-lg font-semibold mb-2 text-gray-800 hover:text-blue-700 transition-colors">{item.title}</h3>
+                <h3 className="text-lg font-semibold mb-2 text-gray-800 hover:text-blue transition-colors">{item.title}</h3>
                 
                 <div className="flex items-center mb-3 text-sm text-gray-500">
                   <Calendar className="h-4 w-4 mr-1" />
@@ -90,7 +90,7 @@ const NewsSection: React.FC = () => {
                 
                 <p className="text-gray-600 text-sm mb-3">{item.summary}</p>
                 
-                <div className="flex items-center text-salmon-500 font-medium">
+                <div className="flex items-center text-salmon font-medium">
                   <span>Ler mais</span>
                   <ExternalLink className="h-4 w-4 ml-1" />
                 </div>

@@ -31,25 +31,25 @@ const NewApproach: React.FC = () => {
 
   const benefits = [
     {
-      icon: <Shield className="h-5 w-5 text-blue-700" />,
+      icon: <Shield className="h-5 w-5 text-blue" />,
       text: "Proteção da saúde da população brasileira"
     },
     {
-      icon: <Share2 className="h-5 w-5 text-blue-700" />,
+      icon: <Share2 className="h-5 w-5 text-blue" />,
       text: "Integração com o Sistema Único de Saúde"
     },
     {
-      icon: <CheckCircle className="h-5 w-5 text-blue-700" />,
+      icon: <CheckCircle className="h-5 w-5 text-blue" />,
       text: "Embasamento em evidências científicas"
     },
     {
-      icon: <Clock className="h-5 w-5 text-blue-700" />,
+      icon: <Clock className="h-5 w-5 text-blue" />,
       text: "Atuação rápida e coordenada"
     }
   ];
 
   return (
-    <section id="approach" className="py-16 bg-gray-50">
+    <section id="approach" className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
         <div 
           ref={sectionRef} 
@@ -71,13 +71,13 @@ const NewApproach: React.FC = () => {
             coordenada e eficiente antes, durante e após emergências sanitárias.
           </p>
           
-          <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-            <h3 className="text-xl font-semibold mb-4 text-salmon-500">Benefícios da nova abordagem:</h3>
+          <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+            <h3 className="text-xl font-semibold mb-4 text-salmon">Benefícios da nova abordagem:</h3>
             
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-center">
-                  <div className="mr-3 text-blue-700">
+                  <div className="mr-3 text-blue">
                     {benefit.icon}
                   </div>
                   <span className="text-gray-700">{benefit.text}</span>

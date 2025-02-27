@@ -36,22 +36,22 @@ const ContextChallenges: React.FC = () => {
 
   const challenges = [
     {
-      icon: <TrendingUp className="h-6 w-6 text-blue-700" />,
+      icon: <TrendingUp className="h-6 w-6 text-blue" />,
       title: "Surtos recorrentes",
       description: "Febre amarela, dengue, zika, chikungunya, sarampo, covid e outras doenças têm impacto devastador na sociedade brasileira."
     },
     {
-      icon: <AlertTriangle className="h-6 w-6 text-blue-700" />,
+      icon: <AlertTriangle className="h-6 w-6 text-blue" />,
       title: "Sistema vulnerável",
       description: "O sistema de vigilância em saúde atual não está preparado para lidar com emergências de forma rápida e eficiente."
     },
     {
-      icon: <ShieldAlert className="h-6 w-6 text-blue-700" />,
+      icon: <ShieldAlert className="h-6 w-6 text-blue" />,
       title: "Resposta insuficiente",
       description: "A falta de integração e comunicação entre os diversos órgãos de saúde prejudica o enfrentamento das emergências."
     },
     {
-      icon: <Heart className="h-6 w-6 text-salmon-500" />,
+      icon: <Heart className="h-6 w-6 text-salmon" />,
       title: "Impacto humano",
       description: "Além das mortes, há um grande impacto na saúde mental e na qualidade de vida da população."
     }
@@ -78,7 +78,7 @@ const ContextChallenges: React.FC = () => {
               className="challenge-card opacity-0 translate-y-8 transition-all duration-500 bg-white rounded-lg p-6 shadow-md border border-gray-100"
             >
               <div className="flex items-start">
-                <div className="mr-4 bg-blue-50 p-3 rounded-lg">
+                <div className="mr-4 bg-blue-light p-3 rounded-lg">
                   {challenge.icon}
                 </div>
                 <div>

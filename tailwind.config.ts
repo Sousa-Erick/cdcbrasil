@@ -63,48 +63,46 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				indigo: {
-					50: '#eef2ff',
-					100: '#e0e7ff',
-					200: '#c7d2fe',
-					300: '#a5b4fc',
-					400: '#818cf8',
-					500: '#6366f1',
-					600: '#4f46e5',
-					700: '#4338ca',
-					800: '#3730a3',
-					900: '#312e81',
-					950: '#1e1b4b',
-				},
-				purple: {
-					50: '#faf5ff',
-					100: '#f3e8ff',
-					200: '#e9d5ff',
-					300: '#d8b4fe',
-					400: '#c084fc',
-					500: '#a855f7',
-					600: '#9333ea',
-					700: '#7e22ce',
-					800: '#6b21a8',
-					900: '#581c87',
-					950: '#3b0764',
-				},
-				health: {
-					500: '#ED5B61', // Vermelho principal
-					600: '#ED5B61', // Mantido igual para compatibilidade
-					700: '#d84b51', // Versão mais escura
+				// Cores primárias da paleta
+				'pantone-171c': '#EB5E57',  // salmão/coral
+				'pantone-2935c': '#1961AC', // azul
+				// Cores secundárias da paleta
+				'pantone-420c': '#C4CECA',  // cinza esverdeado
+				'pantone-420c-66': '#D3DFDD', // cinza claro 1
+				'pantone-420c-33': '#E6EDEC', // cinza claro 2
+				'pantone-485c': '#D3242D',  // vermelho
+				'pantone-171c-20': '#FBDEDF', // rosa claro
+				'pantone-2935c-20': '#DFEAF3', // azul claro
+				
+				// Mantém as cores existentes com os nomes atualizados
+				salmon: {
+					DEFAULT: '#EB5E57', // PANTONE 171C
+					500: '#EB5E57',
+					600: '#E34840',
+					700: '#D3242D', // PANTONE 485C
+					light: '#FBDEDF', // PANTONE 171C - 20%
 				},
 				blue: {
-					500: '#2567AA', // Azul principal
-					600: '#2567AA', // Mantido igual para compatibilidade
-					700: '#15365D', // Azul mais escuro para destaques
-					800: '#102a4a', // Versão ainda mais escura
+					DEFAULT: '#1961AC', // PANTONE 2935C
+					500: '#1961AC',
+					600: '#0F55A0',
+					700: '#15365D',
+					800: '#102a4a',
+					light: '#DFEAF3', // PANTONE 2935C - 20%
 				},
-				salmon: {
-					500: '#FF8370', // Cor de salmão principal
-					600: '#FF6B55', // Versão mais escura
-					700: '#FF5A44', // Versão ainda mais escura
-				}
+				gray: {
+					DEFAULT: '#C4CECA', // PANTONE 420C
+					100: '#E6EDEC', // PANTONE 420C - 33%
+					200: '#D3DFDD', // PANTONE 420C - 66%
+					300: '#C4CECA', // PANTONE 420C
+					// Manter outras variações de cinza para compatibilidade
+					400: '#9CA3AF',
+					500: '#6B7280',
+					600: '#4B5563',
+					700: '#374151',
+					800: '#1F2937',
+					900: '#111827',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

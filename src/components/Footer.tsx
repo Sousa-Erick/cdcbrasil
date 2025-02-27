@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Youtube, Instagram, X, ChevronRight, Linkedin } fr
 
 const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="bg-blue-800 text-white pt-16 pb-10">
+    <footer id="contact" className="bg-blue text-white pt-16 pb-10">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div>
@@ -92,15 +92,15 @@ const Footer: React.FC = () => {
             <h2 className="font-bold text-lg mb-6">Contato</h2>
             <ul className="space-y-5">
               <li className="flex items-center">
-                <MapPin className="h-5 w-5 text-salmon-500 mr-3 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-salmon mr-3 flex-shrink-0" />
                 <span className="text-gray-300">São Paulo - SP - Brasil</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 text-salmon-500 mr-3 flex-shrink-0" />
+                <Mail className="h-5 w-5 text-salmon mr-3 flex-shrink-0" />
                 <a href="mailto:contato@cdcbrasil.org" className="text-gray-300 hover:text-white transition-colors">contato@cdcbrasil.org</a>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 text-salmon-500 mr-3 flex-shrink-0" />
+                <Phone className="h-5 w-5 text-salmon mr-3 flex-shrink-0" />
                 <a href="tel:+551199999999" className="text-gray-300 hover:text-white transition-colors">(11) 9XXXX-XXXX</a>
               </li>
             </ul>

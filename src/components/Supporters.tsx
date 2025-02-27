@@ -109,7 +109,7 @@ const Supporters: React.FC = () => {
   };
 
   return (
-    <section id="supporters" className="py-16 bg-gray-50">
+    <section id="supporters" className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
         <div 
           ref={sectionRef} 
@@ -124,7 +124,7 @@ const Supporters: React.FC = () => {
             conta com o apoio de diversos especialistas e instituições.
           </p>
           
-          <div className="relative bg-white rounded-lg shadow-md border border-gray-100 p-6 overflow-hidden">
+          <div className="relative bg-white rounded-lg shadow-md border border-gray-200 p-6 overflow-hidden">
             <div 
               className="flex transition-transform duration-300 ease-out"
               ref={sliderRef}
@@ -138,10 +138,10 @@ const Supporters: React.FC = () => {
                     <img 
                       src={supporter.image} 
                       alt={supporter.name} 
-                      className="w-24 h-24 rounded-full mb-4 border-4 border-blue-100"
+                      className="w-24 h-24 rounded-full mb-4 border-4 border-blue-light"
                     />
                     <h3 className="text-lg font-semibold text-gray-800">{supporter.name}</h3>
-                    <p className="text-salmon-500 text-sm mb-4">{supporter.role}</p>
+                    <p className="text-salmon text-sm mb-4">{supporter.role}</p>
                     <p className="text-gray-600 italic">"{supporter.quote}"</p>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ const Supporters: React.FC = () => {
             
             {/* Navigation arrows */}
             <button 
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-blue-700 transition-colors"
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-blue transition-colors"
               onClick={() => navigateSlider('prev')}
               aria-label="Anterior"
             >
@@ -158,7 +158,7 @@ const Supporters: React.FC = () => {
             </button>
             
             <button 
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-blue-700 transition-colors"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-blue transition-colors"
               onClick={() => navigateSlider('next')}
               aria-label="Próximo"
             >
@@ -171,7 +171,7 @@ const Supporters: React.FC = () => {
                 <button 
                   key={index}
                   className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                    currentSlide === index ? 'bg-salmon-500' : 'bg-gray-300'
+                    currentSlide === index ? 'bg-salmon' : 'bg-gray-300'
                   }`}
                   onClick={() => setCurrentSlide(index)}
                   aria-label={`Ir para slide ${index + 1}`}

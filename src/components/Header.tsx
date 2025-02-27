@@ -41,13 +41,13 @@ const Header: React.FC = () => {
           
           {/* Desktop Navigation - Hidden on mobile */}
           <nav className="hidden md:flex space-x-6">
-            <a href="#hero" className="text-gray-800 hover:text-blue-700 transition-colors font-medium">Início</a>
-            <a href="#context" className="text-gray-800 hover:text-blue-700 transition-colors font-medium">Por que Precisamos?</a>
-            <a href="#characteristics" className="text-gray-800 hover:text-blue-700 transition-colors font-medium">Características</a>
-            <a href="#supporters" className="text-gray-800 hover:text-blue-700 transition-colors font-medium">Apoio</a>
-            <a href="#materials" className="text-gray-800 hover:text-blue-700 transition-colors font-medium">Materiais</a>
-            <a href="#news" className="text-gray-800 hover:text-blue-700 transition-colors font-medium">Notícias</a>
-            <a href="#contact" className="text-gray-800 hover:text-blue-700 transition-colors font-medium">Contato</a>
+            <a href="#hero" className="text-gray-800 hover:text-blue transition-colors font-medium">Início</a>
+            <a href="#context" className="text-gray-800 hover:text-blue transition-colors font-medium">Por que Precisamos?</a>
+            <a href="#characteristics" className="text-gray-800 hover:text-blue transition-colors font-medium">Características</a>
+            <a href="#supporters" className="text-gray-800 hover:text-blue transition-colors font-medium">Apoio</a>
+            <a href="#materials" className="text-gray-800 hover:text-blue transition-colors font-medium">Materiais</a>
+            <a href="#news" className="text-gray-800 hover:text-blue transition-colors font-medium">Notícias</a>
+            <a href="#contact" className="text-gray-800 hover:text-blue transition-colors font-medium">Contato</a>
           </nav>
           
           {/* Mobile menu button */}
