@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
               href="#emergencies" 
               className="flex flex-col items-center bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-4 shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
             >
-              <span className="text-lg font-semibold mb-1">Leia mais</span>
+              <span className="text-xl md:text-2xl font-bold mb-1">Leia mais</span>
               <ChevronDown className="h-5 w-5 animate-bounce" />
             </a>
           </div>
