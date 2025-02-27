@@ -99,9 +99,9 @@ const WorldMapSection: React.FC = () => {
                 <span className="sr-only">Mapa mundial de CDCs</span>
               </div>
               <img 
-                src="/placeholder.svg" 
+                src="/lovable-uploads/b45acc37-13e4-44f0-8385-7ff3683eae3d.png" 
                 alt="Mapa mundial mostrando CDCs em diferentes países" 
-                className="w-full h-full object-contain opacity-25"
+                className="w-full h-full object-contain"
               />
               
               {/* Este seria substituído por um mapa interativo real em uma implementação futura */}

@@ -82,10 +82,7 @@ const Footer: React.FC = () => {
           <p className="text-gray-600 text-xs mb-2 md:mb-0">
             © {new Date().getFullYear()} Instituto Todos pela Saúde. Todos os direitos reservados.
           </p>
-          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-            <a href="#" className="text-blue-500 text-xs hover:underline">Termos de Uso</a>
-            <a href="#" className="text-blue-500 text-xs hover:underline">Política de Privacidade</a>
-          </div>
+          {/* Links de Termos de Uso e Política de Privacidade foram removidos */}
         </div>
       </div>
     </footer>
