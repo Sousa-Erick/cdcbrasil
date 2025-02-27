@@ -17,10 +17,10 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="pt-20 pb-0 bg-white min-h-screen flex flex-col justify-center">
       <div className="container mx-auto px-6 md:px-8 flex flex-col h-full">
-        <div className="flex-grow flex flex-col justify-center items-start max-w-3xl mx-auto md:mx-0 md:ml-8 lg:ml-16 text-left pb-16">
+        <div className="flex-grow flex flex-col justify-center items-center text-center mx-auto pb-16">
           <h1 
             className={cn(
-              "text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight text-gray-900 transition-all duration-700 ease-in-out",
+              "text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight text-gray-900 transition-all duration-700 ease-in-out max-w-3xl",
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             )}
           >
