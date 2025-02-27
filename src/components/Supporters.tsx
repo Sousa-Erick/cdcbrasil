@@ -138,19 +138,19 @@ const Supporters: React.FC = () => {
           <div className="overflow-x-auto rounded-lg shadow">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="bg-blue-700 text-white">
-                  <th className="py-4 px-6 text-left font-semibold tracking-wider border-b border-blue-600 text-base">Nome</th>
-                  <th className="py-4 px-6 text-left font-semibold tracking-wider border-b border-blue-600 text-base">Cargo/Função</th>
+                <tr className="bg-blue-light text-blue-700">
+                  <th className="py-4 px-6 text-left font-semibold tracking-wider border-b border-blue-200 text-base">Nome</th>
+                  <th className="py-4 px-6 text-left font-semibold tracking-wider border-b border-blue-200 text-base">Cargo/Função</th>
                 </tr>
               </thead>
-              <tbody className="bg-blue-600 text-blue-50">
+              <tbody className="bg-pantone-2935c-20">
                 {supporters.map((supporter, index) => (
                   <tr 
                     key={index} 
-                    className="hover:bg-blue-500 transition-colors"
+                    className="hover:bg-pantone-171c-20 transition-colors"
                   >
-                    <td className="py-3 px-6 border-b border-blue-500 font-medium text-white">{supporter.name}</td>
-                    <td className="py-3 px-6 border-b border-blue-500 text-blue-100 leading-relaxed text-sm">{supporter.role}</td>
+                    <td className="py-3 px-6 border-b border-blue-100 font-medium text-blue-800">{supporter.name}</td>
+                    <td className="py-3 px-6 border-b border-blue-100 text-blue-700 leading-relaxed text-sm">{supporter.role}</td>
                   </tr>
                 ))}
               </tbody>
