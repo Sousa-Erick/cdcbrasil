@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { CheckCircle, XCircle } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 
 const WhatIsSection: React.FC = () => {
   const isRef = useRef<HTMLDivElement>(null);
@@ -74,20 +74,16 @@ const WhatIsSection: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="figma-card">
             <h3 className="text-xl font-bold mb-6 text-[#0067A0] flex items-center">
-              <CheckCircle className="h-6 w-6 mr-2" /> A proposta prevê que o novo centro será:
+              <Check className="h-6 w-6 mr-2" /> A proposta prevê que o novo centro será:
             </h3>
             
-            <div ref={isRef} className="space-y-3">
+            <div ref={isRef} className="space-y-4">
               {isItems.map((item, index) => (
                 <div 
                   key={index} 
-                  className="list-item opacity-0 translate-y-4 transition-all duration-300 flex"
+                  className="list-item opacity-0 translate-y-4 transition-all duration-300 flex items-start"
                 >
-                  <div className="mr-3 mt-1 flex-shrink-0">
-                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center">
-                      <CheckCircle className="h-3 w-3 text-green-600" />
-                    </div>
-                  </div>
+                  <Check className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0 mr-3" />
                   <span className="figma-text text-sm md:text-base">{item}</span>
                 </div>
               ))}
@@ -96,20 +92,16 @@ const WhatIsSection: React.FC = () => {
           
           <div className="figma-card">
             <h3 className="text-xl font-bold mb-6 text-[#ED4C13] flex items-center">
-              <XCircle className="h-6 w-6 mr-2" /> A proposta prevê que o novo centro não será:
+              <X className="h-6 w-6 mr-2" /> A proposta prevê que o novo centro não será:
             </h3>
             
-            <div ref={isNotRef} className="space-y-3">
+            <div ref={isNotRef} className="space-y-4">
               {isNotItems.map((item, index) => (
                 <div 
                   key={index} 
-                  className="list-item opacity-0 translate-y-4 transition-all duration-300 flex"
+                  className="list-item opacity-0 translate-y-4 transition-all duration-300 flex items-start"
                 >
-                  <div className="mr-3 mt-1 flex-shrink-0">
-                    <div className="h-5 w-5 rounded-full bg-red-100 flex items-center justify-center">
-                      <XCircle className="h-3 w-3 text-red-600" />
-                    </div>
-                  </div>
+                  <X className="h-5 w-5 text-red-600 mt-0.5 flex-shrink-0 mr-3" />
                   <span className="figma-text text-sm md:text-base">{item}</span>
                 </div>
               ))}
