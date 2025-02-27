@@ -15,12 +15,12 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" className="pt-20 pb-0 bg-white min-h-screen flex flex-col justify-center">
+    <section id="hero" className="pt-24 pb-0 bg-white min-h-screen flex flex-col justify-center">
       <div className="container mx-auto px-6 md:px-8 flex flex-col h-full">
         <div className="flex-grow flex flex-col justify-center items-center text-center mx-auto pb-16">
           <h1 
             className={cn(
-              "text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight text-gray-900 transition-all duration-700 ease-in-out max-w-3xl",
+              "text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight text-blue-700 transition-all duration-700 ease-in-out max-w-4xl",
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             )}
           >
@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
           <div className="mt-12 mb-8 flex justify-center animate-fade-in">
             <a 
               href="#emergencies" 
-              className="animate-bounce inline-flex items-center flex-col text-gray-700 hover:text-health-600 transition-colors"
+              className="animate-bounce inline-flex items-center flex-col text-gray-700 hover:text-health-500 transition-colors"
             >
               <span className="mb-2">Leia mais</span>
               <ChevronDown className="h-6 w-6" />

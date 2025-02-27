@@ -21,13 +21,13 @@ const Footer: React.FC = () => {
               Centro Brasileiro de Prevenção e Controle de Doenças - Uma iniciativa para proteger a saúde da população brasileira.
             </p>
             <div className="flex space-x-5">
-              <a href="#" className="text-gray-500 hover:text-health-400 transition-colors p-2 bg-gray-200 rounded-full hover:bg-gray-300">
+              <a href="#" className="text-gray-500 hover:text-health-500 transition-colors p-2 bg-gray-200 rounded-full hover:bg-gray-300">
                 <Youtube className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-health-400 transition-colors p-2 bg-gray-200 rounded-full hover:bg-gray-300">
+              <a href="#" className="text-gray-500 hover:text-health-500 transition-colors p-2 bg-gray-200 rounded-full hover:bg-gray-300">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-500 hover:text-health-400 transition-colors p-2 bg-gray-200 rounded-full hover:bg-gray-300">
+              <a href="#" className="text-gray-500 hover:text-health-500 transition-colors p-2 bg-gray-200 rounded-full hover:bg-gray-300">
                 <X className="h-5 w-5" />
               </a>
             </div>
@@ -37,25 +37,25 @@ const Footer: React.FC = () => {
             <h2 className="font-bold text-lg mb-6 relative pl-4 border-l-2 border-health-500">Links Rápidos</h2>
             <ul className="space-y-3 text-center">
               <li>
-                <a href="#hero" className="text-gray-600 hover:text-health-400 transition-colors flex items-center justify-center group">
+                <a href="#hero" className="text-gray-600 hover:text-health-500 transition-colors flex items-center justify-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
                   <span>Início</span>
                 </a>
               </li>
               <li>
-                <a href="#features" className="text-gray-600 hover:text-health-400 transition-colors flex items-center justify-center group">
+                <a href="#features" className="text-gray-600 hover:text-health-500 transition-colors flex items-center justify-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
                   <span>Proposta</span>
                 </a>
               </li>
               <li>
-                <a href="#definition" className="text-gray-600 hover:text-health-400 transition-colors flex items-center justify-center group">
+                <a href="#definition" className="text-gray-600 hover:text-health-500 transition-colors flex items-center justify-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
                   <span>O que é</span>
                 </a>
               </li>
               <li>
-                <a href="#principles" className="text-gray-600 hover:text-health-400 transition-colors flex items-center justify-center group">
+                <a href="#principles" className="text-gray-600 hover:text-health-500 transition-colors flex items-center justify-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
                   <span>Diretrizes</span>
                 </a>
@@ -67,25 +67,25 @@ const Footer: React.FC = () => {
             <h2 className="font-bold text-lg mb-6 relative pl-4 border-l-2 border-health-500">Mais Informações</h2>
             <ul className="space-y-3 text-center">
               <li>
-                <a href="#news" className="text-gray-600 hover:text-health-400 transition-colors flex items-center justify-center group">
+                <a href="#news" className="text-gray-600 hover:text-health-500 transition-colors flex items-center justify-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
                   <span>Notícias</span>
                 </a>
               </li>
               <li>
-                <a href="#world-cdcs" className="text-gray-600 hover:text-health-400 transition-colors flex items-center justify-center group">
+                <a href="#world-cdcs" className="text-gray-600 hover:text-health-500 transition-colors flex items-center justify-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
                   <span>CDCs pelo Mundo</span>
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-health-400 transition-colors flex items-center justify-center group">
+                <a href="#" className="text-gray-600 hover:text-health-500 transition-colors flex items-center justify-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
                   <span>Artigos Científicos</span>
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-health-400 transition-colors flex items-center justify-center group">
+                <a href="#" className="text-gray-600 hover:text-health-500 transition-colors flex items-center justify-center group">
                   <ChevronRight className="h-4 w-4 mr-2 text-health-500 transform group-hover:translate-x-1 transition-transform" /> 
                   <span>Perguntas Frequentes</span>
                 </a>
@@ -97,16 +97,16 @@ const Footer: React.FC = () => {
             <h2 className="font-bold text-lg mb-6 relative pl-4 border-l-2 border-health-500">Contato</h2>
             <ul className="space-y-5 text-center">
               <li className="flex items-center justify-center">
-                <MapPin className="h-5 w-5 text-health-400 mr-3 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-health-500 mr-3 flex-shrink-0" />
                 <span className="text-gray-600">São Paulo - SP - Brasil</span>
               </li>
               <li className="flex items-center justify-center">
-                <Mail className="h-5 w-5 text-health-400 mr-3 flex-shrink-0" />
-                <a href="mailto:contato@cdcbrasil.org" className="text-gray-600 hover:text-health-400 transition-colors">contato@cdcbrasil.org</a>
+                <Mail className="h-5 w-5 text-health-500 mr-3 flex-shrink-0" />
+                <a href="mailto:contato@cdcbrasil.org" className="text-gray-600 hover:text-health-500 transition-colors">contato@cdcbrasil.org</a>
               </li>
               <li className="flex items-center justify-center">
-                <Phone className="h-5 w-5 text-health-400 mr-3 flex-shrink-0" />
-                <a href="tel:+551199999999" className="text-gray-600 hover:text-health-400 transition-colors">(11) 9XXXX-XXXX</a>
+                <Phone className="h-5 w-5 text-health-500 mr-3 flex-shrink-0" />
+                <a href="tel:+551199999999" className="text-gray-600 hover:text-health-500 transition-colors">(11) 9XXXX-XXXX</a>
               </li>
             </ul>
           </div>

@@ -36,27 +36,30 @@ const Header: React.FC = () => {
               className="h-12"
             />
           </a>
+          <div className="hidden md:block ml-4">
+            <h1 className="text-blue-700 text-lg font-semibold">Centro Brasileiro de Prevenção e Controle de Doenças</h1>
+          </div>
         </div>
         
         <div className="flex items-center">
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-4 lg:space-x-6">
-            <a href="#emergencies" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+            <a href="#emergencies" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Contexto
             </a>
-            <a href="#strategies" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+            <a href="#strategies" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Estratégias
             </a>
-            <a href="#characteristics" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+            <a href="#characteristics" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Características
             </a>
-            <a href="#principles-directives" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+            <a href="#principles-directives" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Princípios
             </a>
-            <a href="#what-is" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+            <a href="#what-is" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Proposta
             </a>
-            <a href="#documents" className="text-gray-800 hover:text-health-600 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
+            <a href="#documents" className="text-gray-800 hover:text-health-500 transition-colors font-medium px-3 py-2 text-sm lg:text-base">
               Documentos
             </a>
           </nav>

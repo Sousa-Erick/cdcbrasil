@@ -63,32 +63,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Nova paleta de cores (branco, salmão e azul)
+				// Atualizada paleta de cores conforme especificação
 				health: {
-					50: '#fef2f2',
-					100: '#fde1d3',
-					200: '#ffd6cc',
-					300: '#ffc0b3',
-					400: '#ff9a8a',
-					500: '#ff7a66',
-					600: '#fa5f4a',
-					700: '#e54a38',
-					800: '#c73d2d',
-					900: '#a63426',
-					950: '#7a1e13',
+					500: '#ED5B61', // Vermelho principal
+					600: '#ED5B61', // Mantido igual para compatibilidade
+					700: '#d84b51', // Versão mais escura
 				},
 				blue: {
-					50: '#eef6ff',
-					100: '#d3e4fd',
-					200: '#bcd5fd',
-					300: '#91bcfb',
-					400: '#5a94f8',
-					500: '#2970f8',
-					600: '#1958ec',
-					700: '#1547d8',
-					800: '#1539b0',
-					900: '#17348a',
-					950: '#122153',
+					500: '#2567AA', // Azul principal
+					600: '#2567AA', // Mantido igual para compatibilidade
+					700: '#15365D', // Azul mais escuro para destaques
+					800: '#102a4a', // Versão ainda mais escura
 				}
 			},
 			borderRadius: {

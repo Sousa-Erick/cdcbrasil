@@ -16,16 +16,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 6 100% 67%;
+    --primary: 358 84% 64%;  /* #ED5B61 */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 214 100% 67%;
+    --secondary: 211 66% 41%;  /* #2567AA */
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 6 100% 94%;
+    --accent: 358 84% 94%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 6 100% 67%;
+    --ring: 358 84% 64%;
 
     --radius: 0.75rem;
 
@@ -57,16 +57,16 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 6 100% 67%;
+    --primary: 358 84% 64%;  /* #ED5B61 */
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 214 100% 67%;
+    --secondary: 211 66% 41%;  /* #2567AA */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 6 100% 40%;
+    --accent: 358 84% 40%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -74,7 +74,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 6 100% 67%;
+    --ring: 358 84% 64%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -131,7 +131,7 @@
   }
 
   .section-title {
-    @apply text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-center;
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-center text-blue-700;
   }
 
   .card-hover {
@@ -139,13 +139,13 @@
   }
 
   .btn-primary {
-    @apply bg-health-600 hover:bg-health-700 text-white font-medium py-3 px-5 rounded-lg 
+    @apply bg-health-500 hover:bg-health-700 text-white font-medium py-3 px-5 rounded-lg 
     transition-all duration-300 hover:shadow-md active:scale-[0.98]
     focus:outline-none focus:ring-2 focus:ring-health-500 focus:ring-opacity-50;
   }
 
   .btn-secondary {
-    @apply bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-5 rounded-lg 
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-medium py-3 px-5 rounded-lg 
     transition-all duration-300 hover:shadow-sm active:scale-[0.98]
     focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50;
   }
