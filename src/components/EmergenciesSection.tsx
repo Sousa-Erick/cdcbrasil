@@ -78,8 +78,8 @@ const EmergenciesSection: React.FC = () => {
           
           <div className="animation-element opacity-0 transition-opacity duration-700 rounded-lg bg-blue-500 text-white p-8 md:p-10 shadow-md">
             <div className="flex flex-col md:flex-row md:items-start">
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-center md:text-left">Com a covid-19, o mundo viveu desafios sem precedentes</h3>
+              <div className="w-full">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-center">Com a covid-19, o mundo viveu desafios sem precedentes</h3>
                 <p className="text-white text-opacity-90 mb-3 text-lg text-center md:text-left">
                   A pandemia impactou profundamente a saúde pública, a economia e a vida em sociedade.
                 </p>
