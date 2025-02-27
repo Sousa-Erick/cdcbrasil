@@ -82,8 +82,8 @@ const EmergenciesSection: React.FC = () => {
                 <AlertTriangle className="h-10 w-10 text-[#FF8370]" />
               </div>
               <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-center md:text-left">Comacovid-19,omundoviveudesafiossemprecedentes</h3>
-                <p className="text-white text-opacity-90 mb-6 text-lg text-center md:text-left">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-center md:text-left">Com a covid-19, o mundo viveu desafios sem precedentes</h3>
+                <p className="text-white text-opacity-90 mb-3 text-lg text-center md:text-left">
                   A pandemia impactou profundamente a saúde pública, a economia e a vida em sociedade.
                 </p>
                 <p className="text-white text-opacity-90 text-lg text-center md:text-left">
