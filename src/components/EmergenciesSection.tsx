@@ -80,10 +80,10 @@ const EmergenciesSection: React.FC = () => {
             <div className="flex flex-col md:flex-row md:items-start">
               <div className="w-full">
                 <h3 className="text-xl md:text-2xl font-bold mb-4 text-center">Com a covid-19, o mundo viveu desafios sem precedentes</h3>
-                <p className="text-white text-opacity-90 mb-3 text-lg text-center md:text-left">
+                <p className="text-white text-opacity-90 mb-3 text-lg text-center">
                   A pandemia impactou profundamente a saúde pública, a economia e a vida em sociedade.
                 </p>
-                <p className="text-white text-opacity-90 text-lg text-center md:text-left">
+                <p className="text-white text-opacity-90 text-lg text-center">
                   E, mesmo com a imensa capacidade do SUS, ficou evidente que os processos, as estruturas e as respostas convencionais não foram suficientes.
                 </p>
               </div>
