@@ -14,6 +14,8 @@ const EmergenciesSection: React.FC = () => {
             elements.forEach((el) => {
               el.classList.add('opacity-100');
               el.classList.remove('opacity-0');
+              // Garantir que os elementos permaneçam visíveis adicionando uma classe permanente
+              el.classList.add('animation-visible');
             });
           }
         });

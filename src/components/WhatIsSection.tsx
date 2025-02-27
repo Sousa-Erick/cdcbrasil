@@ -16,6 +16,8 @@ const WhatIsSection: React.FC = () => {
               setTimeout(() => {
                 item.classList.add('opacity-100', 'translate-y-0');
                 item.classList.remove('opacity-0', 'translate-y-4');
+                // Garantir que os itens permaneçam visíveis após a animação
+                item.classList.add('animation-visible');
               }, index * 50);
             });
           }
@@ -60,7 +62,7 @@ const WhatIsSection: React.FC = () => {
   ];
 
   return (
-    <section id="what-is" className="py-16 md:py-20 bg-gray-50">
+    <section id="what-is" className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-xl mx-auto text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">O que é, o que não é</h2>

@@ -10,7 +10,13 @@ const StrategiesSection: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
+            const fadeElements = entry.target.querySelectorAll('.fade-in-element');
+            fadeElements.forEach((el) => {
+              el.classList.add('opacity-100');
+              el.classList.remove('opacity-0');
+              // Garantir que os elementos permaneçam visíveis após a animação
+              el.classList.add('animation-visible');
+            });
           }
         });
       },
@@ -30,7 +36,7 @@ const StrategiesSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="strategies" ref={sectionRef} className="py-16 md:py-20 bg-gray-50">
+    <section id="strategies" ref={sectionRef} className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="fade-in-element opacity-0 mb-12 text-center">

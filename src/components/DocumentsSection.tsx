@@ -15,6 +15,8 @@ const DocumentsSection: React.FC = () => {
               setTimeout(() => {
                 item.classList.add('opacity-100', 'translate-y-0');
                 item.classList.remove('opacity-0', 'translate-y-4');
+                // Garantir que os itens permaneçam visíveis
+                item.classList.add('animation-visible');
               }, index * 100);
             });
           }
@@ -53,7 +55,7 @@ const DocumentsSection: React.FC = () => {
   ];
 
   return (
-    <section id="documents" ref={sectionRef} className="py-16 md:py-20 bg-gray-50">
+    <section id="documents" ref={sectionRef} className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-xl mx-auto text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Você quer saber mais sobre a proposta?</h2>

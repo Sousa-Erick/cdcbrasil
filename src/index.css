@@ -304,7 +304,33 @@ body {
 }
 
 /* Corrigindo problema de animações que desaparecem */
-.animation-element.opacity-100 {
+.animation-element.opacity-100,
+.fade-in-element.opacity-100,
+.list-item.opacity-100,
+.document-item.opacity-100,
+.animate-item.opacity-100,
+.news-item.opacity-100,
+.map-item.opacity-100,
+.characteristic-card.opacity-100,
+.animation-visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
+}
+
+/* Quando elementos são animados, garantir que permaneçam visíveis */
+[class*="animate-"] {
+  animation-fill-mode: forwards;
+}
+
+/* Garantir que todos os elementos que recebem animações estejam visíveis após a animação */
+.animation-element,
+.fade-in-element,
+.list-item,
+.document-item,
+.animate-item,
+.news-item,
+.map-item,
+.characteristic-card {
+  will-change: opacity, transform;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
