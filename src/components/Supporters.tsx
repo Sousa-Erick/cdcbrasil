@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Supporters: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -138,10 +138,10 @@ const Supporters: React.FC = () => {
                     <img 
                       src={supporter.image} 
                       alt={supporter.name} 
-                      className="w-24 h-24 rounded-full mb-4 border-4 border-indigo-100"
+                      className="w-24 h-24 rounded-full mb-4 border-4 border-blue-100"
                     />
                     <h3 className="text-lg font-semibold text-gray-800">{supporter.name}</h3>
-                    <p className="text-indigo-600 text-sm mb-4">{supporter.role}</p>
+                    <p className="text-salmon-500 text-sm mb-4">{supporter.role}</p>
                     <p className="text-gray-600 italic">"{supporter.quote}"</p>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ const Supporters: React.FC = () => {
             
             {/* Navigation arrows */}
             <button 
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-indigo-600 transition-colors"
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-blue-700 transition-colors"
               onClick={() => navigateSlider('prev')}
               aria-label="Anterior"
             >
@@ -158,7 +158,7 @@ const Supporters: React.FC = () => {
             </button>
             
             <button 
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-indigo-600 transition-colors"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-blue-700 transition-colors"
               onClick={() => navigateSlider('next')}
               aria-label="Próximo"
             >
@@ -171,7 +171,7 @@ const Supporters: React.FC = () => {
                 <button 
                   key={index}
                   className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                    currentSlide === index ? 'bg-indigo-600' : 'bg-gray-300'
+                    currentSlide === index ? 'bg-salmon-500' : 'bg-gray-300'
                   }`}
                   onClick={() => setCurrentSlide(index)}
                   aria-label={`Ir para slide ${index + 1}`}

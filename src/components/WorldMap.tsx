@@ -78,8 +78,8 @@ const WorldMap: React.FC = () => {
           </div>
           
           <div className="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden">
-            <div className="p-6 bg-indigo-50 flex items-center justify-center">
-              <Globe className="h-24 w-24 text-indigo-600" />
+            <div className="p-6 bg-blue-50 flex items-center justify-center">
+              <Globe className="h-24 w-24 text-blue-700" />
             </div>
             
             <div className="p-6">
@@ -87,10 +87,10 @@ const WorldMap: React.FC = () => {
                 {cdcs.map((cdc, index) => (
                   <div 
                     key={index}
-                    className="p-4 border border-gray-100 rounded-lg hover:bg-indigo-50 transition-colors"
+                    className="p-4 border border-gray-100 rounded-lg hover:bg-blue-50 transition-colors"
                   >
                     <div className="flex flex-col md:flex-row md:items-center">
-                      <div className="font-semibold text-indigo-600 md:w-1/4 mb-2 md:mb-0">
+                      <div className="font-semibold text-salmon-500 md:w-1/4 mb-2 md:mb-0">
                         {cdc.country}
                       </div>
                       <div className="md:w-3/4">

@@ -63,11 +63,11 @@ const Characteristics: React.FC = () => {
   ];
 
   const backgroundColors = [
-    "bg-indigo-600",
-    "bg-purple-600",
+    "bg-blue-700",
     "bg-blue-600",
-    "bg-indigo-700",
-    "bg-purple-700"
+    "bg-salmon-500",
+    "bg-blue-800",
+    "bg-salmon-600"
   ];
 
   return (

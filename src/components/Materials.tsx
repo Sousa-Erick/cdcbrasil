@@ -74,8 +74,8 @@ const Materials: React.FC = () => {
             >
               <div className="flex flex-col md:flex-row items-center md:items-start">
                 <div className="flex-shrink-0 mr-0 md:mr-5 mb-4 md:mb-0 flex justify-center md:justify-start">
-                  <div className="p-3 bg-indigo-100 rounded-lg">
-                    <FileText className="h-6 w-6 text-indigo-600" />
+                  <div className="p-3 bg-blue-100 rounded-lg">
+                    <FileText className="h-6 w-6 text-blue-700" />
                   </div>
                 </div>
                 <div className="flex-grow text-center md:text-left">
@@ -83,7 +83,7 @@ const Materials: React.FC = () => {
                   <p className="text-gray-600 text-sm mb-4">{material.description}</p>
                   <a 
                     href={material.link} 
-                    className="inline-flex items-center text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
+                    className="inline-flex items-center text-salmon-500 hover:text-salmon-700 transition-colors font-medium"
                   >
                     <Download className="h-4 w-4 mr-2" />
                     <span>Baixar documento</span>

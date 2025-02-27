@@ -79,7 +79,7 @@ const NewsSection: React.FC = () => {
               className="news-item opacity-0 translate-y-8 transition-all duration-500 bg-white rounded-lg p-5 shadow-md border border-gray-100"
             >
               <a href={item.link} className="block hover:no-underline">
-                <h3 className="text-lg font-semibold mb-2 text-gray-800 hover:text-indigo-600 transition-colors">{item.title}</h3>
+                <h3 className="text-lg font-semibold mb-2 text-gray-800 hover:text-blue-700 transition-colors">{item.title}</h3>
                 
                 <div className="flex items-center mb-3 text-sm text-gray-500">
                   <Calendar className="h-4 w-4 mr-1" />
@@ -90,7 +90,7 @@ const NewsSection: React.FC = () => {
                 
                 <p className="text-gray-600 text-sm mb-3">{item.summary}</p>
                 
-                <div className="flex items-center text-indigo-600 font-medium">
+                <div className="flex items-center text-salmon-500 font-medium">
                   <span>Ler mais</span>
                   <ExternalLink className="h-4 w-4 ml-1" />
                 </div>

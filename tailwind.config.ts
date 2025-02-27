@@ -63,7 +63,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Paleta de cores do Canny
 				indigo: {
 					50: '#eef2ff',
 					100: '#e0e7ff',
@@ -102,7 +101,9 @@ export default {
 					800: '#102a4a', // Versão ainda mais escura
 				},
 				salmon: {
-					500: '#FF8370', // Cor de salmão
+					500: '#FF8370', // Cor de salmão principal
+					600: '#FF6B55', // Versão mais escura
+					700: '#FF5A44', // Versão ainda mais escura
 				}
 			},
 			borderRadius: {

@@ -70,49 +70,49 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         <nav className="py-6 px-5 space-y-4">
           <a 
             href="#hero" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-50 hover:text-blue-700 rounded-md transition-colors"
             onClick={() => handleLinkClick('hero')}
           >
             Início
           </a>
           <a 
             href="#context" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-50 hover:text-blue-700 rounded-md transition-colors"
             onClick={() => handleLinkClick('context')}
           >
             Por que Precisamos?
           </a>
           <a 
             href="#characteristics" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-50 hover:text-blue-700 rounded-md transition-colors"
             onClick={() => handleLinkClick('characteristics')}
           >
             Características
           </a>
           <a 
             href="#supporters" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-50 hover:text-blue-700 rounded-md transition-colors"
             onClick={() => handleLinkClick('supporters')}
           >
             Apoio
           </a>
           <a 
             href="#materials" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-50 hover:text-blue-700 rounded-md transition-colors"
             onClick={() => handleLinkClick('materials')}
           >
             Materiais
           </a>
           <a 
             href="#news" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-50 hover:text-blue-700 rounded-md transition-colors"
             onClick={() => handleLinkClick('news')}
           >
             Notícias
           </a>
           <a 
             href="#contact" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition-colors"
+            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-50 hover:text-blue-700 rounded-md transition-colors"
             onClick={() => handleLinkClick('contact')}
           >
             Contato
@@ -120,7 +120,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         </nav>
         
         <div className="absolute bottom-0 left-0 right-0 p-5 border-t">
-          <button className="w-full py-3 px-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+          <button className="w-full py-3 px-4 bg-salmon-500 text-white rounded-lg hover:bg-salmon-600 transition-colors">
             Apoie a Proposta
           </button>
         </div>

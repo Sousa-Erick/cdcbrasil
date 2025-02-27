@@ -4,7 +4,7 @@ import { ChevronDown, Link2, Users, Database, Heart } from 'lucide-react';
 
 const Principles: React.FC = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,36 +37,36 @@ const Principles: React.FC = () => {
   const principles = [
     {
       title: "Integrado",
-      icon: <Link2 className="h-5 w-5 text-indigo-600" />,
+      icon: <Link2 className="h-5 w-5 text-blue-700" />,
       content: "Atua de forma articulada com o SUS, respeitando seus princípios e fortalecendo a capacidade de resposta do sistema de saúde brasileiro."
     },
     {
       title: "Forte",
-      icon: <Users className="h-5 w-5 text-indigo-600" />,
+      icon: <Users className="h-5 w-5 text-blue-700" />,
       content: "Dispõe de recursos humanos, tecnológicos e financeiros adequados, com estabilidade institucional e governança transparente."
     },
     {
       title: "Eficiente",
-      icon: <Database className="h-5 w-5 text-indigo-600" />,
+      icon: <Database className="h-5 w-5 text-blue-700" />,
       content: "Utiliza métodos científicos e evidências para embasar decisões, com avaliação constante de resultados e aprimoramento contínuo."
     }
   ];
 
   const directives = [
     {
-      icon: <Link2 className="h-5 w-5 text-indigo-600" />,
+      icon: <Link2 className="h-5 w-5 text-blue-700" />,
       text: "Parcerias com instituições nacionais e internacionais"
     },
     {
-      icon: <Users className="h-5 w-5 text-indigo-600" />,
+      icon: <Users className="h-5 w-5 text-blue-700" />,
       text: "Cooperação intersetorial e federativa"
     },
     {
-      icon: <Database className="h-5 w-5 text-indigo-600" />,
+      icon: <Database className="h-5 w-5 text-blue-700" />,
       text: "Uso inteligente de dados para tomada de decisões"
     },
     {
-      icon: <Heart className="h-5 w-5 text-indigo-600" />,
+      icon: <Heart className="h-5 w-5 text-blue-700" />,
       text: "Proteção das populações vulneráveis"
     }
   ];
@@ -89,7 +89,7 @@ const Principles: React.FC = () => {
           
           <div className="bg-white rounded-lg shadow-md border border-gray-100 mb-8">
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-4 text-indigo-600">Princípios fundamentais:</h3>
+              <h3 className="text-xl font-semibold mb-4 text-salmon-500">Princípios fundamentais:</h3>
               
               <div className="space-y-4">
                 {principles.map((principle, index) => (
@@ -99,7 +99,7 @@ const Principles: React.FC = () => {
                       onClick={() => toggleAccordion(index)}
                     >
                       <div className="flex items-center">
-                        <div className="mr-3 text-indigo-600">
+                        <div className="mr-3 text-blue-700">
                           {principle.icon}
                         </div>
                         <span className="font-medium text-gray-800">{principle.title}</span>
@@ -122,12 +122,12 @@ const Principles: React.FC = () => {
           </div>
           
           <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-            <h3 className="text-xl font-semibold mb-4 text-indigo-600">Diretrizes essenciais:</h3>
+            <h3 className="text-xl font-semibold mb-4 text-blue-700">Diretrizes essenciais:</h3>
             
             <ul className="space-y-4">
               {directives.map((directive, index) => (
                 <li key={index} className="flex items-center">
-                  <div className="mr-3 text-indigo-600">
+                  <div className="mr-3 text-blue-700">
                     {directive.icon}
                   </div>
                   <span className="text-gray-700">{directive.text}</span>

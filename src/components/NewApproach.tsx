@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { CheckCircle, Share2, Shield, Clock } from 'lucide-react';
 
 const NewApproach: React.FC = () => {
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,19 +31,19 @@ const NewApproach: React.FC = () => {
 
   const benefits = [
     {
-      icon: <Shield className="h-5 w-5 text-indigo-600" />,
+      icon: <Shield className="h-5 w-5 text-blue-700" />,
       text: "Proteção da saúde da população brasileira"
     },
     {
-      icon: <Share2 className="h-5 w-5 text-indigo-600" />,
+      icon: <Share2 className="h-5 w-5 text-blue-700" />,
       text: "Integração com o Sistema Único de Saúde"
     },
     {
-      icon: <CheckCircle className="h-5 w-5 text-indigo-600" />,
+      icon: <CheckCircle className="h-5 w-5 text-blue-700" />,
       text: "Embasamento em evidências científicas"
     },
     {
-      icon: <Clock className="h-5 w-5 text-indigo-600" />,
+      icon: <Clock className="h-5 w-5 text-blue-700" />,
       text: "Atuação rápida e coordenada"
     }
   ];
@@ -72,12 +72,12 @@ const NewApproach: React.FC = () => {
           </p>
           
           <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-            <h3 className="text-xl font-semibold mb-4 text-indigo-600">Benefícios da nova abordagem:</h3>
+            <h3 className="text-xl font-semibold mb-4 text-salmon-500">Benefícios da nova abordagem:</h3>
             
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-center">
-                  <div className="mr-3 text-indigo-600">
+                  <div className="mr-3 text-blue-700">
                     {benefit.icon}
                   </div>
                   <span className="text-gray-700">{benefit.text}</span>
