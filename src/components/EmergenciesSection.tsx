@@ -38,8 +38,8 @@ const EmergenciesSection: React.FC = () => {
   const emergencies = [
     { name: "Aids", icon: <Biohazard className="h-5 w-5 text-health-500 mb-2" /> },
     { name: "Cólera", icon: <Droplets className="h-5 w-5 text-health-500 mb-2" /> },
-    { name: "Influenza H1N1", icon: <Bug className="h-5 w-5 text-health-500 mb-2" /> },
-    { name: "Dengue", icon: <Thermometer className="h-5 w-5 text-health-500 mb-2" /> },
+    { name: "Influenza H1N1", icon: <Thermometer className="h-5 w-5 text-health-500 mb-2" /> },
+    { name: "Dengue", icon: <Bug className="h-5 w-5 text-health-500 mb-2" /> },
     { name: "Zika", icon: <Bug className="h-5 w-5 text-health-500 mb-2" /> },
     { name: "Febre amarela", icon: <Thermometer className="h-5 w-5 text-health-500 mb-2" /> },
     { name: "Covid-19", icon: <Biohazard className="h-5 w-5 text-health-500 mb-2" /> },
