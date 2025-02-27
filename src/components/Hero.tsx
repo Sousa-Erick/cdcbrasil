@@ -41,10 +41,10 @@ const Hero: React.FC = () => {
           <div className="mt-12 mb-8 flex justify-center animate-fade-in">
             <a 
               href="#emergencies" 
-              className="flex flex-col items-center text-blue-700 hover:text-blue-800 transition-colors"
+              className="flex flex-col items-center text-gray-400 hover:text-gray-500 transition-colors"
             >
-              <span className="text-2xl md:text-3xl font-bold mb-2">Leia mais</span>
-              <ChevronDown className="h-6 w-6 animate-bounce" />
+              <span className="text-xl md:text-2xl font-medium mb-2">Leia mais</span>
+              <ChevronDown className="h-5 w-5 animate-bounce" />
             </a>
           </div>
         </div>
