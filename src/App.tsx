@@ -6,7 +6,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import NewsAdmin from "./components/NewsAdmin";
 
 const queryClient = new QueryClient();
 
@@ -19,8 +18,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/index" element={<Navigate to="/" replace />} />
-          <Route path="/admin/news" element={<NewsAdmin />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
