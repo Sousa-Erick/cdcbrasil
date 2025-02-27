@@ -37,20 +37,14 @@ const Hero: React.FC = () => {
           </p>
           
           <div className={cn(
-            "flex justify-center items-center gap-8 flex-wrap transition-all duration-700 delay-500 ease-in-out",
+            "flex justify-center items-center transition-all duration-700 delay-500 ease-in-out",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
             <a 
-              href="#what-is-section" 
+              href="#documents" 
               className="bg-health-600 hover:bg-health-700 text-white py-3 px-6 rounded-lg font-medium transition-colors shadow-md"
             >
               Conheça a proposta
-            </a>
-            <a 
-              href="#documents" 
-              className="border border-blue-700 text-blue-700 hover:bg-blue-50 py-3 px-6 rounded-lg font-medium transition-colors"
-            >
-              Documentos
             </a>
           </div>
         </div>
