@@ -81,7 +81,7 @@ const WorldMap: React.FC = () => {
             <div className="p-6 bg-[#DFEAF3] flex flex-col items-center justify-center">
               <div className="relative w-full max-w-4xl mx-auto">
                 <img 
-                  src="/lovable-uploads/b45acc37-13e4-44f0-8385-7ff3683eae3d.png" 
+                  src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=1000"
                   alt="Mapa mundial mostrando CDCs em diferentes países"
                   className="w-full h-auto object-contain rounded-lg"
                 />
