@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Instagram, X, Facebook } from 'lucide-react';
+
 const Footer: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -83,7 +85,7 @@ const Footer: React.FC = () => {
       <div className="border-t border-gray-200 py-4">
         <div className="container mx-auto px-4 flex flex-col md:flex-row md:justify-between items-center text-center md:text-left">
           <p className="text-gray-600 text-xs mb-2 md:mb-0 text-center">
-            © {new Date().getFullYear()} Instituto Todos pela Saúde. Todos os direitos reservados.
+            © 2025 Instituto Todos pela Saúde. Todos os direitos reservados.
           </p>
           {/* Links de Termos de Uso e Política de Privacidade foram removidos */}
         </div>
