@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
               <h3 className="text-blue-500 font-bold text-base mb-3">Navegação</h3>
               <ul className="space-y-2">
                 <li><button onClick={() => scrollToSection('hero')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Início</button></li>
-                <li><button onClick={() => scrollToSection('context')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Por que Precisamos?</button></li>
+                <li><button onClick={() => scrollToSection('context')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Por que precisamos?</button></li>
                 <li><button onClick={() => scrollToSection('characteristics')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Características</button></li>
                 <li><button onClick={() => scrollToSection('supporters')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Apoio</button></li>
                 <li><button onClick={() => scrollToSection('materials')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Materiais</button></li>
