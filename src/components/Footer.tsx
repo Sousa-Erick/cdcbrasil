@@ -1,17 +1,15 @@
-
 import React from 'react';
 import { Instagram, X, Facebook } from 'lucide-react';
-
 const Footer: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <footer id="contact" className="bg-white text-gray-700">
+  return <footer id="contact" className="bg-white text-gray-700">
       {/* Faixa cinza superior com ícones de redes sociais */}
       <div className="w-full bg-[#8a8a8a] py-3">
         <div className="container mx-auto px-4 flex justify-end space-x-4">
@@ -34,11 +32,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 md:w-[200px] pr-8">
             <div className="py-2">
               <button onClick={() => scrollToSection('hero')}>
-                <img 
-                  src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
-                  alt="Logo"
-                  className="h-10 md:h-12 w-auto"
-                />
+                <img src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png" alt="Logo" className="h-10 md:h-12 w-auto" />
               </button>
             </div>
           </div>
@@ -88,14 +82,12 @@ const Footer: React.FC = () => {
       {/* Rodapé com direitos e termos */}
       <div className="border-t border-gray-200 py-4">
         <div className="container mx-auto px-4 flex flex-col md:flex-row md:justify-between items-center text-center md:text-left">
-          <p className="text-gray-600 text-xs mb-2 md:mb-0">
+          <p className="text-gray-600 text-xs mb-2 md:mb-0 text-center">
             © {new Date().getFullYear()} Instituto Todos pela Saúde. Todos os direitos reservados.
           </p>
           {/* Links de Termos de Uso e Política de Privacidade foram removidos */}
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
