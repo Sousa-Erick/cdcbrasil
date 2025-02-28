@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import MobileMenu from './MobileMenu';
@@ -29,7 +30,7 @@ const Header: React.FC = () => {
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center">
             <button onClick={() => scrollToSection('hero')} className="block">
-              <img src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png" alt="Logo" className="h-10 md:h-12" />
+              <img src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png" alt="Logo" className="h-10 md:h-16 lg:h-20 w-auto transition-all duration-300" />
             </button>
           </div>
           

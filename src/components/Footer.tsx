@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 md:w-[200px] pr-8">
             <div className="py-2">
               <button onClick={() => scrollToSection('hero')}>
-                <img src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png" alt="Logo" className="h-10 md:h-12 w-auto" />
+                <img src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png" alt="Logo" className="h-10 md:h-16 lg:h-20 w-auto transition-all duration-300" />
               </button>
             </div>
           </div>
