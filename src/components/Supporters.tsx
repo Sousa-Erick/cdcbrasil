@@ -115,15 +115,15 @@ const Supporters: React.FC = () => {
                   <tr 
                     key={index} 
                     className={`
-                      transition-colors 
-                      ${index % 2 === 0 ? 'bg-white' : 'bg-blue-50/90'}
+                      transition-colors duration-300 
+                      ${index % 2 === 0 ? 'bg-white' : 'bg-pantone-2935c-20/90'}
                       hover:bg-blue-100/90
                     `}
                   >
-                    <td className="py-4 px-6 border-b border-gray-100/40 font-medium text-gray-800">
+                    <td className="py-5 px-6 border-b border-gray-100/40 font-medium text-gray-800">
                       {supporter.name}
                     </td>
-                    <td className="py-4 px-6 border-b border-gray-100/40 text-gray-600 leading-relaxed text-sm">
+                    <td className="py-5 px-6 border-b border-gray-100/40 text-gray-600 leading-relaxed text-sm">
                       {supporter.role}
                     </td>
                   </tr>
