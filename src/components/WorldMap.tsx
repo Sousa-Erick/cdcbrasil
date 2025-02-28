@@ -79,14 +79,18 @@ const WorldMap: React.FC = () => {
           
           <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
             <div className="p-6 bg-[#DFEAF3] flex flex-col items-center justify-center">
-              <div className="relative w-full max-w-4xl mx-auto">
-                <img 
-                  src="/lovable-uploads/f02a5836-3956-43e6-845b-17290226bcbf.png"
-                  alt="Mapa mundial mostrando CDCs em diferentes países"
-                  className="w-full h-auto object-contain rounded-lg"
-                />
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <Globe className="h-16 w-16 text-blue-500 opacity-30" />
+              <div className="relative w-full max-w-4xl mx-auto h-48 md:h-64 lg:h-80 flex items-center justify-center">
+                {/* Substituindo a imagem do mapa por uma representação visual alternativa */}
+                <div className="w-full h-full flex items-center justify-center relative">
+                  <Globe className="h-24 w-24 text-blue-500 opacity-70" />
+                  <div className="absolute inset-0 bg-[#DFEAF3] opacity-10 rounded-full scale-150 animate-pulse"></div>
+                  
+                  {/* Pontos representando os CDCs pelo mundo */}
+                  <div className="absolute w-3 h-3 bg-salmon rounded-full top-1/4 left-1/4"></div>
+                  <div className="absolute w-3 h-3 bg-salmon rounded-full top-1/3 left-2/3"></div>
+                  <div className="absolute w-3 h-3 bg-salmon rounded-full top-2/3 left-1/5"></div>
+                  <div className="absolute w-3 h-3 bg-salmon rounded-full top-1/2 left-3/4"></div>
+                  <div className="absolute w-3 h-3 bg-salmon rounded-full top-3/4 left-1/3"></div>
                 </div>
               </div>
             </div>
