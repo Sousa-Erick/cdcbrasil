@@ -21,6 +21,13 @@ const Header: React.FC = () => {
     };
   }, [scrolled]);
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -30,24 +37,24 @@ const Header: React.FC = () => {
       }`}>
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center">
-            <a href="#" className="block">
+            <button onClick={() => scrollToSection('hero')} className="block">
               <img 
                 src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
                 alt="Logo"
                 className="h-10 md:h-12"
               />
-            </a>
+            </button>
           </div>
           
           {/* Desktop Navigation - Hidden on mobile */}
           <nav className="hidden md:flex space-x-6">
-            <a href="#hero" className="text-gray-800 hover:text-blue transition-colors font-medium">Início</a>
-            <a href="#context" className="text-gray-800 hover:text-blue transition-colors font-medium">Por que Precisamos?</a>
-            <a href="#characteristics" className="text-gray-800 hover:text-blue transition-colors font-medium">Características</a>
-            <a href="#supporters" className="text-gray-800 hover:text-blue transition-colors font-medium">Apoio</a>
-            <a href="#materials" className="text-gray-800 hover:text-blue transition-colors font-medium">Materiais</a>
-            <a href="#news" className="text-gray-800 hover:text-blue transition-colors font-medium">Notícias</a>
-            <a href="#contact" className="text-gray-800 hover:text-blue transition-colors font-medium">Contato</a>
+            <button onClick={() => scrollToSection('hero')} className="text-gray-800 hover:text-blue transition-colors font-medium">Início</button>
+            <button onClick={() => scrollToSection('context')} className="text-gray-800 hover:text-blue transition-colors font-medium">Por que Precisamos?</button>
+            <button onClick={() => scrollToSection('characteristics')} className="text-gray-800 hover:text-blue transition-colors font-medium">Características</button>
+            <button onClick={() => scrollToSection('supporters')} className="text-gray-800 hover:text-blue transition-colors font-medium">Apoio</button>
+            <button onClick={() => scrollToSection('materials')} className="text-gray-800 hover:text-blue transition-colors font-medium">Materiais</button>
+            <button onClick={() => scrollToSection('news')} className="text-gray-800 hover:text-blue transition-colors font-medium">Notícias</button>
+            <button onClick={() => scrollToSection('contact')} className="text-gray-800 hover:text-blue transition-colors font-medium">Contato</button>
           </nav>
           
           {/* Mobile menu button */}

@@ -68,55 +68,48 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         </div>
         
         <nav className="py-6 px-5 space-y-4">
-          <a 
-            href="#hero" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
+          <button 
+            className="block w-full text-left py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
             onClick={() => handleLinkClick('hero')}
           >
             Início
-          </a>
-          <a 
-            href="#context" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
+          </button>
+          <button 
+            className="block w-full text-left py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
             onClick={() => handleLinkClick('context')}
           >
             Por que Precisamos?
-          </a>
-          <a 
-            href="#characteristics" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
+          </button>
+          <button 
+            className="block w-full text-left py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
             onClick={() => handleLinkClick('characteristics')}
           >
             Características
-          </a>
-          <a 
-            href="#supporters" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
+          </button>
+          <button 
+            className="block w-full text-left py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
             onClick={() => handleLinkClick('supporters')}
           >
             Apoio
-          </a>
-          <a 
-            href="#materials" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
+          </button>
+          <button 
+            className="block w-full text-left py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
             onClick={() => handleLinkClick('materials')}
           >
             Materiais
-          </a>
-          <a 
-            href="#news" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
+          </button>
+          <button 
+            className="block w-full text-left py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
             onClick={() => handleLinkClick('news')}
           >
             Notícias
-          </a>
-          <a 
-            href="#contact" 
-            className="block py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
+          </button>
+          <button 
+            className="block w-full text-left py-2 px-4 text-lg text-gray-800 hover:bg-blue-light hover:text-blue rounded-md transition-colors"
             onClick={() => handleLinkClick('contact')}
           >
             Contato
-          </a>
+          </button>
         </nav>
         
         <div className="absolute bottom-0 left-0 right-0 p-5 border-t">

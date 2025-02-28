@@ -3,6 +3,13 @@ import React from 'react';
 import { Instagram, X, Facebook } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer id="contact" className="bg-white text-gray-700">
       {/* Faixa cinza superior com ícones de redes sociais */}
@@ -26,11 +33,13 @@ const Footer: React.FC = () => {
           {/* Logo sem texto */}
           <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 md:w-[200px] pr-8">
             <div className="py-2">
-              <img 
-                src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
-                alt="Logo"
-                className="h-10 md:h-12 w-auto"
-              />
+              <button onClick={() => scrollToSection('hero')}>
+                <img 
+                  src="/lovable-uploads/4cd0378c-8df3-49cd-b431-3f45ee8257cd.png"
+                  alt="Logo"
+                  className="h-10 md:h-12 w-auto"
+                />
+              </button>
             </div>
           </div>
           
@@ -40,13 +49,13 @@ const Footer: React.FC = () => {
             <div className="border-l border-gray-200 pl-4">
               <h3 className="text-blue-500 font-bold text-base mb-3">Navegação</h3>
               <ul className="space-y-2">
-                <li><a href="#hero" className="text-gray-600 hover:text-blue-500 transition-colors text-sm">Início</a></li>
-                <li><a href="#context" className="text-gray-600 hover:text-blue-500 transition-colors text-sm">Por que Precisamos?</a></li>
-                <li><a href="#characteristics" className="text-gray-600 hover:text-blue-500 transition-colors text-sm">Características</a></li>
-                <li><a href="#supporters" className="text-gray-600 hover:text-blue-500 transition-colors text-sm">Apoio</a></li>
-                <li><a href="#materials" className="text-gray-600 hover:text-blue-500 transition-colors text-sm">Materiais</a></li>
-                <li><a href="#news" className="text-gray-600 hover:text-blue-500 transition-colors text-sm">Notícias</a></li>
-                <li><a href="#contact" className="text-gray-600 hover:text-blue-500 transition-colors text-sm">Contato</a></li>
+                <li><button onClick={() => scrollToSection('hero')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Início</button></li>
+                <li><button onClick={() => scrollToSection('context')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Por que Precisamos?</button></li>
+                <li><button onClick={() => scrollToSection('characteristics')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Características</button></li>
+                <li><button onClick={() => scrollToSection('supporters')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Apoio</button></li>
+                <li><button onClick={() => scrollToSection('materials')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Materiais</button></li>
+                <li><button onClick={() => scrollToSection('news')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Notícias</button></li>
+                <li><button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Contato</button></li>
               </ul>
             </div>
             
@@ -54,9 +63,9 @@ const Footer: React.FC = () => {
             <div className="border-l border-gray-200 pl-4">
               <h3 className="text-blue-500 font-bold text-base mb-3">Recursos</h3>
               <ul className="space-y-2">
-                <li><a href="#materials" className="text-gray-600 hover:text-blue-500 transition-colors text-sm">Documentos</a></li>
-                <li><a href="#approach" className="text-gray-600 hover:text-blue-500 transition-colors text-sm">Abordagem</a></li>
-                <li><a href="#principles" className="text-gray-600 hover:text-blue-500 transition-colors text-sm">Princípios</a></li>
+                <li><button onClick={() => scrollToSection('materials')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Documentos</button></li>
+                <li><button onClick={() => scrollToSection('approach')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Abordagem</button></li>
+                <li><button onClick={() => scrollToSection('principles')} className="text-gray-600 hover:text-blue-500 transition-colors text-sm text-left">Princípios</button></li>
               </ul>
             </div>
             
