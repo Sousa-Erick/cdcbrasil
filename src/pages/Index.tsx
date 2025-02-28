@@ -10,7 +10,6 @@ import Definition from '../components/Definition';
 import Supporters from '../components/Supporters';
 import Materials from '../components/Materials';
 import NewsSection from '../components/NewsSection';
-import WorldMap from '../components/WorldMap';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -34,7 +33,6 @@ const Index = () => {
         <Supporters />
         <Materials />
         <NewsSection />
-        <WorldMap />
       </main>
       
       <Footer />
