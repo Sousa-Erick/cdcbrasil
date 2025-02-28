@@ -1,6 +1,9 @@
+
 import React, { useRef, useEffect } from 'react';
+
 const Supporters: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -12,15 +15,18 @@ const Supporters: React.FC = () => {
     }, {
       threshold: 0.1
     });
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
+
   const supporters = [{
     name: "Amilcar Tanuri",
     role: "Chefe do Laboratório de Virologia Molecular do Instituto de Biologia da UFRJ"
@@ -88,30 +94,47 @@ const Supporters: React.FC = () => {
     name: "Wanderson Oliveira",
     role: "Epidemiologista na direção técnica de Ensino e Pesquisa do Hospital das Forças Armadas, professor de Medicina na Uniceplac, ex-secretário de Vigilância em Saúde no Ministério da Saúde e ex-secretário de Saúde do STF"
   }];
-  return <section id="supporters" className="py-16 bg-gray-50">
+  
+  return (
+    <section id="supporters" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div ref={sectionRef} className="max-w-5xl mx-auto opacity-0 translate-y-8 transition-all duration-700">
+        <div 
+          ref={sectionRef} 
+          className="max-w-5xl mx-auto opacity-0 translate-y-8 transition-all duration-700"
+        >
           <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center">Apoiadores da proposta</h2>
           
-          <p className="text-gray-600 mb-10 text-center max-w-3xl mx-auto">A criação do Centro Brasileiro de Prevenção e Controle de Doenças conta com o apoio de diversos especialistas e instituições</p>
+          <p className="text-gray-600 mb-10 text-center max-w-3xl mx-auto">
+            A criação do Centro Brasileiro de Prevenção e Controle de Doenças conta com o apoio de diversos especialistas e instituições
+          </p>
           
-          <div className="overflow-x-auto rounded-lg shadow-md">
+          <div className="overflow-hidden rounded-xl shadow-lg">
             <table className="w-full border-collapse bg-white">
               <tbody>
-                {supporters.map((supporter, index) => <tr key={index} className="hover:bg-gray-50 transition-colors">
-                    <td className="py-4 px-6 border-b border-gray-100 font-medium text-gray-800 relative">
+                {supporters.map((supporter, index) => (
+                  <tr 
+                    key={index} 
+                    className={`
+                      transition-colors 
+                      ${index % 2 === 0 ? 'bg-white' : 'bg-blue-50/90'}
+                      hover:bg-blue-100/90
+                    `}
+                  >
+                    <td className="py-4 px-6 border-b border-gray-100/40 font-medium text-gray-800">
                       {supporter.name}
-                      <div className="absolute top-1/2 right-0 w-px h-4/5 bg-gray-200 bg-opacity-40 transform -translate-y-1/2"></div>
                     </td>
-                    <td className="py-4 px-6 border-b border-gray-100 text-gray-600 leading-relaxed text-sm">
+                    <td className="py-4 px-6 border-b border-gray-100/40 text-gray-600 leading-relaxed text-sm">
                       {supporter.role}
                     </td>
-                  </tr>)}
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Supporters;
