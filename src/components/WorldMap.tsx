@@ -79,18 +79,28 @@ const WorldMap: React.FC = () => {
           
           <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
             <div className="p-6 bg-[#DFEAF3] flex flex-col items-center justify-center">
-              <div className="relative w-full max-w-4xl mx-auto h-48 md:h-64 lg:h-80 flex items-center justify-center">
-                {/* Substituindo a imagem do mapa por uma representação visual alternativa */}
-                <div className="w-full h-full flex items-center justify-center relative">
-                  <Globe className="h-24 w-24 text-blue-500 opacity-70" />
-                  <div className="absolute inset-0 bg-[#DFEAF3] opacity-10 rounded-full scale-150 animate-pulse"></div>
+              <div className="relative w-full max-w-4xl mx-auto h-64 md:h-72 lg:h-80">
+                {/* Representação visual do mapa mundial */}
+                <div className="w-full h-full relative rounded-lg overflow-hidden bg-blue-50 flex items-center justify-center">
+                  {/* Mapa estilizado usando CSS */}
+                  <div className="absolute inset-0 bg-blue-100">
+                    <div className="absolute w-[80%] h-[40%] bg-blue-200 top-[20%] left-[10%] rounded-lg"></div>
+                    <div className="absolute w-[20%] h-[20%] bg-blue-200 top-[60%] left-[20%] rounded-lg"></div>
+                    <div className="absolute w-[30%] h-[25%] bg-blue-200 top-[30%] left-[60%] rounded-lg"></div>
+                  </div>
+                  
+                  {/* Ícone do globo */}
+                  <Globe className="h-24 w-24 text-blue-500 opacity-40 z-10" />
                   
                   {/* Pontos representando os CDCs pelo mundo */}
-                  <div className="absolute w-3 h-3 bg-salmon rounded-full top-1/4 left-1/4"></div>
-                  <div className="absolute w-3 h-3 bg-salmon rounded-full top-1/3 left-2/3"></div>
-                  <div className="absolute w-3 h-3 bg-salmon rounded-full top-2/3 left-1/5"></div>
-                  <div className="absolute w-3 h-3 bg-salmon rounded-full top-1/2 left-3/4"></div>
-                  <div className="absolute w-3 h-3 bg-salmon rounded-full top-3/4 left-1/3"></div>
+                  <div className="absolute w-4 h-4 bg-red-500 rounded-full top-[30%] left-[25%] z-20 animate-pulse"></div>
+                  <div className="absolute w-4 h-4 bg-red-500 rounded-full top-[35%] left-[45%] z-20 animate-pulse"></div>
+                  <div className="absolute w-4 h-4 bg-red-500 rounded-full top-[45%] left-[65%] z-20 animate-pulse"></div>
+                  <div className="absolute w-4 h-4 bg-red-500 rounded-full top-[55%] left-[35%] z-20 animate-pulse"></div>
+                  <div className="absolute w-4 h-4 bg-red-500 rounded-full top-[40%] left-[75%] z-20 animate-pulse"></div>
+                  
+                  {/* Overlay para criar efeito de mapa */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-100 opacity-20"></div>
                 </div>
               </div>
             </div>
@@ -103,7 +113,7 @@ const WorldMap: React.FC = () => {
                     className="p-4 border border-gray-200 rounded-lg hover:bg-[#DFEAF3] transition-colors"
                   >
                     <div className="flex flex-col md:flex-row md:items-center">
-                      <div className="font-semibold text-salmon md:w-1/4 mb-2 md:mb-0">
+                      <div className="font-semibold text-red-500 md:w-1/4 mb-2 md:mb-0">
                         {cdc.country}
                       </div>
                       <div className="md:w-3/4">
