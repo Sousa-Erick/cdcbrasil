@@ -72,7 +72,8 @@ const Footer: React.FC = () => {
                 <p className="text-gray-600 mb-2">
                   Instituto Todos pela Saúde (ITpS)<br />
                   Av. Paulista, 1.938 – 16º andar<br />
-                  São Paulo - SP – 01310-942
+                  São Paulo - SP<br />
+                  01310-942
                 </p>
                 <a href="mailto:contato@itps.org.br" className="text-blue-500 hover:underline">contato@itps.org.br</a>
               </address>
